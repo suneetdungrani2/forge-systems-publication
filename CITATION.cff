@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Please cite this preprint when using the paper or its research materials."
+title: "FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation"
+date-released: 2026-11-23
+type: software
+authors:
+  - family-names: Dungrani
+    given-names: Suneet
+    affiliation: Independent Researcher
+    email: suneetdungrani@utexas.edu
+abstract: "Scoped robot-design evidence, controlled template repair, conditional operation simulation, fixed-path speed optimization and finite production-model evaluation."
+keywords:
+  - robot design
+  - scoped verification
+  - simulation
+  - manufacturing
+preferred-citation:
+  type: article
+  title: "FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation"
+  authors:
+    - family-names: Dungrani
+      given-names: Suneet
+      affiliation: Independent Researcher
+      email: suneetdungrani@utexas.edu
+  year: 2026
+  notes: "Preprint · Not peer reviewed"

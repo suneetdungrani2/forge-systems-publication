@@ -1,0 +1,64 @@
+{
+  "change": {
+    "solver_iteration_multiplier": 2,
+    "timestep_multiplier": 0.5
+  },
+  "created_after_primary_results": true,
+  "interpretation_receipt_sha256": "105d5a1094af2047ec6fe3394f31725e1318408fecccbc640a9d55f8515bd9dc",
+  "prespecified_receipt": {
+    "collision_credibility": {
+      "check": "inspect actual frozen fixture primitives and independently test a small analytically known empty cavity/occupied rim witness set against actual collision geoms",
+      "scope": "localized parity witnesses, not a universal geometry/contact validation"
+    },
+    "created_at": "2026-11-15T20:17:31.157433+00:00",
+    "film_trial_selection": {
+      "never_select_maximum_effect_or_hide_full_distribution": true,
+      "rule": "first ascending heldout seed in historical_fast with original FAIL and lead-in PASS; if none, first ascending qualification discordance; if none, first paired trial with no improvement claim"
+    },
+    "heldout_results_seen": 0,
+    "primary_contrast": "reference control, lead-in minus original; unchanged",
+    "refinement": {
+      "additional_rule": "per profile, add the seed of the PASS and the FAIL row closest to max(worst/limit)=1 among rows with finite hold witnesses; ties by ascending seed, then condition; evaluate both geometries for each union seed",
+      "base_subset_seeds": [
+        630100,
+        630101,
+        630102,
+        630103,
+        630104
+      ],
+      "control_and_geometry_unchanged": true,
+      "report": "retain all reruns, numerical warnings, missing results and baseline/refined decision flips; do not replace primary outcomes",
+      "solver_iterations_multiplier": 2,
+      "timestep_multiplier": 0.5
+    },
+    "schema": "forge.v6.e2-interpretation-freeze/1",
+    "secondary_contrast": "historical_fast control, lead-in minus original; unchanged",
+    "statistics": {
+      "operation_counts": "all PASS/FAIL/UNKNOWN/CRASH in planned denominator; conditional binomial Wilson 95% by frozen profile and geometry",
+      "paired_contrasts": "show paired contingency and difference; no invented paired interval; any added exploratory interval labeled with its assumptions"
+    }
+  },
+  "primary_results_replaced": false,
+  "rule_frozen_before_primary": true,
+  "schema": "forge.v6-e2-refinement-selection/1",
+  "selected_seeds": {
+    "historical_fast": [
+      630100,
+      630101,
+      630102,
+      630103,
+      630104,
+      630131,
+      630169
+    ],
+    "reference": [
+      630100,
+      630101,
+      630102,
+      630103,
+      630104,
+      630144
+    ]
+  },
+  "source_manifest_sha256": "f76dbf46c77426ab3da9060c9b9fa48ee27e7e5099346c8a58840ba786fbf5ca"
+}

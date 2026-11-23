@@ -1,0 +1,39 @@
+% Primary source anchors: scripts/v6/e0_study.py:_geometry_cases,_geometry_fixture;
+% scripts/v6_1/e0_v61_study.py:v61_cases,_construct,_pose,protocol.
+\subsection{Analytic construction dictionary for the geometry cases}
+The 260 geometry cases comprise 100 retained fixtures and 160 additional fixtures in Table~\ref{tab:checker-constructions}. Dimensions below are millimetres, and angles are degrees. Unless specified, the stock is $[-15,15]\times[-10,10]\times[0,12]$ and bores are centered. A blind cylindrical bore of radius $r$ starts at floor height $s$ and ends at the top face. Define $L_n(a,b)_i=a+(b-a)i/(n-1)$, with zero-based indices, and cycle radii $r_i=(1,1.5,2.5,3)_{i\bmod4}$.
+
+Ground truth precedes evaluation: a constructed critical distance below 0.8 is invalid; otherwise it is valid within the construction's declared scope. Feature-local truth concerns walls between recognized hole features and non-entry faces. Global fixture truth also includes introduced thin regions outside those features. These are closed-form known-answer constructions, without a universal minimum-wall guarantee. Expected checker statuses are separately declared; unsupported geometry can remain analytically invalid while producing \status{UNKNOWN}.
+
+\begingroup\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{0.25\linewidth}p{0.71\linewidth}@{}}
+\caption{Geometry construction parameters. Counts include transformed repetitions.}\label{tab:checker-constructions}\\
+\toprule
+Family (count) & Construction and analytic distance\\
+\midrule
+\endfirsthead
+\toprule Family (count) & Construction and analytic distance\\\midrule
+\endhead
+\bottomrule\endfoot
+Axial pilot holes (70) & Centered $r=2.5$ bore; floor skins $s=0.30+0.013i$ and $0.90+0.029i$, each $i=0,\ldots,34$. Critical distance is $s$.\\
+Off-axis valid control (15) & Same centered bore, $s=1.2$, without a secondary cavity.\\
+Off-axis local web (15) & Main bore $r=2.5$, $s=1$; underside bore $r=0.4$, centered at $(3,0)$, extends from $z=0$ to $0.4$. Edge separation is $\sqrt{0.1^2+0.6^2}$.\\
+Valid feature (30) & Fourteen pilots: $s=L_{14}(0.85,3)_i$, $r=r_i$, center $(-4+2(i\bmod5),-2+2(i\bmod3))$. Ten two-bore webs: $w=L_{10}(0.85,3)_j$, secondary $r_2=(0.75,1,1.5)_{j\bmod3}$, azimuth $17+47j$, floors $s=1+0.2j$ and $s+1$; distance $\min(w,s)$. Six sidewalls: $w=L_6(0.85,2)_k$, $r=r_k$, floor $1.5+0.3k$.\\
+Thin bottom skin (20) & Pilot $s=L_{20}(0.30,0.78)_i$, $r=r_i$, center $(-5+2(i\bmod6),-3+2(i\bmod4))$; distance $s$.\\
+Thin radial sidewall (20) & Sidewall $w=L_{20}(0.30,0.78)_i$, $r=r_i$, floor $1.5+0.125i$; distance $w$.\\
+Oblique rim (12) & Stock $[-5,5]\times[-10,10]\times[-2,11]$ is cut below $z=ax$; centered $r=2.5$ bore has floor $h$. Rim distance $(h-2.5a)/\sqrt{1+a^2}$, using $(a,h)$ pairs listed below.\\
+Off-axis web (20) & Fifteen two-bore webs: $w=L_{15}(0.30,0.78)_i$, $r_2=(0.75,1,1.5)_{i\bmod3}$, azimuth $11+67i$, floors 1 and 2. Five underside pockets: main floor 1.2, pocket radius 0.4, center $(2.9+g_x,0)$, top $1.2-g_z$; distance $\sqrt{g_x^2+g_z^2}$.\\
+Near-threshold wall (12) & Pilot skin, sidewall and two-bore web each take 0.79 and 0.81 in two poses. Main radius 2.5; sidewall floor 2; web secondary radius 1, azimuth 45, floors 2 and 3.\\
+Non-feature thin plate (10) & Five $20\times20$ plates: thickness $L_5(0.3,0.7)_i$. Three stock blocks carry a $t\times10\times5$ fin starting at $(10,-5,12)$, $t=0.4,0.55,0.7$, plus a radius-2.5 bore at $(-6,0)$ with floor 1.5. Two $20\times20$ plates, thickness 0.5 and 0.6, have centered radius-2 through holes.\\
+Rotation/tessellation (16) & Four repetitions of: centered pilot $s=0.6$; centered pilot $s=1.2$; positive-X sidewall $w=0.5$, floor 2; two-bore web $w=1$, secondary radius 1, azimuth 30, floors 1 and 2. Main radii are 2.5.\\
+Drill-point apex (10) & A $118^\circ$ conical tip has height $r/\tan59^\circ$; apex skin $s=(0.3,0.45,0.6,0.7,0.78,0.85,1,1.4,2,2.5)$; radii alternate 1.5 and 2.5.\\
+Through hole (10) & Bore traverses stock; radial wall $w=(0.3,0.45,0.6,0.7,0.78,0.85,1,1.5,2.5,4)$, $r=r_i$.\\
+\end{longtable}
+\endgroup
+
+Sidewall centers cycle through $(\pm(15-r-w),0)$ and $(0,\pm(10-r-w))$. Two-bore center separation is $2.5+r_2+w$. Oblique $(a,h)$ pairs are $(.10,.90)$, $(.15,1)$, $(.20,1.05)$, $(.25,1.10)$, $(.30,1.20)$, $(.12,.95)$, $(.18,1.10)$, $(.28,1.25)$, $(.10,1.30)$, $(.15,1.50)$, $(.20,1.60)$, $(.05,1)$. Pocket gaps are $(.1,.6)$, $(.2,.5)$, $(.3,.4)$, $(.1,.4)$ and $(.25,.65)$.
+
+Thin plates without holes have no feature-local truth. Fin and perforated-plate defects are globally invalid but locally valid: their thin regions lie outside the recognized feature-wall scope. Oblique-rim, apex and edge-supported pocket minima exercise unsupported certificates; \status{UNKNOWN} is abstention, not geometric validity.
+
+Rigid transforms preserve the analytic distances. Retained fixtures rotate about $(1,2,3)$; angles advance by 37, 53, 29 or 31 per family sequence. New fixtures cycle axis/angle pairs $(1,2,3)/37$, $(.3,-1,.2)/123$, $(1,0,0)/90$, $(-2,1,5)/251$, $(0,0,1)/0$, $(1,1,0)/199$. Display tessellation alternates tolerance pairs $(0.02,0.1)$ and $(0.8,0.4)$. The dedicated transform family also translates by $(3\sin i,-2\cos i,0.5i)$; neither mesh resolution nor a checker response supplies its truth label.

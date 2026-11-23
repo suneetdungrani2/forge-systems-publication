@@ -1,0 +1,77 @@
+WEBVTT
+
+1
+00:00:00.400 --> 00:00:04.300
+Recorded simulation at 1×.
+Inspection quadruped with 12 actuated joints.
+
+2
+00:00:05.100 --> 00:00:09.500
+The native Forge CAD view shows a feasible concept with checks still open.
+
+3
+00:00:10.100 --> 00:00:13.900
+Design · native exploded view. Every part, joint and fastener is editable.
+
+4
+00:00:14.100 --> 00:00:16.600
+A six-axis arm places the sensor-pod housing.
+
+5
+00:00:16.600 --> 00:00:21.700
+Ring chamfer 0.4 → 3.0 mm. Key-slot flare 0 → 3.0 mm.
+Both changes were tested together.
+
+6
+00:00:21.700 --> 00:00:25.800
+Recorded fixture comparison at 1×. Same disturbance.
+
+7
+00:00:25.800 --> 00:00:29.330
+Closer camera, same recorded instant.
+
+8
+00:00:29.330 --> 00:00:32.630
+Final yaw (limit 3.3°):
+Original 3.42° fails. Revised 0.07° passes.
+
+9
+00:00:32.830 --> 00:00:38.730
+Simulated reference approach: 96/100 original, 100/100 revised.
+Chamfer and slot flare changed together.
+
+10
+00:00:39.130 --> 00:00:41.130
+Gantry tray transfer along a fixed path.
+
+11
+00:00:41.230 --> 00:00:46.100
+Baseline and optimized trajectories at 1×.
+Same path, controller and disturbance.
+
+12
+00:00:46.100 --> 00:00:49.630
+Contact phase ends. Final recorded state held.
+
+13
+00:00:49.830 --> 00:00:55.530
+Gantry planned motion: 21.760 → ≈7.474 s.
+Simulated transfers: 59/100 → 58/100.
+Transfer reliability did not improve.
+
+14
+00:00:55.830 --> 00:01:01.130
+Modeled mean good units, FIFO / CP-SAT:
+Original fixture 11.9 / 13.4. Revised fixture 12.3 / 13.9.
+
+15
+00:01:01.530 --> 00:01:05.830
+Forge · native study view. Every result links back to its recorded evidence.
+
+16
+00:01:06.030 --> 00:01:09.230
+Design → change → matched test → result → operations.
+
+17
+00:01:09.930 --> 00:01:11.930
+Design. Test. Improve.

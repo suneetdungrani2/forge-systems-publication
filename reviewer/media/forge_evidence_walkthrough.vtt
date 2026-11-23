@@ -1,0 +1,176 @@
+WEBVTT
+
+1
+00:00:00.300 --> 00:00:03.500
+Forge interface captures and recorded simulations.
+
+2
+00:00:03.500 --> 00:00:07.900
+Replays run at 1×. Holds and camera views are labeled.
+No physical prototype was built or tested.
+
+3
+00:00:08.000 --> 00:00:13.900
+Recorded simulation at 1×.
+Inspection quadruped with 12 actuated joints.
+
+4
+00:00:14.700 --> 00:00:19.900
+The native Forge CAD view shows a feasible concept with checks still open.
+
+5
+00:00:20.200 --> 00:00:25.900
+Design · native. Select a part: mass, envelope, joints and fasteners.
+
+6
+00:00:26.200 --> 00:00:31.900
+Design · native. The exploded assembly, in the native viewer.
+
+7
+00:00:32.200 --> 00:00:37.900
+Design · native. A section through the assembly.
+
+8
+00:00:38.200 --> 00:00:44.300
+Test · native. Its recorded step test, replayed in the app with contact forces.
+
+9
+00:00:44.600 --> 00:00:50.700
+Test · native. Revisions compared on the same recorded tests.
+
+10
+00:00:50.700 --> 00:00:52.900
+Wall requirement: at least 0.8 mm.
+
+11
+00:00:52.900 --> 00:00:57.200
+Both earlier screw-pilot walls measure 0.51 mm.
+The earlier sampled screen passed both.
+
+12
+00:00:57.200 --> 00:01:01.700
+The revised checker covers declared holes.
+Later revisions made those pilots shallower.
+
+13
+00:01:01.700 --> 00:01:04.400
+Checker results on synthetic known-answer cases.
+
+14
+00:01:10.900 --> 00:01:13.800
+Sensor-pod fixture comparison from recorded states.
+
+15
+00:01:13.800 --> 00:01:19.700
+Ring chamfer 0.4 → 3.0 mm. Key-slot flare 0 → 3.0 mm.
+Both changes were tested together.
+
+16
+00:01:19.700 --> 00:01:24.200
+Recorded fixture comparison at 1×. Same disturbance.
+
+17
+00:01:24.200 --> 00:01:27.730
+Closer camera, same recorded instant.
+
+18
+00:01:27.730 --> 00:01:32.630
+Final yaw (limit 3.3°):
+Original 3.42° fails. Revised 0.07° passes.
+
+19
+00:01:32.830 --> 00:01:39.530
+Simulated reference approach: 96/100 original, 100/100 revised.
+Chamfer and slot flare changed together.
+
+20
+00:01:39.730 --> 00:01:44.130
+Faster approach, same 100 held-out pairs.
+Original 91/100, revised 98/100.
+
+21
+00:01:44.130 --> 00:01:49.630
+Draw 630111: original height error 3.977 mm and tilt 10.4° fail.
+Revised height error 0.0018 mm passes.
+
+22
+00:01:49.930 --> 00:01:56.630
+Forge · native study view. The same records in the native study view, with counts.
+
+23
+00:01:56.930 --> 00:02:03.630
+Forge · native study view. The fast approach profile, side by side in the app.
+
+24
+00:02:03.730 --> 00:02:08.330
+Same agent, tools and budgets. Feedback differed.
+All 54 planned held-out episodes ran.
+
+25
+00:02:08.330 --> 00:02:12.730
+Passes: A0 14/18, A1 17/18, A2 18/18.
+Ten first failures became selected passes.
+
+26
+00:02:12.730 --> 00:02:18.630
+A2 − A1: +0.056. 95% bootstrap interval [0.000, 0.167].
+No established improvement from richer feedback.
+
+27
+00:02:18.730 --> 00:02:21.430
+Held-out repair results by condition and task family.
+
+28
+00:02:28.930 --> 00:02:31.730
+Gantry planning with torque, speed and tray-slip limits.
+
+29
+00:02:31.830 --> 00:02:36.700
+Baseline and optimized trajectories at 1×.
+Same path, controller and disturbance.
+
+30
+00:02:36.700 --> 00:02:41.230
+Contact phase ends. Final recorded state held.
+
+31
+00:02:41.430 --> 00:02:49.130
+Gantry planned motion: 21.760 → ≈7.474 s.
+Simulated transfers: 59/100 → 58/100.
+Transfer reliability did not improve.
+
+32
+00:02:49.330 --> 00:02:52.030
+Baseline and optimized speed along the fixed path.
+
+33
+00:02:57.330 --> 00:03:00.030
+Planned torque versus the modeled limits.
+
+34
+00:03:05.430 --> 00:03:16.130
+Modeled mean good units, FIFO / CP-SAT:
+Original fixture 11.9 / 13.4. Revised fixture 12.3 / 13.9.
+
+35
+00:03:16.330 --> 00:03:19.730
+Model and simulation evidence.
+No physical robot or fixture validation.
+
+36
+00:03:19.730 --> 00:03:24.430
+Tier B replays one reference-profile fixture pair.
+It requires separately authorized meshes.
+
+37
+00:03:24.430 --> 00:03:29.230
+Gantry trays remained unseated in 40/100 trials per profile.
+Repair feedback superiority was not established.
+
+38
+00:03:29.430 --> 00:03:32.630
+Design → check → matched test → study → limits.
+
+39
+00:03:33.330 --> 00:03:35.330
+Design. Test. Improve.

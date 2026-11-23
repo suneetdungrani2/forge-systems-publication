@@ -1,0 +1,126 @@
+{
+  "by_arm": {
+    "A0": {
+      "build_valid_count": 8,
+      "common_compile_feedback_published_count": 8,
+      "completed_graded_count": 8,
+      "episode_count": 18,
+      "evaluator_calls_count": 18,
+      "feedback_published_count": 8,
+      "feedback_verified_count": 8,
+      "protected_task_feedback_published_count": 0,
+      "provider_usage_available_episode_count": 8,
+      "provider_usage_unavailable_episode_count": 10,
+      "submitted_count": 18,
+      "token_usage": {
+        "cache_write_input_tokens": {
+          "actual_total": 0,
+          "observed_turns": 8
+        },
+        "cached_input_tokens": {
+          "actual_total": 1072256,
+          "observed_turns": 8
+        },
+        "input_tokens": {
+          "actual_total": 1225195,
+          "observed_turns": 8
+        },
+        "output_tokens": {
+          "actual_total": 6369,
+          "observed_turns": 8
+        },
+        "reasoning_output_tokens": {
+          "actual_total": 1167,
+          "observed_turns": 8
+        }
+      },
+      "wall_s_total": 1686.8741056570143,
+      "worker_timeout_count": 10
+    },
+    "A1": {
+      "build_valid_count": 8,
+      "common_compile_feedback_published_count": 8,
+      "completed_graded_count": 8,
+      "episode_count": 18,
+      "evaluator_calls_count": 18,
+      "feedback_published_count": 8,
+      "feedback_verified_count": 8,
+      "protected_task_feedback_published_count": 8,
+      "provider_usage_available_episode_count": 8,
+      "provider_usage_unavailable_episode_count": 10,
+      "submitted_count": 18,
+      "token_usage": {
+        "cache_write_input_tokens": {
+          "actual_total": 0,
+          "observed_turns": 8
+        },
+        "cached_input_tokens": {
+          "actual_total": 1073408,
+          "observed_turns": 8
+        },
+        "input_tokens": {
+          "actual_total": 1243697,
+          "observed_turns": 8
+        },
+        "output_tokens": {
+          "actual_total": 5977,
+          "observed_turns": 8
+        },
+        "reasoning_output_tokens": {
+          "actual_total": 1207,
+          "observed_turns": 8
+        }
+      },
+      "wall_s_total": 1697.4842208849805,
+      "worker_timeout_count": 10
+    },
+    "A2": {
+      "build_valid_count": 8,
+      "common_compile_feedback_published_count": 8,
+      "completed_graded_count": 8,
+      "episode_count": 18,
+      "evaluator_calls_count": 18,
+      "feedback_published_count": 8,
+      "feedback_verified_count": 8,
+      "protected_task_feedback_published_count": 8,
+      "provider_usage_available_episode_count": 7,
+      "provider_usage_unavailable_episode_count": 11,
+      "submitted_count": 18,
+      "token_usage": {
+        "cache_write_input_tokens": {
+          "actual_total": 0,
+          "observed_turns": 7
+        },
+        "cached_input_tokens": {
+          "actual_total": 923776,
+          "observed_turns": 7
+        },
+        "input_tokens": {
+          "actual_total": 1087473,
+          "observed_turns": 7
+        },
+        "output_tokens": {
+          "actual_total": 5275,
+          "observed_turns": 7
+        },
+        "reasoning_output_tokens": {
+          "actual_total": 799,
+          "observed_turns": 7
+        }
+      },
+      "wall_s_total": 1882.534289124982,
+      "worker_timeout_count": 10
+    }
+  },
+  "interpretation": {
+    "feedback": "publication receipts only; publication does not establish model reading or use",
+    "provider_tokens": "sums of observed provider-reported token counts; unavailable episodes are excluded, so these are not complete consumption totals or cost estimates"
+  },
+  "schema": "forge.v6-e1-resource-summary/1",
+  "source_identities": {
+    "cohort_freeze_sha256": "3d7dec754318229a82ccc82ff34f3f9fb565283f6c4988a572cc24c950936dc7",
+    "protocol_sha256": "54cded11ebdb1b67ff3db7f454166161413af62d7ae59d2c6e0b04a5635d370c",
+    "source_commit": "1e8e388afda1c98eb2c6ccf2de52d59d7b23b259",
+    "source_manifest_sha256": "72968ebb370eb941c7e5cf971acdadcc6161effb6d3f1a0ccf6cfd8a351f2deb"
+  }
+}

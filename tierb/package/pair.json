@@ -1,0 +1,40 @@
+{
+  "archive_identity": {
+    "control_profile": "reference",
+    "controller_settings": {
+      "approach_mm": 30.0,
+      "speed_frac": 0.35,
+      "t_insert_s": 1.2
+    },
+    "model_verification_sha256": "5a6383c8be4224f6525cf7d798049093e1f6f2ec9dfb36bf2c26ca7c9f5a0c47",
+    "pair_trial_rows_sha256": "2017c85cc4ebed88fc4fa6b37cc528f6cf48cb4a19d5fa81211b712d797378fa",
+    "protocol_sha256": "ab2ce4f7976fd73f46afcbb9e4601fd756c3801399999bb1c08b36153954e597",
+    "runtime_cpu_model_read_later_from_same_host": "Intel(R) Core(TM) Ultra 9 285K",
+    "runtime_packages": {
+      "mujoco": "3.15.0",
+      "numpy": "2.5.4"
+    },
+    "runtime_platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "runtime_python": "3.12.3",
+    "trials_jsonl_sha256": "c4d9c166c2d27c41ba8b099e4b695c6f747af60fca5c5653ddd97f877cf5fdfa"
+  },
+  "conditions": [
+    "original",
+    "historical_v4_lead_in"
+  ],
+  "exporter": {
+    "method": "archived source imported; mj_step replaced by a ctrl recorder (no physics); scene bytes re-composed and matched to archive",
+    "mujoco": "3.15.0",
+    "numpy": "2.5.4",
+    "source": {
+      "declared_commit": "86308de844dbca9d0a9ee3103a23e977c097d24c",
+      "manifest_file_sha256": "0dcd2ed86fb721fc8c4667fd5a57f776e72208e98f7720d1a94354dd8e98d76f",
+      "unlisted_python_files_present": [],
+      "verified_files": 379
+    }
+  },
+  "schema": "forge.v6_1.tierb-pair/1",
+  "seed": 630103,
+  "selection_rule": "Fixed before any replay was run, using only archived trial statuses: in the primary reference-profile held-out archive (seeds 630100-630199), take the seeds whose original-fixture trial is FAIL and whose historical-V4-lead-in trial is PASS, and select the smallest such seed.",
+  "study": "V6 E2 fixture insertion, primary reference profile, held-out split"
+}

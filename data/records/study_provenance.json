@@ -1,0 +1,38 @@
+{
+  "evidence_categories": [
+    "tested software invariant",
+    "simulated operation",
+    "production-model outcome"
+  ],
+  "full_generation_workflow": "proprietary and excluded",
+  "physical_validation": "not established",
+  "schema": "forge.sanitized-study-provenance/1",
+  "source_receipts": {
+    "E0": {
+      "assessment_rows": 300,
+      "fixture_count": 200,
+      "protocol_sha256": "b574771fcd0ca1d941c4741f29e201449782606817010b7c839a64c6fd3fa998",
+      "raw_sha256": "f18017c6b279a7c1f56ee3518c7be8b6cc6aa2ab88fd4cb7b695b4386ea470e0",
+      "runtime_note": "per-fixture runtime is repeated on the two geometry-checker rows; do not sum duplicated values as separate timings"
+    },
+    "E1": {
+      "episode_rows_sha256": "a14a35e228629847ec8831d7ac237b80e6acfdc2a18d5b20d800b3f636a3cb5e",
+      "episodes": 54
+    },
+    "E2-historical_fast": {
+      "protocol_sha256": "1e8b04b6ae639fd891e999deb8806976ebb576ff1190e83fba9ca20de89d58c4"
+    },
+    "E2-reference": {
+      "protocol_sha256": "ab2ce4f7976fd73f46afcbb9e4601fd756c3801399999bb1c08b36153954e597"
+    },
+    "E2-reference-development-historical-v1": {
+      "protocol_sha256": "247707d3dadee6812875da03786e878401f829021fa5e1957a206836efa3cd3e",
+      "scope": "historical development under V1; not backdated into the V2 held-out evaluator"
+    },
+    "E3": {
+      "protocol_sha256": "a5710fd355f3669ce5bc99efaf808edcfaa3a59be85600fafb04e5731d0a8de5",
+      "raw_sha256": "319c1dca9dcb63d8cf8bd56877f2ebd39ed0dfe41eff1bd75dbae4938b1be72c"
+    }
+  },
+  "study_id": "FORGE-SYSTEMS-V6"
+}

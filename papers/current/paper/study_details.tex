@@ -1,0 +1,72 @@
+% Source anchors: data/records/operation_model_contracts.json;
+% src/forge/operations/arm_ops.py:ENVELOPE,sample; robot_sim/mjcf.py;
+% Geometry verification details are based on the frozen study records.
+\section{Operation disturbances, contact settings and refinement}
+\subsection{Applied disturbance envelope}
+The fixture-operation trials draw planar offsets uniformly over disks: the angle is uniform over $[0,2\pi)$ and the radius is $r\sqrt{U}$ for $U\sim\mathrm{Uniform}(0,1)$. Angular offsets and scalar multipliers are uniform over their declared intervals. Table~\ref{tab:operation-envelope-details} specifies the sampling bounds. Each geometry receives the same seeded disturbance draw within a controller profile. Tool-center-point errors are sampled separately at pick and place; the controller continues to target nominal station poses. These distributions represent declared simulation assumptions, without measured manufacturing or calibration distributions.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Declared operation envelope. Angular bounds are symmetric about zero; disk bounds are radii. Housing, insert and lid values appear in that order.}
+\label{tab:operation-envelope-details}
+\begin{tabular}{@{}p{0.48\linewidth}p{0.43\linewidth}@{}}
+\toprule
+Quantity & Bound or interval\\
+\midrule
+Tray position and yaw & 0.3 mm; $\pm0.5^\circ$\\
+Fixture position and yaw & 0.4 mm; $\pm0.5^\circ$\\
+Part position in tray nest & 0.75 mm\\
+Part yaw in tray nest & $\pm(1.1,3.4,2.2)^\circ$\\
+Previously seated part position & 0.5 mm\\
+Previously seated part yaw & $\pm(2,3,2)^\circ$\\
+Tool-center-point position; roll error & 1.0 mm; $\pm0.7^\circ$\\
+Part mass multiplier & $[0.9,1.1]$\\
+Pad friction multiplier & $[0.6,1.0]$\\
+Part/fixture and part/tray sliding friction & $[0.3,0.6]$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The operation determines which parts are already seated: none for housing placement, the housing for insert placement, and the housing and insert for lid placement. The studied housing-placement contrast therefore does not exercise every seated-part bound. A stiffness multiplier in $[0.85,1.15]$ is also sampled and recorded, but is never applied to the actuator gains. The reported outcomes consequently provide no gain-variation robustness evidence.
+
+\subsection{Numerical model and acceptance clock}
+The canonical model uses a 0.0005 s integration step, 100 solver iterations, the \texttt{implicitfast} integrator, elliptic friction cones and an impedance ratio of 10. Gravity is $9.81$ m\,s$^{-2}$ downward. Ordinary geometries have contact dimension 3, reference parameters $(0.02,1)$ and impedance parameters $(0.9,0.95,0.001,0.5,2)$. Contact-critical scene geometries use contact dimension 4, reference parameters $(0.004,1)$ and impedance parameters $(0.95,0.99,0.001,0.5,2)$; their mixing weight is 10. These finite-softness contact settings are part of the model being tested.
+
+Each attempt includes 0.6 s settling before commanded motion and 0.5 s post-task hold. Acceptance requires terminal success and all sampled poses in the final 0.25 s to satisfy planar error $\leq1.0$ mm, absolute height error $\leq0.4$ mm, absolute yaw error $\leq3.3^\circ$, and tilt $\leq2^\circ$. The judge uses the actual perturbed fixture center and seat height. Warnings, nonfinite observations or missing required observations produce \status{UNKNOWN}, retained in the planned denominator. Passing this finite observation window does not establish indefinite stability.
+
+% Source anchors: data/records/refinement_selection.json,
+% refinement_trials.csv and refinement_facets48.csv.
+\subsection{Selected numerical and geometric probes}
+The refinement rule uses the first five held-out seeds and adds near-threshold passing and failing cases separately by profile, including both geometries for each selected seed. This produces 26 cases. Halving the step to 0.00025 s and doubling iterations to 200 changes two decisions: the original reference case 630103 changes from fail to pass, and the original fast case 630131 changes from pass to fail. The canonical cohort outcomes remain unchanged in the primary analysis.
+
+An exploratory 48-facet representation, also evaluated at the finer numerical settings on the same 26 cases, has two changes relative to canonical outcomes: original reference 630103 and revised fast 630131 both change from fail to pass. Geometric refinement also changes compiled masses and inertias, so this comparison cannot isolate collision tessellation alone. All 26 cavity-witness records pass, but their 0.05 mm local probes test selected empty-cavity and occupied-rim locations. Neither those probes nor the decision counts establish global CAD/contact parity or a population flip rate.
+
+% Source anchors: scripts/v6/production_study.py:_qualification_documents,
+% _e2_opqual_records; manufacturing/experiments.py:scenario_sets;
+% manufacturing/demand.py:_variants; manufacturing/opqual.py:sample_attempt.
+\section{Production demand and operation-envelope sampling}
+\subsection{Six fixed demand conditions}
+Table~\ref{tab:production-demand-details} identifies the six engineering conditions. Each has 40 orders available at time zero, a 1200 s observation horizon and zero warm-up deletion. The two balanced random streams distinguish sequence realization from a changed nominal mix. For random streams, weights are draw probabilities, without enforced exact counts. Repeated blocks are truncated after order 40, giving 21 A and 19 B orders; strict alternation gives 20 of each.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Production demand dictionary. Record keys and seeds permit exact reconstruction; condition names describe the demand mechanism.}
+\label{tab:production-demand-details}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Condition & Key & Seed & Nominal A:B; ordering\\
+\midrule
+Balanced random stream 1 & D1 & 11 & 50:50; random\\
+Balanced random stream 2 & D2 & 12 & 50:50; random\\
+A-heavy random stream & D3 & 13 & 70:30; random\\
+B-heavy random stream & D4 & 14 & 30:70; random\\
+Three-order product blocks & D5 & 15 & 50:50; AAABBB repeated\\
+Alternating products & D6 & 16 & 50:50; AB repeated\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Finite evidence envelope and failures}
+The mechanical factor changes only variant-A housing placement. Its two envelopes use the 40 paired fast-profile qualification disturbances 620200--620239. All variant-B and other operations retain the common baseline library. Each sampled attempt preserves its joint duration and success outcome; duration includes settling and post-task hold even for failure. Success uses the composite operation decision, including numerical checks and finite hold acceptance. Repeated production attempts resample this finite evidence, without collecting new mechanical trials.
+
+The four factorial conditions share keyed random streams within scenario and replication. Failed attempts remain represented through their observed duration and outcome. Failed plans, crashes, checker violations and unverified runs remain in the planned run denominator; primary contrasts require complete, finite, passing quartets across all six scenarios. Good output counts units entering the output buffer before the horizon. Incomplete units are censored and reported as work in progress; completed-unit flow summaries exclude them. Replication uncertainty is conditional on these fixed demand conditions and qualification envelopes, excluding uncertainty in the underlying contact model and finite qualification sample.

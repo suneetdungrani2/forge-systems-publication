@@ -1,0 +1,83 @@
+{
+  "conditions": {
+    "historical_v4_lead_in": {
+      "source_model_sha256": "b8a37789f26e7d5185c33d5a4d8d4d7b35284dd34d7da050f24ee95b168b501a",
+      "source_observation_sha256": "ee85c4bc36976364526f9570e23d4a018707723094d8f409b702c22067dccec6",
+      "status": "PASS",
+      "worst": {
+        "abs_yaw_error_deg": 3.0186081324722522,
+        "abs_z_error_mm": 0.0017505844783807234,
+        "tilt_deg": 0.003126659792251876,
+        "xy_error_mm": 0.4801833742461304
+      }
+    },
+    "original": {
+      "source_model_sha256": "e5198797f69f8f29e5b99372adbbd1c5861c7bd78687f592e01d42df39d65b7b",
+      "source_observation_sha256": "bafaf539eb240011927be2eb19ad4507a9fed5dd4dced3c1e78b91d43be46918",
+      "status": "FAIL",
+      "worst": {
+        "abs_yaw_error_deg": 2.9114281914913818,
+        "abs_z_error_mm": 3.9773381700386246,
+        "tilt_deg": 10.428858424035718,
+        "xy_error_mm": 1.0201178523345211
+      }
+    }
+  },
+  "control_profile": "historical_fast",
+  "evidence_class": "simulated operation outcome",
+  "geometry_mm": {
+    "housing_outer_radius": 22.0,
+    "original_chamfer": 0.4,
+    "original_slot_flare": 0.0,
+    "plate_thickness": 6.0,
+    "revised_chamfer": 3.0,
+    "revised_slot_flare": 3.0,
+    "ring_height": 8.0,
+    "ring_inner_radius": 22.6,
+    "ring_outer_radius": 29.6,
+    "slot_width": 9.8
+  },
+  "historical_geometry_reuse": true,
+  "images": {
+    "historical_v4_lead_in": {
+      "editorial_crop_pixels": [
+        600,
+        100,
+        1550,
+        1050
+      ],
+      "file": "figures/contact-lead-in.png",
+      "image_scope": "matched recorded final-hold frame; numeric labels summarize the entire final hold",
+      "sha256": "f4ec1dc7ebd32c5b36345d113a92988374139c49b34aa2d19f1d4ec8f1a1f218",
+      "source_fps": 30,
+      "source_frame_index": 136,
+      "source_kind": "whole_operation",
+      "source_video_sha256": "2311d10ee184c79793f1ef5ae45b212b29e7047523ab2f19d40e91ec6d9e6838"
+    },
+    "original": {
+      "editorial_crop_pixels": [
+        600,
+        100,
+        1550,
+        1050
+      ],
+      "file": "figures/contact-original.png",
+      "image_scope": "matched recorded final-hold frame; numeric labels summarize the entire final hold",
+      "sha256": "0efda7439c2e818f11071f72f8c9167116a1778c90c6eaafcfe3995f6167166f",
+      "source_fps": 30,
+      "source_frame_index": 136,
+      "source_kind": "whole_operation",
+      "source_video_sha256": "750a282a5408d6428c5cb918594870db7e0959a1d0016d1de0db4fc350442a98"
+    }
+  },
+  "limits": {
+    "abs_yaw_error_deg": 3.3,
+    "abs_z_error_mm": 0.4,
+    "tilt_deg": 2.0,
+    "xy_error_mm": 1.0
+  },
+  "schema": "forge.fixture-case-figure/1",
+  "seed": 630111,
+  "selection_rule": "first_ascending_seed_original_FAIL_lead_in_PASS",
+  "source_render_manifest_sha256": "075878b7a28a167d565e1aa575e5f1d825b8671e7a93bd1bc094374649d38754"
+}

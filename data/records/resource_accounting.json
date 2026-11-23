@@ -1,0 +1,2198 @@
+{
+  "episodes": [
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t05-r1-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 129.62540188999992,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t05-r1-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.4299123039964,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t05-r1-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 134.2288930030045,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t02-r2-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.42666763300076,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t02-r2-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 132.4284689030028,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t02-r2-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 12,
+          "item.started": 9,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 233600,
+            "input_tokens": 248403,
+            "output_tokens": 1155,
+            "reasoning_output_tokens": 188
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 72.79575969099824,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t04-r2-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 133.02671777700016,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t04-r2-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 4,
+          "item.started": 3,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.8253978970024,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t04-r2-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 133.42894163400342,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t03-r1-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 5,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 133.02826729799563,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t03-r1-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.62812937999843,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t03-r1-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 130.83310147100565,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t07-r2-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 9,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 118528,
+            "input_tokens": 134295,
+            "output_tokens": 678,
+            "reasoning_output_tokens": 116
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 34.775190485001076,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t07-r2-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 117504,
+            "input_tokens": 133240,
+            "output_tokens": 665,
+            "reasoning_output_tokens": 128
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 34.02085406399419,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t07-r2-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 9,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 122496,
+            "input_tokens": 143149,
+            "output_tokens": 751,
+            "reasoning_output_tokens": 120
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 37.935940422001295,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t00-r2-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 132.8316641739948,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t00-r2-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 132.23035237699514,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t00-r2-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 5,
+          "item.started": 3,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 130.82888651500252,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t06-r1-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 110336,
+            "input_tokens": 135331,
+            "output_tokens": 648,
+            "reasoning_output_tokens": 138
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 34.89767158999166,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t06-r1-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 9,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 112384,
+            "input_tokens": 142361,
+            "output_tokens": 721,
+            "reasoning_output_tokens": 149
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 34.468891093012644,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t06-r1-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 98944,
+            "input_tokens": 119270,
+            "output_tokens": 755,
+            "reasoning_output_tokens": 155
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 33.591419144999236,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t04-r1-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 5,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.83044493600028,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t04-r1-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 240.170707295998,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t04-r1-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 10,
+          "item.started": 7,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 189568,
+            "input_tokens": 207342,
+            "output_tokens": 963,
+            "reasoning_output_tokens": 167
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 63.57549259100051,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t08-r2-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 98176,
+            "input_tokens": 119844,
+            "output_tokens": 655,
+            "reasoning_output_tokens": 71
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 35.331584277009824,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t08-r2-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 136192,
+            "input_tokens": 158899,
+            "output_tokens": 763,
+            "reasoning_output_tokens": 120
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 36.52415747300256,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t08-r2-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 114560,
+            "input_tokens": 144476,
+            "output_tokens": 618,
+            "reasoning_output_tokens": 104
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 30.570764211995993,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t07-r1-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 98304,
+            "input_tokens": 117979,
+            "output_tokens": 687,
+            "reasoning_output_tokens": 141
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 32.29293098900234,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t07-r1-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 98048,
+            "input_tokens": 117279,
+            "output_tokens": 651,
+            "reasoning_output_tokens": 100
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 31.675496341995313,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t07-r1-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 134144,
+            "input_tokens": 150558,
+            "output_tokens": 766,
+            "reasoning_output_tokens": 140
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 40.89177673798986,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t03-r2-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 5,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.0297569629911,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t03-r2-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 141184,
+            "input_tokens": 158857,
+            "output_tokens": 776,
+            "reasoning_output_tokens": 212
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 74.64747244599857,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t03-r2-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 130.62929973599967,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t05-r2-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 5,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.83288353799435,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t05-r2-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 9,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 157696,
+            "input_tokens": 179733,
+            "output_tokens": 955,
+            "reasoning_output_tokens": 162
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 64.55444743399858,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t05-r2-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 10,
+          "item.started": 7,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 208128,
+            "input_tokens": 235122,
+            "output_tokens": 1056,
+            "reasoning_output_tokens": 175
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 72.77476139800274,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t06-r2-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 128128,
+            "input_tokens": 144677,
+            "output_tokens": 695,
+            "reasoning_output_tokens": 120
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 35.6766464280081,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t06-r2-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 139008,
+            "input_tokens": 158012,
+            "output_tokens": 664,
+            "reasoning_output_tokens": 103
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 38.256566312004,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t06-r2-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 9,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 126592,
+            "input_tokens": 155159,
+            "output_tokens": 821,
+            "reasoning_output_tokens": 100
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 44.8350549369934,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t01-r1-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 137.0351229759981,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t01-r1-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 138.23551815000246,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t01-r1-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 131.22957766000764,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t08-r1-a1",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 6,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 122112,
+            "input_tokens": 145972,
+            "output_tokens": 791,
+            "reasoning_output_tokens": 223
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 46.5940189769899,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t08-r1-a0",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 100864,
+            "input_tokens": 121939,
+            "output_tokens": 681,
+            "reasoning_output_tokens": 165
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 35.73978207500477,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 1,
+      "common_compile_feedback_published_count": 1,
+      "completed_graded_count": 1,
+      "completed_graded_ordinals": [
+        1
+      ],
+      "episode_id": "e1-t08-r1-a2",
+      "feedback_published_count": 1,
+      "feedback_published_ordinals": [
+        1
+      ],
+      "feedback_verified_count": 1,
+      "feedback_verified_ordinals": [
+        1
+      ],
+      "protected_task_feedback_published_count": 1,
+      "provider_exit_code": 0,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 9,
+          "item.started": 7,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "status": "available",
+        "usage_records": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 162944,
+            "input_tokens": 184468,
+            "output_tokens": 706,
+            "reasoning_output_tokens": 76
+          }
+        ]
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 47.333034258001135,
+      "worker_timeout_count": 0,
+      "worker_timeout_ordinals": []
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t00-r1-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 138.63768090801022,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t00-r1-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 145.24720446199353,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t00-r1-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 135.23381499000243,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t01-r2-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 134.63392072998977,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t01-r2-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 4,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 132.0343786339945,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t01-r2-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 138.43882407799538,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A2",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t02-r1-a2",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 137.44016956999258,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A1",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t02-r1-a1",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 6,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 137.03714699900593,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    },
+    {
+      "arm": "A0",
+      "build_valid_count": 0,
+      "common_compile_feedback_published_count": 0,
+      "completed_graded_count": 0,
+      "completed_graded_ordinals": [],
+      "episode_id": "e1-t02-r1-a0",
+      "feedback_published_count": 0,
+      "feedback_published_ordinals": [],
+      "feedback_verified_count": 0,
+      "feedback_verified_ordinals": [],
+      "protected_task_feedback_published_count": 0,
+      "provider_exit_code": -15,
+      "provider_usage": {
+        "event_counts": {
+          "item.completed": 7,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "status": "unavailable",
+        "usage_records": []
+      },
+      "revision_budget": 4,
+      "submitted_count": 1,
+      "submitted_ordinals": [
+        1
+      ],
+      "wall_budget_s": 240,
+      "wall_s": 133.63564840800245,
+      "worker_timeout_count": 1,
+      "worker_timeout_ordinals": [
+        1
+      ]
+    }
+  ],
+  "schema": "forge.v6-e1-resources/2"
+}

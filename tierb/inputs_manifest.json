@@ -1,0 +1,339 @@
+{
+  "archive_identity": {
+    "control_profile": "reference",
+    "controller_settings": {
+      "approach_mm": 30.0,
+      "speed_frac": 0.35,
+      "t_insert_s": 1.2
+    },
+    "model_verification_sha256": "5a6383c8be4224f6525cf7d798049093e1f6f2ec9dfb36bf2c26ca7c9f5a0c47",
+    "pair_trial_rows_sha256": "2017c85cc4ebed88fc4fa6b37cc528f6cf48cb4a19d5fa81211b712d797378fa",
+    "protocol_sha256": "ab2ce4f7976fd73f46afcbb9e4601fd756c3801399999bb1c08b36153954e597",
+    "runtime_cpu_model_read_later_from_same_host": "Intel(R) Core(TM) Ultra 9 285K",
+    "runtime_packages": {
+      "mujoco": "3.15.0",
+      "numpy": "2.5.4"
+    },
+    "runtime_platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "runtime_python": "3.12.3",
+    "trials_jsonl_sha256": "c4d9c166c2d27c41ba8b099e4b695c6f747af60fca5c5653ddd97f877cf5fdfa"
+  },
+  "files": [
+    {
+      "bytes": 1824,
+      "path": "pair.json",
+      "root": "package",
+      "sha256": "ff464525053e65956b221916d05d880884432c0bd033ff307711bbfa16385c5c"
+    },
+    {
+      "bytes": 1170,
+      "path": "timing.json",
+      "root": "package",
+      "sha256": "e02add53bf7f597bfb1ade716c70c3bab948940dd816c01954ebb66c4d91b64c"
+    },
+    {
+      "bytes": 27159,
+      "path": "disturbance.json",
+      "root": "package",
+      "sha256": "6e2c1fd642d9d2135f82731043672b95e865d07119377baaa4d40cc2a8796230"
+    },
+    {
+      "bytes": 2388,
+      "path": "judge.json",
+      "root": "package",
+      "sha256": "a8b514f2b81c70555a0b811061bdbff80a9a55e81b2074781b50e92b4b16c25d"
+    },
+    {
+      "bytes": 3158,
+      "path": "expected.json",
+      "root": "package",
+      "sha256": "643a20fb1b97f0ba304e2e980f0009813fd60885248987bca379ca152fae56b8"
+    },
+    {
+      "bytes": 238400,
+      "path": "schedule.npz",
+      "root": "package",
+      "sha256": "c88921efcde8747d6142ca0341df0ae01b4b1f3d10a80e6936fc7b0adaeb8284"
+    },
+    {
+      "bytes": 1139,
+      "path": "initial_state.npz",
+      "root": "package",
+      "sha256": "b3214847673f83f79da3b1c777bca26851e1027af2f4dce663bbb44aa3ef10f6"
+    },
+    {
+      "bytes": 107949,
+      "path": "model/scene_original.xml",
+      "root": "package",
+      "sha256": "e5198797f69f8f29e5b99372adbbd1c5861c7bd78687f592e01d42df39d65b7b"
+    },
+    {
+      "bytes": 108384,
+      "path": "model/scene_historical_v4_lead_in.xml",
+      "root": "package",
+      "sha256": "b8a37789f26e7d5185c33d5a4d8d4d7b35284dd34d7da050f24ee95b168b501a"
+    },
+    {
+      "bytes": 729567,
+      "path": "reference/original_pose.npz",
+      "root": "package",
+      "sha256": "b24fc07cb17fb611bc15e3af554c3b32308943c81f0e86e8de2aac97ba307d83"
+    },
+    {
+      "bytes": 35854,
+      "path": "reference/original_qpos30.npz",
+      "root": "package",
+      "sha256": "09a5122c7d30d8782e1537b35577d547aae65a45872b3b9c8457b8779fe6d741"
+    },
+    {
+      "bytes": 732724,
+      "path": "reference/historical_v4_lead_in_pose.npz",
+      "root": "package",
+      "sha256": "9abb46d986e6c9bc9afcd4169d722b9d46e495424a645ab40587878fb9128ee1"
+    },
+    {
+      "bytes": 35860,
+      "path": "reference/historical_v4_lead_in_qpos30.npz",
+      "root": "package",
+      "sha256": "0422b3678fca526111ae04b071ca4bb0fb1f21530139f468b4e486dd6bd0862e"
+    },
+    {
+      "bytes": 1025684,
+      "path": "base_housing.stl",
+      "root": "meshes",
+      "sha256": "f77c443c79cd61a7ab0a94da3bf796f10e19346e3bff6fb0f6046de0051415e1"
+    },
+    {
+      "bytes": 255884,
+      "path": "base_plate.stl",
+      "root": "meshes",
+      "sha256": "3fd12dafc8c8a05208238a4c6775af339c0749576382a8c83a500cf52e70a749"
+    },
+    {
+      "bytes": 254684,
+      "path": "cam_bracket.stl",
+      "root": "meshes",
+      "sha256": "20c953695bf016f7e067e90443762ddc71f3e25351bf36857f0439bbf09e0148"
+    },
+    {
+      "bytes": 129084,
+      "path": "camera.stl",
+      "root": "meshes",
+      "sha256": "38b7f94611be0f1ea57b7d68e08465977aee9b31699a091163f3d7d0363993a6"
+    },
+    {
+      "bytes": 53884,
+      "path": "clip_fa1.stl",
+      "root": "meshes",
+      "sha256": "422e3f7972df875cf3f12c5e14fe4d3f4ec8c8453545bc871122a1e2f29fb8e7"
+    },
+    {
+      "bytes": 53884,
+      "path": "clip_fa2.stl",
+      "root": "meshes",
+      "sha256": "5ac743dfcd5c08663a73be66342fbc4d564d9347a4cf1683d2ad92c81fdbb1d3"
+    },
+    {
+      "bytes": 53884,
+      "path": "clip_ua1.stl",
+      "root": "meshes",
+      "sha256": "97fc9e964f0d5629b8012779872bf66be14ce82c490dd5ba4513eadfb820f955"
+    },
+    {
+      "bytes": 53884,
+      "path": "clip_ua2.stl",
+      "root": "meshes",
+      "sha256": "a27518bfb9d7aa572a79057edd76269c28bc607e12b904cf10e203cb266dea4b"
+    },
+    {
+      "bytes": 933484,
+      "path": "elbow_servo.stl",
+      "root": "meshes",
+      "sha256": "f7dcbd77fc5d6a41546bef1b1f9c30cae69e5e73861528c8a01cd2386b80b4e9"
+    },
+    {
+      "bytes": 101884,
+      "path": "finger_a.stl",
+      "root": "meshes",
+      "sha256": "335ff545bb8f92407e1e2ec8b2ea1cc507c0cd1224b27487405a66c6f9a72efc"
+    },
+    {
+      "bytes": 101884,
+      "path": "finger_b.stl",
+      "root": "meshes",
+      "sha256": "c374be3fd79943045b661088258c8b75ca14efd6be67e954c13e5743774653ef"
+    },
+    {
+      "bytes": 101884,
+      "path": "finger_c.stl",
+      "root": "meshes",
+      "sha256": "78b6587a61ef0e2302ad6fa6b4c8a4396d827265487e8edff23e17b3ebf5e671"
+    },
+    {
+      "bytes": 345284,
+      "path": "fore_a.stl",
+      "root": "meshes",
+      "sha256": "d833b7218b7928d074cbdc8097858c1e7bf83770ea7289c1d7fcae2e28ce50fa"
+    },
+    {
+      "bytes": 233284,
+      "path": "fore_b.stl",
+      "root": "meshes",
+      "sha256": "84dfcebe51280d72a04d84eb5bd66cec6a7b28eaa42942bcca61f85fe26c83eb"
+    },
+    {
+      "bytes": 265484,
+      "path": "grip_body.stl",
+      "root": "meshes",
+      "sha256": "8298190ffeabd4e87e24788a86724643222539904b77a5c60cc88b036b852870"
+    },
+    {
+      "bytes": 531484,
+      "path": "grip_servo.stl",
+      "root": "meshes",
+      "sha256": "859b3a419d27c6f001cee87db04e35d20cc74e4118f5b3d5a1341456dc6973ec"
+    },
+    {
+      "bytes": 102284,
+      "path": "housing_lid.stl",
+      "root": "meshes",
+      "sha256": "4a085037c472a1f04608e86e1adc0d04f650e41c5bc90d9ce14019623e7e7175"
+    },
+    {
+      "bytes": 35484,
+      "path": "keyhole_cap.stl",
+      "root": "meshes",
+      "sha256": "935ee68620e0bf25b552bb5e33373ff790d994d2a1177a40f6395f2760c80ad1"
+    },
+    {
+      "bytes": 51084,
+      "path": "pad_a.stl",
+      "root": "meshes",
+      "sha256": "d154a1352b96ed2632554c2ff562ee575dab4f96adbb87b199db85773636e071"
+    },
+    {
+      "bytes": 51084,
+      "path": "pad_b.stl",
+      "root": "meshes",
+      "sha256": "752b27979337f1513b1dce2fec348f8030c658c5780afb51dfb5bb5072507bb4"
+    },
+    {
+      "bytes": 51084,
+      "path": "pad_c.stl",
+      "root": "meshes",
+      "sha256": "bbd8e957772ee87cd1fb94972f266c6031792b21ad5f1b82affa8a177550c969"
+    },
+    {
+      "bytes": 205684,
+      "path": "phb12.stl",
+      "root": "meshes",
+      "sha256": "a25046a7ed6b4607944a037c557a792764257fd3d99e0d0b0e4cd1cd1caad1b9"
+    },
+    {
+      "bytes": 205684,
+      "path": "phb5.stl",
+      "root": "meshes",
+      "sha256": "b95e41193a116d2731dcaae6d7227b3d50b6ed11b513d734bc29667bab84ebcf"
+    },
+    {
+      "bytes": 134584,
+      "path": "pi.stl",
+      "root": "meshes",
+      "sha256": "df54fc081df1d8b2fe9f575e88d717ac8e9d5048717b4397ab2db106e62f7fdc"
+    },
+    {
+      "bytes": 53084,
+      "path": "reg5.stl",
+      "root": "meshes",
+      "sha256": "bcf4650753cf2e26147c3dcb457b1e83cfa06a008f01b91b8a0ae7259b1cdb30"
+    },
+    {
+      "bytes": 53084,
+      "path": "regp.stl",
+      "root": "meshes",
+      "sha256": "21e9e69408d8b4c2920aefc5eb250e9613e5f0ba307e9e4694fc693ba8bbf35a"
+    },
+    {
+      "bytes": 531484,
+      "path": "roll_servo.stl",
+      "root": "meshes",
+      "sha256": "ca2690a29839faf6614471fe974c6ffe9aa2ce3826b6913e29d694b6c8afa1b5"
+    },
+    {
+      "bytes": 180084,
+      "path": "scroll.stl",
+      "root": "meshes",
+      "sha256": "52820ce74d463157370cc01cd13af5bf7600f489c739e508994d2009e82a6615"
+    },
+    {
+      "bytes": 933484,
+      "path": "shoulder_servo.stl",
+      "root": "meshes",
+      "sha256": "846b21a0758fc0c38462d43386197c50c6a343d9cd0f18c89c62491db6873d35"
+    },
+    {
+      "bytes": 53884,
+      "path": "strain_relief.stl",
+      "root": "meshes",
+      "sha256": "8df3cbb97ea258d4149adb3998022e0e1304b734fb47d6b1391fe711ab5eae41"
+    },
+    {
+      "bytes": 255484,
+      "path": "turntable.stl",
+      "root": "meshes",
+      "sha256": "b302b3c2d5ae1a13c055d7856403d94eaf2a59857aedc38db43f80cea0328230"
+    },
+    {
+      "bytes": 684,
+      "path": "u2d2a.stl",
+      "root": "meshes",
+      "sha256": "dba2b67aa77a0dacd64711649e1dddae2fdd13167f6f546915696e6de9346abc"
+    },
+    {
+      "bytes": 684,
+      "path": "u2d2b.stl",
+      "root": "meshes",
+      "sha256": "acb4b7a3a8246a623afa4d1d5dbb1c0b51f3b911802602dfe065204aea4da1d9"
+    },
+    {
+      "bytes": 347284,
+      "path": "upper_arm.stl",
+      "root": "meshes",
+      "sha256": "9e5a65c7f35ef58fce4df8b14bd58c6afbf6cdcfedc3a90ed0a8b056ea4ce695"
+    },
+    {
+      "bytes": 206684,
+      "path": "wrist_bracket.stl",
+      "root": "meshes",
+      "sha256": "4c2ff4436d613a6f77b5197766063add8dd08b1a56d7814a284bdae558cc0092"
+    },
+    {
+      "bytes": 531484,
+      "path": "wrist_pitch_servo.stl",
+      "root": "meshes",
+      "sha256": "4dcbd18a473e7f743e3eba624aefbab8bcba7963d3ca130310f04d1c3e94078c"
+    },
+    {
+      "bytes": 531484,
+      "path": "wrist_roll_servo.stl",
+      "root": "meshes",
+      "sha256": "2cd8af3af00f82068ca8d4355948e8989b72ca2b948700f95f5cbc9b98b8e754"
+    },
+    {
+      "bytes": 933484,
+      "path": "yaw_servo.stl",
+      "root": "meshes",
+      "sha256": "e206ba8bc9f790d2f2ce8d900e1e7fef82728bc4e0ceb307b365ef3ec2843c26"
+    }
+  ],
+  "hash": "sha256",
+  "roots": {
+    "meshes": "robot STL meshes of the compiled scene (outside Git; byte-identical to the archived compiled tree)",
+    "package": "study_artifact/tierb/package (in Git)"
+  },
+  "schema": "forge.v6_1.tierb-inputs-manifest/1",
+  "total_bytes": {
+    "meshes": 9944892,
+    "package": 2025576
+  }
+}

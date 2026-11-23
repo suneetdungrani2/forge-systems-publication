@@ -1,0 +1,84 @@
+{
+  "conditions": {
+    "historical_v4_lead_in": {
+      "collateral_start_pos_mm": {
+        "obj_insert": [
+          233.51302414929486,
+          -56.40912100527446,
+          3.02
+        ],
+        "obj_lid": [
+          176.88917517907637,
+          -114.12291979292927,
+          3.02
+        ]
+      },
+      "part_body": "obj_housing",
+      "seat_target_mm_deg": {
+        "x_mm": 199.93153312536637,
+        "y_mm": 79.95335776794165,
+        "yaw_deg": 29.554268402652017,
+        "z_mm": 6.0
+      }
+    },
+    "original": {
+      "collateral_start_pos_mm": {
+        "obj_insert": [
+          233.51302414929486,
+          -56.40912100527446,
+          3.02
+        ],
+        "obj_lid": [
+          176.88917517907637,
+          -114.12291979292927,
+          3.02
+        ]
+      },
+      "part_body": "obj_housing",
+      "seat_target_mm_deg": {
+        "x_mm": 199.93153312536637,
+        "y_mm": 79.95335776794165,
+        "yaw_deg": 29.554268402652017,
+        "z_mm": 6.0
+      }
+    }
+  },
+  "finite_hold": {
+    "composite": "legacy_terminal_success AND every sampled pose in final 0.25 s of the existing 0.5 s post-task hold is within all limits",
+    "grid": "sample i has task_time i*dt; window = indices with T+0.25 <= i*dt <= T+0.5",
+    "limits": {
+      "abs_yaw_error_deg": 3.3,
+      "abs_z_error_mm": 0.4,
+      "tilt_deg": 2.0,
+      "xy_error_mm": 1.0
+    },
+    "window_s_after_task_end": [
+      0.25,
+      0.5
+    ]
+  },
+  "terminal_legacy_judge": {
+    "abs_z_epsilon": 1e-09,
+    "angles": "yaw = degrees(atan2(R[1,0], R[0,0])); tilt = degrees(acos(clip(R[2,2], -1, 1))); dyaw wrapped to [-180, 180)",
+    "collateral_mm_gt": 3.0,
+    "grasp_slip": {
+      "xy_mm_gt": 12.0,
+      "z_below_seat_mm_gt": 5.0
+    },
+    "order": [
+      "unstable_simulation: non-finite qpos or any BADQACC/BADQVEL/BADQPOS warning",
+      "grasp_slip: xy > 12 or z < seat_z - 5",
+      "jam_on_rim: |dz| > 0.4 + 1e-9 or tilt > 5 (ear_out_of_slot when also |dyaw| > 3.3)",
+      "seated_out_of_tolerance: xy > 1.0 or |dyaw| > 3.3 or tilt > 2.0",
+      "collateral_disturbance: max distance of the other free parts from their start > 3.0 mm"
+    ],
+    "pose": "part body pose cached after the final mj_step",
+    "tolerances": {
+      "abs_yaw_deg": 3.3,
+      "abs_z_mm": 0.4,
+      "jam_tilt_deg": 5.0,
+      "seated_tilt_deg": 2.0,
+      "xy_mm": 1.0
+    }
+  }
+}

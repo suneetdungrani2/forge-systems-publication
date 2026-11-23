@@ -1,0 +1,204 @@
+\input{preamble}
+\hypersetup{pdftitle={FORGE: Technical Supplement}}
+\title{FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation\\\large Technical Supplement}
+\author{\authorblock}
+\date{November 19, 2026\\\small Preprint \textperiodcentered{} Not peer reviewed}
+\begin{document}
+\maketitle
+\noindent This supplement defines the evaluation contracts and preserves complete planned denominators. Experimental identifiers in the reproduction appendix locate frozen files; reader-facing condition names describe their engineering meaning. New checker, repair and gantry observations are distinct from previously collected fixture and production records. No hardware validation is reported.
+\tableofcontents
+
+\section{Evidence identity and interpretation}
+An evidence record links an input revision, candidate revision, exported model digest, evaluator and threshold versions, scenario or draw, controller, environment, observations with units, and a declared coverage scope. The outcome is separate from the identity. A record with matching bytes can still represent an inadequate physical model. A missing record is not a measured failure mode, while a stale record cannot support a changed requirement. Supersession preserves the old record and names the replacement.
+
+The operational outcomes are \status{PASS}, \status{FAIL}, \status{UNKNOWN}, runtime \status{CRASH}, and missing candidate or measurement. The repair endpoint counts every non-pass in the planned denominator. Product gate labels and experiment endpoints are distinct: a simulated task pass does not imply that assembly, electrical, manufacturing or owner-evidence gates are complete. Native project revisions marked \status{NOT\_READY} remain unqualified even if a particular simulation passes.
+
+\section{Known-answer checker study}
+\subsection{Truth construction, scope and cohorts}
+The checker evaluation has 360 records: 260 geometric cases and 100 nongeometry contract cases. The geometry cases comprise 100 earlier constructions and 160 newly constructed controls. Their analytic geometry supplies truth independently of the tested checker. The nongeometry cases exercise identity, replay and production-consistency behavior and are not additional wall-thickness trials.
+
+The sampled screen, centerline witness and whole-part projection are scored against global fixture truth. The feature-local checker uses truth for a declared hole feature, reverting to global truth when no feature exists. A part can have a valid declared feature and an invalid wall elsewhere. Consequently a local acceptance cannot be substituted for a global acceptance, and the local confusion table is not a same-predicate accuracy baseline against the sampled screen.
+
+The revised local acceptance compares exact BRep distances from the hole surfaces to non-entry boundary faces, with analytic near-face support and an agreeing sampled cross-check. The unchanged thickness requirement is 0.8 mm, with a $10^{-6}$ mm acceptance guard as specified by the checker. A rejection requires an in-material segment shorter than the threshold with the required face-interior and perpendicular support conditions. Edge- or vertex-supported minima, oblique rims, drill-point apices and unsupported webs can remain unknown. The CAD kernel calculations are not formally verified arithmetic.
+
+The whole-part projection never reports pass. It can inherit a verified local violation as a whole-part failure because one invalid wall suffices to refute the global predicate. The absence of that witness leaves the global question unresolved. This asymmetry explains why local acceptance coverage can increase while global acceptance remains zero.
+
+\input{checker_definitions}
+
+\subsection{Complete family cross-tabulations}
+CA and CR denote correct acceptance and rejection; FA and FR denote incorrect acceptance and rejection; U denotes abstention. All rows retain crashes. The tables report the full family totals under the truth definitions above; related parametric cases are not independent physical samples.
+\begin{center}\scriptsize
+\input{build/e0_families}
+\end{center}
+
+\subsection{Runtime and reassessment}
+Mean/median assessment durations were 21.510/13.441 ms for the sampled screen, 2.295/2.167 ms for the centerline witness, and 27.957/15.972 ms for the revised assessment. The revised assessment's 95th percentile was 83.941 ms; these are observed host runtimes, not worst-case execution guarantees. Archived bay frames and a pedestal were rebuilt from pinned BRep inputs and reassessed at 0.51 mm against the unchanged 0.8 mm rule. Their three earlier passes were superseded by failures. Neither the old records nor the threshold was edited, and the prospective checker was not wired into the live production gate.
+
+\section{Controlled template-repair methods}
+The selected held-out candidates pass in \EOneCadPass{}/18 CAD-diagnostic episodes, \EOneAggregatePass{}/18 aggregate-feedback episodes and \EOneStructuredPass{}/18 structured-witness episodes. All planned episodes remain represented, including the five non-passing selections. No unknown, crash or missing-candidate endpoint occurs in this cohort.
+\subsection{Tasks and design surface}
+Nine tasks are organized into sorting, seating and gantry timing families. Sorting includes cube/cylinder placement, a heavier shifted case and a shifted-fixture case. Seating includes shallow housing, deep housing and insert-proxy tasks. Gantry timing includes full-volume traversal, tray transfer and an inspection position. The first two families share one six-axis-arm template; the gantry supplies a second template. Task clusters therefore do not represent nine independent morphologies.
+
+Arm candidates submit numeric link lengths $l_1\in[100,130]$ mm, $l_2\in[90,120]$ mm and time scale $[0.5,1.5]$. Gantry candidates submit timing only. Trusted code recomputes joint waypoints and prevents changes to targets, object properties, success criteria and actuator authority. Starting arm-sorting parameters are $(100,90,1.5)$; seating starts at $(125,120,1.5)$; gantry starts at time scale 0.5. Each starting design is a build-valid development failure selected by pre-study development probes. The pilot inspection position is disjoint from the nine confirmatory tasks.
+
+\subsection{Information, budgets and hidden evaluation}
+All conditions receive the same task brief, common CAD and compile diagnostics. CAD-only feedback supplies no protected task verdict, but the brief still contains task timing and criteria from which a repair may be inferred. Aggregate feedback adds the protected development verdict. Structured feedback additionally exposes typed witnesses, units, per-draw measurements and failure reasons. Candidate workspaces are isolated from protected evaluator state and sealed draws. The same scoring family serves every condition; only the exposed feedback projection differs.
+
+Codex CLI 0.162.1 uses \texttt{gpt-6.1-sol}, medium reasoning effort, an ephemeral session and one execution turn per episode. The declared context window is 65,536 tokens, with automatic compaction at 60,000. Provider weights, sampling seed and a stable underlying model-build identity are not exposed.
+
+The ceilings are four submitted candidates, 1,800 s episode wall time and 900 s per worker request. Compile/static/access/interface/assembly/sweep/electrical stage caps are 180/120/120/60/60/300/30 s, with 120 s per physics draw. Sessions end voluntarily; none used the full episode ceiling. Each task-session block starts the three feedback conditions concurrently; block ordering uses the frozen randomization seed. There are two sessions per task-condition, 18 episodes per condition and 54 overall.
+
+Starting-design grading is performed symmetrically before the episode clock and is never selectable. Recorded costs are roughly 75--77 s for arm tasks and 9.5--10.7 s for gantry tasks. Geometry-check cache identity includes geometry, specification, thresholds and evaluator source. Matching wall ceilings do not imply equal total compute. Reported input tokens sum to \TokensCad{}, \TokensAggregate{} and \TokensStructured{} for CAD, aggregate and structured conditions, respectively. Missing provider usage would remain unknown; all 54 episodes emit usage in this cohort.
+
+Development uses two frozen perturbation draws. The arm families require static, access, interface and sweep checks plus operation outcomes and task windows. Gantry tasks use timing and physics rather than those arm geometry checks. Assembly and electrical outputs are additional structured diagnostics; assembly locating features remain unknown where not measured. The selected candidate is the last task-preserving build-valid candidate with a finished trusted receipt, regardless of its score.
+
+After the cohort seal, five hidden draws perturb mass and damping within $[0.95,1.05]$ and friction within $[0.9,1.1]$. Selected-candidate success requires all eligible checks and all five draws to pass. The first build-valid candidate and the starting design are also scored for secondary comparisons. Hidden outcomes never select the final artifact. Because hidden and development draws share an evaluator and disturbance family, this design does not establish robustness to evaluator errors or distribution shift.
+
+\subsection{Estimands, uncertainty and deviations}
+The primary estimate averages the structured-minus-aggregate success difference over nine tasks, using the mean of two sessions within each task-condition. The task-cluster percentile bootstrap uses 9,999 resamples and frozen seed 61101. Its 95\% interval is [0, \EOnePrimaryHigh{}] around estimate \EOnePrimary{}. Secondary structured-minus-CAD and aggregate-minus-CAD estimates are \EOneStructuredCad{} and \EOneAggregateCad{}, with intervals [0, \EOneStructuredCadHigh{}] and [0, \EOneAggregateCadHigh{}]. These few-cluster descriptive intervals neither demonstrate efficacy nor establish equivalence.
+
+The frozen transition wording compares the selected candidate with ordinal one and requires selected ordinal at least two and changed geometry or case identity. The original analysis implementation instead compared against the first build-valid candidate. This definition discrepancy was identified after outcomes became visible. Both results are retained: literal counts 3/6/6 and build-valid-relative counts 0/6/5. The literal CAD transitions begin with an unbuildable ordinal-one submission and end at a build-valid failing candidate; calling those successful repairs would be incorrect. Direct first-build-valid FAIL to selected PASS counts are 0/5/5.
+
+Seventeen unbuildable submitted revisions failed in the trusted planner, including unreachable inverse-kinematics configurations. Compile diagnostics were available to every condition. An implementation change permitted read-only export by the operator account when trace ownership prevented worker-account export; it changed neither the observations nor the endpoint. No hidden draw, endpoint threshold, condition assignment or denominator changed after sealing.
+
+\subsection{Continuous residual limitations}
+For assessed signed dimensionless constraints $g_j(c)$, the prespecified residual is
+\begin{equation}
+ V(c)=\left\|\max(0,g(c))\right\|_2,\qquad
+ \rho_k=1-\frac{V(c_k)}{V(c_0)}.
+\end{equation}
+Relative reduction is defined only when $V(c_0)>0$ and the assessed sets are identical. Components normalize task-window excess, placement error, deadline, lift shortfall, end-effector error, speed and torque by their declared scales. Missing components remain listed and cannot be filled with zero. Geometry checks have status-only outputs, so $V=0$ does not imply full task validity. In sorting repairs, link geometry and timing can change together; a smooth timing residual is not evidence that the geometric failure has been repaired.
+
+\subsection{Complete episode accounting}
+The table retains all 54 episodes. Sent is submitted revision count; first is first build-valid ordinal; selected follows the score-independent selection rule. Parameters are $l_1/l_2/\text{time scale}$, with dashes where only timing is exposed. Episode identifiers are reproduction keys, not reader-facing product names.
+\begin{center}\scriptsize\input{build/e1_episodes}\end{center}
+
+The archived earlier 54-episode study remains separate: each 18-episode condition had six passes, two unknowns and ten crashes, and no completed candidate-to-candidate repair. Worker and execution changes distinguish the new study from that archive. A before/after comparison cannot isolate a feedback effect and is not used for the primary estimate.
+
+\section{Fixture operation study and selected independent replay}
+\subsection{Geometry, controller and cohorts}
+The previously collected intervention couples a ring inner-edge chamfer of 0.4 to 3.0 mm with a key-slot entry flare of 0 to 3.0 mm. The unchanged controller is evaluated separately under reference and fast approaches. Reference settings are 30 mm approach, 1.2 s insertion and 0.35 speed fraction; fast settings are 8 mm, 0.2 s and 0.8. Held-out disturbance IDs are paired across geometry. Development, qualification, held-out and sensitivity records remain separate. The complete artifact table \texttt{data/operation\_trials.csv}, filtered to \texttt{phase=holdout}, contains seeds 630100--630199 for each geometry and profile; profile and seed identify a pair.
+
+The primary reference count is \ETwoReferenceOriginal{}/100 versus \ETwoReferenceRevised{}/100 and the secondary fast count is \ETwoFastOriginal{}/100 versus \ETwoFastRevised{}/100. Original-minus-revised contrasts are $-0.040$ and $-0.070$. Cell-wise Wilson 95\% intervals for the primary counts are approximately [0.9016,0.9843] and [0.9630,1]; these are not paired-effect intervals or estimates of physical reliability. The separate 24/30 versus 30/30 development example is excluded from these denominators.
+
+The final-hold judge uses 0.4 mm Z error, $2^\circ$ tilt and $3.3^\circ$ yaw limits for the demonstrated pair. The representative pair is selected by the prespecified smallest held-out seed with original failure and revised success under the reference approach. That rule yields seed 630103. Its original worst final yaw is $3.4233^\circ$ and revised yaw approximately $0.0741^\circ$.
+
+\subsection{Replay and model discrepancy}
+The standalone runner imports only MuJoCo, NumPy and standard-library modules. Exported data identify MJCF collision geometry, inertias, actuators, contact/friction parameters, time-indexed control targets, initial states, perturbations and judge rules. With pinned library versions, the selected pair reproduces trajectories and decisions exactly. This establishes selected-pair reproduction only. It does not reproduce the remaining 99 reference pairs or independently validate the original simulator.
+
+Three exploratory initial-position offsets of $10^{-12}$ m cause two original-fixture decisions to change to pass. The revised case remains passing with maximum observed change approximately 0.043 mm. This is a numerical sensitivity probe, not a random-sample flip-rate estimate. Contact-solver and geometry-refinement results must be interpreted with this fragility.
+
+The visual copies preserve compiled physics fields and recorded trajectories. Added visual geometry does not alter masses, inertias, collision authority or controls. Nonetheless, the original collision representation itself omits CAD material beside the key-slot jaws: approximately 592 mm$^3$ for the original ring, 547 mm$^3$ for the revised ring, and 594 mm$^3$ of tray-nest material. Rendered views show the simulated shape. Their appearance does not establish complete CAD/contact equivalence or physical capture reliability.
+
+\section{Gantry model, formulation and paired simulation}
+The formulation applies fixed-path squared-speed optimization as described by Lipp and Boyd~\cite{lipp2014minimum}. Simulation terminology follows the pinned MuJoCo documentation~\cite{mujocodocs3150}.
+\subsection{Plant and clock}
+The modeled three-axis gantry uses rotary drive coordinates for belt X/Y and a lead-screw Z transmission. Nominal simulated torque limits are 0.272 N\,m for belts and $0.124\times0.43=0.05332$ N\,m effective on Z. The drives are idealized position servos; step loss and realistic speed-dependent stepper torque are not modeled. Planning reserves half the torque limit and uses 90\% of declared speed limits, with +5\% inertia, +5\% damping and +10\% friction margins and a 0.134087285 kg payload.
+
+The reported clock sums commanded planned segments from idle to idle, excluding 0.6 s pre-settle and 1.0 s hold. Historical notes do not unambiguously tie the original ten-second requirement to this exact clock; one early note concerns computation time per trial. Neither \GantryOptimisedTime{} s planned motion nor a solver optimum establishes successful complete transfers within ten seconds.
+
+\begin{center}\scriptsize\input{build/gantry_plant}\end{center}
+The table gives shaft-coordinate quantities in Y/X/Z order. Inertia and damping matrices are diagonal in this modeled plant. Controller position gains are 3.0 N\,m/rad on all axes; velocity gains are 0.0045/0.0045/0.0018 N\,m\,s/rad. Z gravity torque is approximately 0.00078696 N\,m. These are simulation parameters, not measured motor or transmission identification.
+\begin{center}\small\input{build/gantry_path}\end{center}
+Segments six and seven form one collinear progression group; every other segment forms its own rest-to-rest group. Endpoint names identify successive positions of the frozen transfer path. The full forward runner remains study-private, so this parameter table does not imply independently available gantry physics replay.
+
+\subsection{Actual conic program}
+For a straight path segment with unit direction $u$, squared path speed $b$ and acceleration $a$, the discretization imposes
+\begin{align}
+ \min\ &\sum_i2\Delta s_i d_i,\nonumber\\
+ b_{i+1}-b_i&=2\Delta s_i a_i,& b_j,e_j,d_i&\ge0,\\
+ e_j^2&\le b_j,&d_i(e_i+e_{i+1})&\ge1.
+\end{align}
+The two quadratic inequalities have second-order-cone epigraph representations. With nonnegative $x,y$, $xy\ge z^2$ is equivalent to $\|(2z,x-y)\|_2\le x+y$. Thus the time product uses $x=d_i$, $y=e_i+e_{i+1}$, $z=1$, while $e_j^2\le b_j$ uses $x=b_j$, $y=1$, $z=e_j$. The objective recovers the piecewise-linear squared-speed interval time when these epigraphs are tight.
+
+Node speed caps bound the segment's linear squared-speed interpolation. The actual conservative per-drive bound is
+\begin{equation}
+ \left|M_r\frac{u_r}{c_{1r}}a_i+g_r\right|+R_i
+ \le0.5\tau_{{\rm lim},r},
+\end{equation}
+where $c_{1r}$ maps rotary motion to translation, $g_r$ is the modeled gravity torque, and $R_i$ bounds Coulomb friction and damping at the segment speed cap. It is this bounded modeled torque constraint that is optimized, not an experimentally identified motor envelope.
+
+Carry segments additionally impose
+\begin{equation}
+ \|u_h\|_2|a_i|\le0.15(g+u_z a_i),\qquad u_z a_i\ge-0.5g.
+\end{equation}
+Rest at direction changes and endpoints defines nine rest-to-rest groups. Baseline stops at each segment include a collinear boundary that the optimized progression traverses without stopping. The spatial polyline remains fixed, but the boundary rest constraints intentionally differ between profiles.
+
+\subsection{Numerical evidence and bound directions}
+The recorded rest-to-rest groups also admit an analytic check within the same bounded model. For a group of length $L$, speed cap $V$ and constant positive acceleration/deceleration bounds $A_+,A_-$, the peak speed and duration are
+\begin{align}
+ v_*&=\min\left\{V,\sqrt{\frac{2L}{A_+^{-1}+A_-^{-1}}}\right\},\\
+ T&=\frac{v_*}{A_+}+\frac{v_*}{A_-}
+   +\frac{L-\tfrac12v_*^2(A_+^{-1}+A_-^{-1})}{v_*}.
+\end{align}
+The final term is the nonnegative cruise duration; it vanishes for a triangular speed profile. Evaluating this expression for the nine recorded groups independently checks the reported continuous-model sum. The acceleration bounds include the declared conservative torque, damping, friction and carry assumptions; they do not describe an experimentally identified gantry.
+CVXPY 1.9.3 uses Clarabel 0.11.1 as the primary solver, with ECOS 2.0.14 checks. Requested tolerance is $10^{-8}$; the main raw constraint violation reaches approximately $1.21542\times10^{-5}$. Endpoint projection and acceleration excess require separate checks, so the requested tolerance cannot be reported as achieved constraint accuracy.
+The artifact's \texttt{data/v6\_1/derived/e2b\_feasibility.json}, field \texttt{formulation.solver\_receipts\_main}, records primal/dual objectives and residuals for all nine subproblems. Per-constraint dual multipliers were not exported; no active-constraint attribution is inferred from them. Clarabel's absolute-gap, relative-gap and feasibility tolerances were each $10^{-8}$.
+
+The bounded continuous model gives \GantryContinuous{} s. The used 400-grid projected profile gives \GantryOptimisedPrecise{} s. Refinement spans 25 to 800 intervals; the 800-grid Clarabel run includes one \texttt{optimal\_inaccurate}/\texttt{AlmostSolved} group, while ECOS reports optimal at that refinement. A speed-cap-only relaxation yields 6.848749416743445 s for this path and model. The discrete feasible set restricts the continuous bounded model: its feasible optimum is an upper bound, subject to numerical feasibility. The relaxation supplies a lower bound only within the same stated model. No physical impossibility, universal lower bound or hardware ten-second feasibility claim follows.
+
+\begin{center}\small\input{build/gantry_refinement}\end{center}
+Inaccurate group denotes at least one group with an inaccurate optimal status; it is retained in the table. Raw maximum violations have the solver constraint scales and must not be interpreted as a single physical unit.
+
+\subsection{Tracking, saturation and slip}
+The diagnostics below retain all trials and separately show the successful subset. Saturation is the number of trials with any contact-phase actuator saturation. Tracking is the maximum absolute error over axes and contact samples, not an end-effector norm. Slip is the maximum recorded tray motion in the fork frame. The large all-trial errors include capture failures; successful-subset values do not replace the full denominator.
+\begin{center}\small\input{build/gantry_diagnostics}\end{center}
+Neither profile has free-air actuator saturation in these trials. Contact saturation remains in both profiles, including successful transfers, so a conservative free-motion torque plan is not a guarantee of contact tracking. No numerical warning is recorded in either arm; warning absence does not validate the contact model.
+
+\subsection{Complete paired outcome accounting}
+Seeds 9100--9149 each have variants A and B, giving 100 paired comparisons and 50 seed clusters. All 200 simulated trials remain in the table. Baseline success is \GantryBaselinePass{}/100 and optimized success \GantryOptimisedPass{}/100; 55 pairs succeed under both, four succeed only under baseline, three only under optimization, and 38 fail under both. Optimized-minus-baseline success is $\GantryDifference{}$, with seed-cluster interval $[\GantryLow{},\GantryHigh{}]$. The frozen $-0.10$ margin yields noninferiority under that rule, not a reliability gain. Both arms have 40 tray-not-seated failures. Higher actuator usage and mechanical work do not establish electrical efficiency.
+
+The status amendment identifies this study as \status{SIMULATED}; \status{TASK\_VALIDATED} is not reached. An earlier registry value \status{COMPLETED} denotes execution completion and is explicitly mapped by that amendment. It cannot be used as a claim of task qualification.
+\begin{center}\scriptsize\input{build/gantry_pairs}\end{center}
+
+\section{Production-model contract and full factorial record}
+The event model has 40 orders and a 1,200 s horizon. CP-SAT uses qualified mean operation times and an eight-order window, with only information known at time zero. Strict planned dispatch and FIFO are assessed by the same executor and independent event rules. The empirical input is the separately selected 40-pair fast-profile qualification envelope. It is not an estimate from the primary 100-pair held-out reference cohort.
+
+Each of six fixed scenarios has 30 paired seeds and all four mechanical/dispatch conditions. The 720 model runs form 180 quartets. Mechanical, scheduling and combined reference-cell contrasts are $G_{10}-G_{00}$, $G_{01}-G_{00}$ and $G_{11}-G_{00}$; interaction is $G_{11}-G_{10}-G_{01}+G_{00}$. The following table is reduced from the complete quartets, without dropping failed models or selecting favorable seeds. All recorded event checks pass.
+\begin{center}\small\input{build/e3_scenarios}\end{center}
+The following per-scenario intervals use the frozen producer's paired t rule with its rounded critical value 2.045 for 29 degrees of freedom, applied to the 30 within-seed differences. This preserves the protocol interval; the standalone artifact's separate normal approximation is not substituted for it. No interval treats the six fixed scenarios as an independent random sample.
+\begin{center}\small\input{build/e3_intervals}\end{center}
+Uncertainty over seeds is conditional on the finite operation envelope and fixed scenarios. It excludes uncertainty in the envelope, contact-model discrepancy and generalization to a population of factories. A feasible CP-SAT plan does not imply optimality unless the recorded solver status establishes it. Event-checker consistency does not supply continuously coupled robot physics.
+\begin{center}\scriptsize\input{build/e3_runs}\end{center}
+
+\section{Product journeys and visual evidence}
+Three native briefs produce six revisions, all \status{NOT\_READY}. Their journeys include failure witnesses, revision comparison and input replacement. A later journey verifies an earlier-input marker after replacement, distinguishing validated revision from current input. Operator-staged trusted edits are explicit interventions; these journeys do not count as autonomous repair episodes or statistical samples for the other studies.
+
+The inspection-quadruped image is a native read-only presentation capture of a separate project, revision 33e7066b. Seven gates pass and five remain unknown. It illustrates assembly inspection only. The fixture image is extracted from verified render-copy media of a recorded state; no physics or geometry was changed for this paper. Figure provenance, crops, input hashes and exact extraction commands are retained privately.
+
+\section{Reproduction and data dictionary}
+The controlled-sharing artifact contains frozen sanitized records, pinned analysis environments and a standalone selected-pair replay. Tier A verifies identity, schemas, arithmetic, statistical summaries, tables and figures. Selected Tier B re-executes one data-only physics pair; Tier C provider/orchestration execution is unavailable. It is inaccurate to describe Tier A as full physics reproduction.
+
+The root environment and the \texttt{tierb/} environment each have a frozen \texttt{uv.lock}. On Linux with Python 3.12, the principal commands are:
+\begin{verbatim}
+uv sync --frozen
+uv run --frozen python -m unittest discover -s tests
+uv run --frozen python -m analysis.verify data
+uv run --frozen python -m analysis.summarize data derived-check
+uv run --frozen python -m analysis.e1_v61 \
+ data/v6_1/raw_sanitized/e1_study_rows.json --out e1-check.json
+uv run --frozen python -m analysis.figures_v61 \
+ --e1-summary data/v6_1/derived/e1_summary.json \
+ --e0-summary data/v6_1/derived/e0_summary.json --out figures-check
+cd tierb
+uv sync --frozen
+uv run --frozen python replay.py run --package package \
+ --meshes ../../tierb-inputs/meshes \
+ --manifest inputs_manifest.json --result replay-check.json
+\end{verbatim}
+The provenance records identify the frozen research archive and artifact commit. Paper-specific commands and final verification receipts accompany the source package. No Forge installation, private credential or application backend is needed for Tier A or selected Tier B. The mesh archive must remain beside the extracted repository at the documented relative location.
+
+\begin{description}
+\item[Repair records] One row per planned episode; candidate lists retain ordinals, build status, parameter values, model identities, stage timing, continuous components, development outcomes and selected/first hidden outcomes. Failure and absence are explicit categories.
+\item[Operation records] Phase, controller profile, geometry, disturbance ID, outcome, duration, model and protocol identity. Matching disturbance IDs define paired observations within a phase and profile.
+\item[Production records] Scenario, paired seed, factorial condition, good units, horizon, flow time, event-check status and protocol identity. A scenario-seed key must contain exactly four cells.
+\item[Gantry records] Seed, variant, profile, task success, failure mode, planned clock, mechanical work, tracking and actuator measurements, perturbations and numerical checks. Variants from the same seed remain clustered together.
+\end{description}
+
+\input{study_details}
+
+\section{Limits of the evidence}
+The evidence establishes no physical robot safety, factory prediction, electrical energy use or hardware certification. Analytic case truth is restricted to the constructions; local kernel witnesses are not global formal proofs. Repair observations depend on narrow templates and a proprietary provider. Contact-sensitive decisions can flip, idealized drives omit physical behaviors, and finite production-envelope uncertainty is not propagated. Keeping those qualifications attached to their result is part of the engineering contract.
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

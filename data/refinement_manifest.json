@@ -1,0 +1,156 @@
+{
+  "files": [
+    {
+      "bytes": 2110,
+      "path": "records/refinement_trials.csv",
+      "sha256": "a230888c03ae10eda6dea557c68650c60f4cce783674306a2a7866bc0ed46a78"
+    },
+    {
+      "bytes": 2648,
+      "path": "records/refinement_selection.json",
+      "sha256": "86af8b7eedd2a7a769676d69421546db1461fc3b962494a8f5767dc1b1dce5ab"
+    },
+    {
+      "bytes": 2110,
+      "path": "records/refinement_facets48.csv",
+      "sha256": "0e18fb4041b131905901d75ee69b01bcfa62966c0e400c20489f9749a7580274"
+    }
+  ],
+  "primary_selection": {
+    "expected_cases": [
+      {
+        "design_id": "original",
+        "disturbance_id": "630100",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630101",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630102",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630103",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630104",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630131",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630169",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630100",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630101",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630102",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630103",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630104",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630131",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630169",
+        "profile": "historical_fast"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630100",
+        "profile": "reference"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630101",
+        "profile": "reference"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630102",
+        "profile": "reference"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630103",
+        "profile": "reference"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630104",
+        "profile": "reference"
+      },
+      {
+        "design_id": "original",
+        "disturbance_id": "630144",
+        "profile": "reference"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630100",
+        "profile": "reference"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630101",
+        "profile": "reference"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630102",
+        "profile": "reference"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630103",
+        "profile": "reference"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630104",
+        "profile": "reference"
+      },
+      {
+        "design_id": "historical_v4_lead_in",
+        "disturbance_id": "630144",
+        "profile": "reference"
+      }
+    ],
+    "interpretation_receipt_sha256": "105d5a1094af2047ec6fe3394f31725e1318408fecccbc640a9d55f8515bd9dc",
+    "selection_receipt_sha256": "86af8b7eedd2a7a769676d69421546db1461fc3b962494a8f5767dc1b1dce5ab"
+  },
+  "schema": "forge.v6.refinement-inputs/1"
+}

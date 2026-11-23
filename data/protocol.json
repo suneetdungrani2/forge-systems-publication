@@ -1,0 +1,21 @@
+{
+  "expected_production_seeds": {
+    "D1": 30,
+    "D2": 30,
+    "D3": 30,
+    "D4": 30,
+    "D5": 30,
+    "D6": 30
+  },
+  "planned_holdout_trials": {
+    "historical_fast": {
+      "historical_v4_lead_in": 100,
+      "original": 100
+    },
+    "reference": {
+      "historical_v4_lead_in": 100,
+      "original": 100
+    }
+  },
+  "schema_version": 1
+}

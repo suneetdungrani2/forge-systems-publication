@@ -1,0 +1,156 @@
+{
+ "schema": "forge.v6_1.e2b.protocol/1",
+ "protocol_id": "V6.1-E2b-P1",
+ "frozen_utc": "2026-11-18T01:32:21+00:00",
+ "frozen_before": "any confirmatory trial (seeds 9100..9149 never run before this file was committed)",
+ "question": "Does fixed-path minimum-time speed optimisation of the recorded cartesian_gantry_v4b stage_tray path, inside the declared motor/transmission/travel/slip limits, reduce the stage_tray clock below 10.0 s without lowering stage_tray success, in the same MuJoCo model, contacts, controller, actuator limits, disturbance envelope and success criteria as the recorded V4 baseline?",
+ "clock": {
+  "definition": "Stage_tray attempt time is the sum of planned segment durations from idle through over_din, approach, insert, lift, carry, lower_fast, lower_seat, withdraw, rise, and idle_end.",
+  "excludes": [
+   "the 0.6 s pre-contact settle of the simulation (SETTLE_S)",
+   "the 1.0 s hold after the contact phase (HOLD_S)"
+  ],
+  "requirement_s": 10.0,
+  "also_reported": "simulated timeline including the 1.0 s hold, and including hold plus pre-settle"
+ },
+ "arms": [
+  "baseline",
+  "optimised"
+ ],
+ "baseline_law": {
+  "plan_options": {
+   "clip_to_limits": true,
+   "contact_frac": 0.6,
+   "free_frac": 0.7,
+   "slow": {
+    "2": 1.5,
+    "3": 2.0,
+    "4": 1.2,
+    "5": 2.0,
+    "6": 2.4,
+    "7": 2.0
+   },
+   "floor_s": 0.8,
+   "z_idle": 70.0
+  },
+  "profile": "min-jerk per segment, rest to rest",
+  "segment_durations_s": [
+   0.8,
+   1.17,
+   1.5,
+   2.0,
+   1.52,
+   4.36,
+   2.4,
+   2.0,
+   5.21,
+   0.8
+  ],
+  "clock_s": 21.76
+ },
+ "optimised_law": {
+  "method": "fixed-path minimum-time speed optimisation, SOCP (Lipp and Boyd 2014 change of variables and exact interval time; cone epigraph), solved per rest-to-rest group",
+  "path": "the same nominal waypoints and straight joint-space segments as the baseline; rest at every direction-changing waypoint (exact for a polyline); lower_fast -> lower_seat collinear (no forced stop)",
+  "limits": {
+   "rho_v": 0.9,
+   "rho_tau": 0.5,
+   "mu_min": 0.3,
+   "slip_sf": 2.0,
+   "inertia_scale": 1.05,
+   "damping_scale": 1.05,
+   "friction_scale": 1.1
+  },
+  "limit_sources": {
+   "rho_v": "at most 0.9 of the declared top speed; belts 400 mm/s, Z 36 mm/s",
+   "rho_tau": "planned feed-forward torque at most 50% of the actuator record; margin remains for force_scale 0.85 and the position-loop transient",
+   "mu_min": "lowest tine/surface friction in the declared envelope [0.3, 0.6]; MuJoCo combines geom friction by maximum",
+   "slip_sf": "declared safety factor 2 on the friction bound",
+   "scales": "margins for declared extra plant perturbations: mass and damping +5%, Coulomb friction +10%",
+   "payload": "tray plus kit at the high kit-mass scale, the larger of variants A and B (0.134 kg)"
+  },
+  "carried_segments": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "n_per_group": 400,
+  "solver": "CLARABEL 0.11.1 via cvxpy 1.9.3, tol_gap_abs = tol_gap_rel = tol_feas = 1e-8",
+  "reference": "q(t) = W_k + (W_k+1 - W_k) sigma_k(t) on the SAME clipped, fork-offset waypoints as the baseline (only sigma_k and the durations differ)"
+ },
+ "controller_and_plant": "Unchanged MuJoCo 3.15.0 exported scene; position actuators on the motor shafts, kp 3 N m/rad, kv 0.0045 / 0.0018 N m s/rad, forcerange equal to pull-out torque at the declared top speed (Z x 0.43), 0.5 ms implicitfast, elliptic cones, free tray and kit, no weld.",
+ "disturbance": {
+  "envelope": "The same declared operating envelope and identical numpy default_rng(seed) draws are used for both arms.",
+  "extra_plant_perturbation": "declared below, rng = numpy default_rng([seed, 0xE2B]), identical for both arms"
+ },
+ "extra_plant_perturbation": {
+  "robot_mass_rel": 0.05,
+  "damping_rel": 0.05,
+  "frictionloss_rel": 0.1
+ },
+ "success_criteria": "The unchanged success criterion requires tray within 1.0 mm (xy), 1.0 deg (yaw), 0.5 mm (seat height), tilt <= 1.5 deg, kit displacement <= 1.5 mm, lift >= 8 mm, finite state, and no MuJoCo BADQACC/BADQVEL/BADQPOS warnings.",
+ "sets": {
+  "pilot": {
+   "seed_first": 7000,
+   "n_seeds": 4,
+   "variants": [
+    "A",
+    "B"
+   ],
+   "status": "run before protocol freeze; development only, not analysed as confirmatory"
+  },
+  "confirmatory": {
+   "seed_first": 9100,
+   "n_seeds": 50,
+   "variants": [
+    "A",
+    "B"
+   ],
+   "status": "frozen, not yet run"
+  }
+ },
+ "primary_endpoint": {
+  "metric": "paired difference in stage_tray success proportion, optimised minus baseline, pooled over the 100 (seed, variant) pairs",
+  "uncertainty": "95 % percentile bootstrap CI resampling SEEDS (clusters of the A and B pairs that share one draw), 10000 resamples, bootstrap rng seed 20261118; exact two-sided McNemar test on discordant pairs per variant and pooled",
+  "decision": "NON_INFERIOR if the lower CI bound > -0.10; INFERIOR if the upper CI bound < 0; otherwise INCONCLUSIVE",
+  "requirement": "clock <= 10.0 s (deterministic per law)"
+ },
+ "secondary": [
+  "per-variant success and paired difference",
+  "requirement met per trial = success AND clock <= 10.0 s",
+  "kit displacement (paired mean difference, bootstrap CI)",
+  "tray slip in the fork frame while carried",
+  "tray settle after the commanded contact motion",
+  "slide tracking error max and RMS per phase",
+  "actuator torque peak and RMS fraction of the derated force range, saturation fraction (|tau| >= 0.999 range) per phase",
+  "peak_force_fraction_max (V4 metric, nominal stall)",
+  "mechanical positive work proxy work_J (not electrical energy)",
+  "failure modes"
+ ],
+ "analysis_rules": "every trial is recorded and analysed, failures included; no exclusion, no re-run; an unstable simulation is a failure of that arm",
+ "not_claimed": [
+  "physical (hardware) performance",
+  "that the 10 s requirement is physically impossible or possible on real hardware",
+  "electrical efficiency (work_J is mechanical)",
+  "a new feedback controller (the controller is unchanged; only the reference time law changes)"
+ ],
+ "environment": {
+  "pyproject_sha256": "51b3db02346b7b78661f107755c374f71a30c36cc6a9fd074e1ed7ee252e6365",
+  "uv_lock_sha256": "7dd873aef987e042321dd5e3e960663c1d5c4502f3378c5f9c8ead8da24b0a2d",
+  "export_manifest_sha256": "7c53987d1446df89d3f2ef3e2c0b5fb7da2dc3a17f897ef3356d5af4003e2e2d"
+ },
+ "fidelity_check": {
+  "result": "8 of 8 recorded V4 v4b trials (seeds 1000..1003, A and B) reproduced with identical outcome and every metric difference 0.0"
+ },
+ "code_sha256_by_role": {
+  "model_export": "865cda8da3d582c15529474e7a2dd012b6fa7a34b5498af7729ec59431ad1133",
+  "time_law_formulation": "afcc225552d55976a81d8726110a5a1ea965c087c365cfe0a8a8316b2736f12c",
+  "plant_model": "feec8df1439cffe38c4d13fd5b83cd30295bd7459f84d6cbc30f76e4308f65ae",
+  "baseline_fidelity_reproduction": "e9b40a9b64760e640e6e218ee2abfe0e65ad25eedb96d334bce6dad0bfac8e9b",
+  "confirmatory_trial_set_runner": "bc6310acbe05db94b0f11177a97eb88b055ac0e27f57702b3069f8b21babcf49",
+  "forward_simulation_runner": "0c7a2a3c0000ca497a24acd8a14e8bd3c470c0978a055d06fafec66a924414ab",
+  "stage_simulator": "8a444b33ea2743d4ff8f437dc2aff32e815e5b40b972f3d64b2f8bdf90eab978",
+  "simulation_test_suite": "badf367838dc29ffa509a55b01a3b53ba935db65869ed6aec269a9d9b41b621c",
+  "time_optimal_path_parameterisation": "afe24bbf1864433be54a7f622b34571475dbe1951835e4c7b15b5eefff2852ad"
+ }
+}

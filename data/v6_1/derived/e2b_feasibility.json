@@ -1,0 +1,1669 @@
+{
+ "schema": "forge.v6_1.e2b.feasibility/1",
+ "study": "V6.1-E2b sourced-drive gantry fixed-path minimum-time speed optimisation",
+ "status": "COMPLETED",
+ "historical_facts_preserved": {
+  "v4b_stage_tray_success": {
+   "A": "20/30",
+   "B": "22/30"
+  },
+  "v4b_clock_s": {
+   "baseline_plan": 21.76,
+   "fast_plan": 14.97
+  },
+  "ten_second_target": "MISSED in every V4 plan"
+ },
+ "clock": {
+  "definition_used": "V4 stage_tray attempt time = sum of the planned segment durations idle -> over_din -> approach -> insert -> lift -> carry -> lower_fast -> lower_seat -> withdraw -> rise -> idle_end (gantry_ops.run_stage duration_s = sum(plan dur); qualify time_s)",
+  "excludes": [
+   "the 0.6 s pre-contact settle of the simulation (SETTLE_S)",
+   "the 1.0 s hold after the contact phase (HOLD_S)"
+  ],
+  "requirement_s": 10.0,
+  "what_it_measures": "the whole stage_tray operation as planned (move from idle over the docked carrier, descend, insert the fork, lift, carry 195 mm, lower and seat on the transfer-station pins, withdraw, rise and return to idle): pick + transfer + place + return, measured as the PLANNED (commanded) duration, not an observed completion time; the 1.0 s hold in which the simulation lets the seated tray settle is not counted",
+  "provenance_caveat": "The original requirement text is unavailable. The earlier record attaches the 10 s target to wall time per simulated trial, while the later account uses planned stage_tray attempt time. This study uses the planned attempt-time reading; compute wall time is reported separately and is not the requirement studied."
+ },
+ "method_reference": {
+  "citation": "T. Lipp and S. Boyd, Minimum-time speed optimisation over a fixed path, International Journal of Control 87(6), 2014, doi:10.1080/00207179.2013.875224",
+  "accessed": "2026-11-18",
+  "url": "https://doi.org/10.1080/00207179.2013.875224",
+  "pdf_sha256": "b92e9469bd34474ac680860e606cda4518e046524bda0e04132e9529c34d2c07",
+  "pdf_pages": 10,
+  "redistributed": false,
+  "read": "the PDF was downloaded and its text extracted (pypdf) and read; the PDF is not committed",
+  "used_from_paper": [
+   "section 3: dynamics R(q)u = M(q) qdd + C(q, qd) qd + d(q), control constraint sets C(q) on (qd^2, qdd, u), path q = s(theta)",
+   "section 5 (eqs 22-26): change of variables a = theta_dd, b = theta_d^2, b' = 2a; objective integral b^(-1/2); convexity",
+   "section 6.1.1 (eqs 27-29): a constant on each interval, exact interval time 2 dtheta / (sqrt(b_i) + sqrt(b_i+1)), handles b = 0 at the ends",
+   "section 6.1.2: dynamics enforced at interval midpoints with b_mid = (b_i-1 + b_i)/2",
+   "section 6.1.3: constraint sets enforced at the nodes so that speed limits bind at the nodes",
+   "section 6.1.4 (eq 33): b_i - b_i-1 = 2 a_i dtheta exact under constant a",
+   "section 6.1.5: the discretisation of s'' matters for fidelity (here s'' = 0 inside every segment and corners are forced stops, so no s'' discretisation arises)"
+  ],
+  "not_used": [
+   "the paper's own log-barrier interior point method (Algorithm 6.1); a general conic solver (Clarabel) is used instead",
+   "the vehicle examples of section 4"
+  ],
+  "derived_here": [
+   "the gantry constraint sets (torque with conservative friction/damping bound, speed caps, tray non-slip)",
+   "forced stops at direction-changing waypoints",
+   "the exact separation into rest-to-rest groups",
+   "the cone epigraph e^2 <= b, d (e_i + e_i+1) >= 1 of the exact interval time",
+   "the exact continuous bang-coast-bang optimum used as a cross-check",
+   "the end-point projection of the returned b"
+  ]
+ },
+ "plant_and_assumptions": [
+  {
+   "parameter": "actuated axes",
+   "value": [
+    "y_drive (two Y pulleys on one shaft line)",
+    "x_drive",
+    "z_drive"
+   ],
+   "unit": "-",
+   "note": "MuJoCo position actuators on the motor shafts; slides y, x, z are passive followers"
+  },
+  {
+   "parameter": "belt transmission",
+   "value": 0.006366197723675813,
+   "unit": "m/rad",
+   "source": "GT2 20T, 40 mm/rev",
+   "note": "fixed-tendon equality, solref 0.004; lossless"
+  },
+  {
+   "parameter": "Z lead screw",
+   "value": 0.00022918311805232927,
+   "unit": "m/rad",
+   "source": "lead 1.44 mm",
+   "note": "lossless kinematics; efficiency enters only the torque limit"
+  },
+  {
+   "parameter": "Z screw efficiency",
+   "value": 0.43,
+   "unit": "-",
+   "note": "applied to the Z torque record (vendor catalogue, theoretical)"
+  },
+  {
+   "parameter": "belt transmission efficiency",
+   "value": null,
+   "unit": "-",
+   "note": "not modelled (none published); losses only as follower friction and damping"
+  },
+  {
+   "parameter": "shaft torque limit (forcerange)",
+   "value": [
+    0.272,
+    0.272,
+    0.05332
+   ],
+   "unit": "N m (y, x, z)",
+   "note": "PBC 24 Vdc / 2 A rms pull-out torque READ at the declared top speed: belts 0.272 N m at 2000 steps/s; Z 0.124 N m at 5000 steps/s x 0.43; constant in the simulation (speed independent)"
+  },
+  {
+   "parameter": "slide force at the limit",
+   "value": [
+    42.72566008882119,
+    42.72566008882119,
+    232.65238929084416
+   ],
+   "unit": "N (y, x, z)",
+   "source": "derived: tau / c1",
+   "note": ""
+  },
+  {
+   "parameter": "declared top speed",
+   "value": [
+    400.00093537399874,
+    400.00093537399874,
+    36.00008418365989
+   ],
+   "unit": "mm/s (y, x, z)",
+   "note": "NOT enforced by the simulation; the plan's speed limit"
+  },
+  {
+   "parameter": "pull-out curve points",
+   "value": "0.339@0, 0.335@600, 0.320@1200, 0.272@2000, 0.197@3000, 0.153@4000, 0.124@5000, 0.105@6000",
+   "unit": "N m @ full steps/s",
+   "note": "reading uncertainty about +-0.005 N m"
+  },
+  {
+   "parameter": "position loop",
+   "value": {
+    "kp": [
+     3.0,
+     3.0,
+     3.0
+    ],
+    "kv": [
+     0.0045,
+     0.0045,
+     0.0018
+    ]
+   },
+   "unit": "N m/rad, N m s/rad",
+   "note": "modelling choice (stands for a microstepped stepper below pull-out); no feed-forward"
+  },
+  {
+   "parameter": "rotor inertia (armature)",
+   "value": 5.7e-06,
+   "unit": "kg m2 per motor (Y shaft 2x)",
+   "note": ""
+  },
+  {
+   "parameter": "shaft-referred inertia (robot)",
+   "value": [
+    [
+     0.00011820200213934387,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     5.485825627044929e-05,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     7.171213688395135e-06
+    ]
+   ],
+   "unit": "kg m2",
+   "source": "computed from the exported MuJoCo model (mj_fullM projected through the couplings)",
+   "note": "configuration independent to 3e-15 relative"
+  },
+  {
+   "parameter": "slide-equivalent mass",
+   "value": [
+    2.916517501330105,
+    1.3535732188072853,
+    136.52978815612826
+   ],
+   "unit": "kg (y, x, z)",
+   "source": "derived",
+   "note": "Z is dominated by the rotor inertia reflected through the 1.44 mm lead (136.5 kg equivalent)"
+  },
+  {
+   "parameter": "link masses",
+   "value": {
+    "bridge": 1.2667,
+    "carriage": 0.7802,
+    "zslide": 0.35,
+    "zscrew": 0.0758,
+    "pulleys": 0.008
+   },
+   "unit": "kg",
+   "source": "exported robot.xml (compiled from CAD, printed parts at the assumed 0.6 fill)",
+   "note": "ESTIMATED masses of purchased envelopes"
+  },
+  {
+   "parameter": "slide damping",
+   "value": {
+    "y": 8.0,
+    "x": 6.0,
+    "z": 10.0
+   },
+   "unit": "N s/m",
+   "note": "ESTIMATED; shaft damping 1e-5 N m s/rad each"
+  },
+  {
+   "parameter": "slide Coulomb friction (frictionloss)",
+   "value": {
+    "y": 2.0,
+    "x": 1.2,
+    "z": 1.5
+   },
+   "unit": "N",
+   "note": "ESTIMATED"
+  },
+  {
+   "parameter": "gravity on Z (robot)",
+   "value": 0.0007869602830655258,
+   "unit": "N m on the Z shaft",
+   "source": "computed",
+   "note": ""
+  },
+  {
+   "parameter": "payload (tray + kit)",
+   "value": {
+    "A": [
+     0.10753606658840281,
+     0.11741934507234776
+    ],
+    "B": [
+     0.12117347203753318,
+     0.13408728506572934
+    ]
+   },
+   "unit": "kg [low, high]",
+   "source": "tray and kit mass scale [0.9, 1.1]",
+   "note": "planning uses the largest, 0.134 kg"
+  },
+  {
+   "parameter": "tray contact",
+   "value": "free body on two 12 x 3 mm aluminium tines, back plate on one side (insertion axis) only; held by friction and gravity, no weld",
+   "unit": "-",
+   "note": "the carry (Y) is across the tines: friction only"
+  },
+  {
+   "parameter": "friction coefficients",
+   "value": {
+    "tine": [
+     0.3,
+     0.6
+    ],
+    "tray/kit/stations": [
+     0.3,
+     0.6
+    ]
+   },
+   "unit": "-",
+   "note": "MuJoCo default combination of two geoms = maximum, so the tray/tine pair has mu >= 0.3"
+  },
+  {
+   "parameter": "contact model",
+   "value": "elliptic cones, condim 4, solref 0.004 1, solimp 0.95 0.99 0.001, impratio 10",
+   "unit": "-",
+   "note": ""
+  },
+  {
+   "parameter": "timestep / integrator (controller update)",
+   "value": 0.0005,
+   "unit": "s, implicitfast",
+   "note": "the position command is updated every step (2 kHz)"
+  },
+  {
+   "parameter": "disturbance envelope",
+   "value": "dock +-3/+-7 mm, +-3.5 deg; tray play 1 mm; station 0.5 mm; fork 1 mm; kit mass 0.9-1.1; friction 0.3-0.6; force scale 0.85-1.0; kp scale 0.85-1.15",
+   "unit": "-",
+   "note": ""
+  },
+  {
+   "parameter": "success criteria",
+   "value": "tray 1.0 mm xy, 1.0 deg yaw, 0.5 mm seat height, tilt 1.5 deg, kit 1.5 mm, lift 8 mm, clean numerics",
+   "unit": "-",
+   "note": ""
+  },
+  {
+   "parameter": "clip to travel limits",
+   "value": true,
+   "unit": "-",
+   "source": "plan_options",
+   "note": "same for both arms"
+  }
+ ],
+ "environment": {
+  "pyproject_sha256": "51b3db02346b7b78661f107755c374f71a30c36cc6a9fd074e1ed7ee252e6365",
+  "uv_lock_sha256": "7dd873aef987e042321dd5e3e960663c1d5c4502f3378c5f9c8ead8da24b0a2d",
+  "versions": {
+   "cvxpy": "1.9.3",
+   "clarabel": "0.11.1",
+   "ecos": "2.0.14",
+   "mujoco": "3.15.0",
+   "numpy": "2.5.4"
+  },
+  "python": "3.12.3",
+  "threads": "4 worker processes, each OMP/OPENBLAS/MKL/RAYON = 1",
+  "model_export": {
+   "manifest_sha256": "7c53987d1446df89d3f2ef3e2c0b5fb7da2dc3a17f897ef3356d5af4003e2e2d",
+   "archive_sha256": "f2f9acb0bd312cf380e6fe2bc49a672e0df0040b1de66fe68ca72cc48ada8f10",
+   "files_sha256": "exported model file set (82 files)"
+  }
+ },
+ "formulation": {
+  "variables_and_constraints": "See evidence/data/v6_1/e2b/formulation/formulation.json.",
+  "limits": {
+   "rho_v": 0.9,
+   "rho_tau": 0.5,
+   "mu_min": 0.3,
+   "slip_sf": 2.0,
+   "inertia_scale": 1.05,
+   "damping_scale": 1.05,
+   "friction_scale": 1.1
+  },
+  "carried_segments": [
+   3,
+   4,
+   5,
+   6
+  ],
+  "segments": [
+   "idle->over_din",
+   "over_din->approach",
+   "approach->insert",
+   "insert->lift",
+   "lift->carry",
+   "carry->lower_fast",
+   "lower_fast->lower_seat",
+   "lower_seat->withdraw",
+   "withdraw->rise",
+   "rise->idle_end"
+  ],
+  "segment_length_mm": [
+   97.49999999999999,
+   15.750000000000007,
+   110.0,
+   13.500000000000005,
+   195.0,
+   50.25,
+   17.5,
+   110.0,
+   70.0,
+   97.5
+  ],
+  "rest_groups": [
+   [
+    0
+   ],
+   [
+    1
+   ],
+   [
+    2
+   ],
+   [
+    3
+   ],
+   [
+    4
+   ],
+   [
+    5,
+    6
+   ],
+   [
+    7
+   ],
+   [
+    8
+   ],
+   [
+    9
+   ]
+  ],
+  "exact_continuous_optimum_s": 7.473751190831366,
+  "exact_groups": [
+   {
+    "exact": true,
+    "T": 0.3429676689957258,
+    "L_m": 0.09749999999999999,
+    "V_m_s": 0.36000084183659886,
+    "A_plus_m_s2": 4.990656361149829,
+    "A_minus_m_s2": 4.990656361149829,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.2708327000086693
+   },
+   {
+    "exact": true,
+    "T": 0.5292971670174238,
+    "L_m": 0.015750000000000007,
+    "V_m_s": 0.0324000757652939,
+    "A_plus_m_s2": 0.784778888856216,
+    "A_minus_m_s2": 0.7185840850870221,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.4861099743745349
+   },
+   {
+    "exact": true,
+    "T": 0.33722192873804674,
+    "L_m": 0.11,
+    "V_m_s": 0.36000084183659886,
+    "A_plus_m_s2": 11.368296485526159,
+    "A_minus_m_s2": 11.368296485526159,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.30555484103542185
+   },
+   {
+    "exact": true,
+    "T": 0.45985288496391885,
+    "L_m": 0.013500000000000005,
+    "V_m_s": 0.0324000757652939,
+    "A_plus_m_s2": 0.7185840850870221,
+    "A_minus_m_s2": 0.784778888856216,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.4166656923210299
+   },
+   {
+    "exact": true,
+    "T": 0.7863142901543411,
+    "L_m": 0.195,
+    "V_m_s": 0.36000084183659886,
+    "A_plus_m_s2": 1.4715,
+    "A_minus_m_s2": 1.4715,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.5416654000173388
+   },
+   {
+    "exact": true,
+    "T": 2.134231685587316,
+    "L_m": 0.06775,
+    "V_m_s": 0.0324000757652939,
+    "A_plus_m_s2": 0.784778888856216,
+    "A_minus_m_s2": 0.7185840850870221,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 2.091044492944427
+   },
+   {
+    "exact": true,
+    "T": 0.33722192873804674,
+    "L_m": 0.11,
+    "V_m_s": 0.36000084183659886,
+    "A_plus_m_s2": 11.368296485526159,
+    "A_minus_m_s2": 11.368296485526159,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.30555484103542185
+   },
+   {
+    "exact": true,
+    "T": 2.2036759676408213,
+    "L_m": 0.07,
+    "V_m_s": 0.0324000757652939,
+    "A_plus_m_s2": 0.7185840850870221,
+    "A_minus_m_s2": 0.784778888856216,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 2.1604887749979325
+   },
+   {
+    "exact": true,
+    "T": 0.34296766899572584,
+    "L_m": 0.0975,
+    "V_m_s": 0.36000084183659886,
+    "A_plus_m_s2": 4.990656361149829,
+    "A_minus_m_s2": 4.990656361149829,
+    "kind": "trapezoid",
+    "speed_only_bound_s": 0.2708327000086694
+   }
+  ],
+  "speed_only_lower_bound_s": 6.848749416743445,
+  "main_solution": {
+   "n_per_group": 400,
+   "solver": "CLARABEL",
+   "T_s": 7.473960843940534,
+   "segment_T_s": [
+    0.3429689253968793,
+    0.5293015335444955,
+    0.3372256484945919,
+    0.45985769517724173,
+    0.7863159789185055,
+    1.5715819825691075,
+    0.5627328431523848,
+    0.33722564843441205,
+    2.2037816655764084,
+    0.3429689226765076
+   ],
+   "peak_planned_tau_fraction_of_limit": [
+    0.49945466306564756,
+    0.498333939592584,
+    0.499213849118996
+   ],
+   "baseline_segment_T_s": [
+    0.8,
+    1.17,
+    1.5,
+    2.0,
+    1.52,
+    4.36,
+    2.4,
+    2.0,
+    5.21,
+    0.8
+   ],
+   "fast_v4b_segment_T_s": [
+    0.8,
+    0.91,
+    0.8,
+    1.0,
+    1.14,
+    3.27,
+    1.2,
+    1.0,
+    4.05,
+    0.8
+   ]
+  },
+  "refinement_table": [
+   {
+    "n_per_group": 25,
+    "solver": "CLARABEL",
+    "status": "optimal",
+    "T_s": 7.737681443624387,
+    "T_minus_exact_s": 0.2639302527930214,
+    "max_violation": 2.0040399384413377e-07
+   },
+   {
+    "n_per_group": 25,
+    "solver": "ECOS",
+    "status": "optimal_inaccurate,optimal,optimal,optimal,optimal,optimal,optimal,optimal,optimal",
+    "T_s": 7.737683084765576,
+    "T_minus_exact_s": 0.26393189393421057,
+    "max_violation": 2.44871398713542e-06
+   },
+   {
+    "n_per_group": 50,
+    "solver": "CLARABEL",
+    "status": "optimal",
+    "T_s": 7.5589905796891275,
+    "T_minus_exact_s": 0.08523938885776161,
+    "max_violation": 1.2295856888222545e-07
+   },
+   {
+    "n_per_group": 50,
+    "solver": "ECOS",
+    "status": "optimal",
+    "T_s": 7.558991103586095,
+    "T_minus_exact_s": 0.0852399127547292,
+    "max_violation": 1.506226546155176e-06
+   },
+   {
+    "n_per_group": 100,
+    "solver": "CLARABEL",
+    "status": "optimal",
+    "T_s": 7.47597935143099,
+    "T_minus_exact_s": 0.0022281605996239406,
+    "max_violation": 1.4253306510059183e-07
+   },
+   {
+    "n_per_group": 100,
+    "solver": "ECOS",
+    "status": "optimal,optimal_inaccurate,optimal,optimal,optimal,optimal,optimal,optimal,optimal",
+    "T_s": 7.475979354049491,
+    "T_minus_exact_s": 0.0022281632181249122,
+    "max_violation": 2.4837264387400637e-06
+   },
+   {
+    "n_per_group": 200,
+    "solver": "CLARABEL",
+    "status": "optimal",
+    "T_s": 7.474334207966668,
+    "T_minus_exact_s": 0.0005830171353018443,
+    "max_violation": 5.842482133644467e-07
+   },
+   {
+    "n_per_group": 200,
+    "solver": "ECOS",
+    "status": "optimal",
+    "T_s": 7.474334187230449,
+    "T_minus_exact_s": 0.0005829963990828801,
+    "max_violation": 1.3567298662309213e-06
+   },
+   {
+    "n_per_group": 400,
+    "solver": "CLARABEL",
+    "status": "optimal",
+    "T_s": 7.473960843940534,
+    "T_minus_exact_s": 0.0002096531091684284,
+    "max_violation": 1.215419677458307e-05
+   },
+   {
+    "n_per_group": 400,
+    "solver": "ECOS",
+    "status": "optimal",
+    "T_s": 7.473960761191815,
+    "T_minus_exact_s": 0.00020957036044944033,
+    "max_violation": 2.962677521090029e-06
+   },
+   {
+    "n_per_group": 800,
+    "solver": "CLARABEL",
+    "status": "optimal,optimal,optimal,optimal,optimal,optimal_inaccurate,optimal,optimal,optimal",
+    "T_s": 7.4738229868653105,
+    "T_minus_exact_s": 7.179603394469325e-05,
+    "max_violation": 7.293155659393591e-07
+   },
+   {
+    "n_per_group": 800,
+    "solver": "ECOS",
+    "status": "optimal",
+    "T_s": 7.473822938698728,
+    "T_minus_exact_s": 7.174786736197092e-05,
+    "max_violation": 1.7400456537863818e-06
+   }
+  ],
+  "solver_receipts_main": [
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 9.176803757353236e-09,
+    "r_dual": 1.2494882749209016e-11,
+    "obj_val": 0.3429615242065455,
+    "obj_val_dual": 0.34296151809898534,
+    "iterations": 35,
+    "wall_s": 0.05243539810180664,
+    "status": "optimal",
+    "T_obj": 0.3429615242065456,
+    "T": 0.3429689253968803,
+    "max_violation": 1.215419677458307e-05,
+    "post_projection_max_excess_normalised": 2.6229703520286307e-08,
+    "epigraph_gap_e": 0.00019870054172899617,
+    "epigraph_gap_d": 1.215419677458307e-05,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 2.676376048810518e-10,
+    "r_dual": 1.6629073418494724e-11,
+    "obj_val": 0.52929867864693,
+    "obj_val_dual": 0.5292986745783608,
+    "iterations": 33,
+    "wall_s": 0.05028939247131348,
+    "status": "optimal",
+    "T_obj": 0.5292986786469296,
+    "T": 0.5293015335444979,
+    "max_violation": 6.952842329654985e-09,
+    "post_projection_max_excess_normalised": 1.893226020399652e-09,
+    "epigraph_gap_e": 6.849958322013688e-05,
+    "epigraph_gap_d": 2.111913177671454e-08,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 5.0739674149691476e-09,
+    "r_dual": 4.961378934126504e-12,
+    "obj_val": 0.3372228731434928,
+    "obj_val_dual": 0.3372228636764978,
+    "iterations": 26,
+    "wall_s": 0.04453301429748535,
+    "status": "optimal",
+    "T_obj": 0.33722287314349253,
+    "T": 0.3372256484945931,
+    "max_violation": 2.516621491754911e-07,
+    "post_projection_max_excess_normalised": 6.300238108991607e-09,
+    "epigraph_gap_e": 0.000153751915836194,
+    "epigraph_gap_d": 3.616358315305934e-07,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 1.9900852761397278e-09,
+    "r_dual": 4.0264848931565376e-11,
+    "obj_val": 0.4598508009819102,
+    "obj_val_dual": 0.45985079809386364,
+    "iterations": 32,
+    "wall_s": 0.05785703659057617,
+    "status": "optimal",
+    "T_obj": 0.4598508009819105,
+    "T": 0.45985769517726566,
+    "max_violation": 3.714859034276152e-08,
+    "post_projection_max_excess_normalised": 2.7263767909957437e-08,
+    "epigraph_gap_e": 0.0001998310984148334,
+    "epigraph_gap_d": 1.5444859995383808e-06,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 2.371879374843176e-09,
+    "r_dual": 3.783136023223389e-11,
+    "obj_val": 0.7862990398967158,
+    "obj_val_dual": 0.786299035033869,
+    "iterations": 37,
+    "wall_s": 0.0683741569519043,
+    "status": "optimal",
+    "T_obj": 0.7862990398967158,
+    "T": 0.7863159789184926,
+    "max_violation": 3.4616469710775255e-09,
+    "post_projection_max_excess_normalised": 1.122739567982478e-09,
+    "epigraph_gap_e": 6.637277013528285e-05,
+    "epigraph_gap_d": 7.662419124976338e-06,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 7.082673498118817e-09,
+    "r_dual": 2.533276323976015e-11,
+    "obj_val": 2.1343090755500183,
+    "obj_val_dual": 2.1343090709198425,
+    "iterations": 38,
+    "wall_s": 0.07016348838806152,
+    "status": "optimal",
+    "T_obj": 2.134309075550018,
+    "T": 2.1343148257215,
+    "max_violation": 2.3999673359753615e-08,
+    "post_projection_max_excess_normalised": 0.0,
+    "epigraph_gap_e": 3.26402070647687e-05,
+    "epigraph_gap_d": 8.704174854656799e-06,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 3.266323155755663e-09,
+    "r_dual": 2.4456192448843704e-12,
+    "obj_val": 0.3372241573030518,
+    "obj_val_dual": 0.3372241569260782,
+    "iterations": 26,
+    "wall_s": 0.04731583595275879,
+    "status": "optimal",
+    "T_obj": 0.33722415730305183,
+    "T": 0.33722564843436054,
+    "max_violation": 1.4734749065326014e-07,
+    "post_projection_max_excess_normalised": 3.737613440968346e-09,
+    "epigraph_gap_e": 8.560513195915406e-05,
+    "epigraph_gap_d": 2.2907602809096872e-07,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 6.80867317406691e-09,
+    "r_dual": 1.2388698848312977e-11,
+    "obj_val": 2.203776740401421,
+    "obj_val_dual": 2.203776735459929,
+    "iterations": 39,
+    "wall_s": 0.06144285202026367,
+    "status": "optimal",
+    "T_obj": 2.2037767404014206,
+    "T": 2.2037816655763818,
+    "max_violation": 7.333219522592804e-08,
+    "post_projection_max_excess_normalised": 0.0,
+    "epigraph_gap_e": 2.9359737799496744e-05,
+    "epigraph_gap_d": 2.018156588512454e-06,
+    "n_intervals": 400
+   },
+   {
+    "solver": "CLARABEL",
+    "raw_status": "Solved",
+    "r_prim": 1.3021450904777011e-10,
+    "r_dual": 1.3767241115333098e-11,
+    "obj_val": 0.34296143230176046,
+    "obj_val_dual": 0.34296142801721813,
+    "iterations": 23,
+    "wall_s": 0.04276728630065918,
+    "status": "optimal",
+    "T_obj": 0.34296143230176057,
+    "T": 0.34296892267642565,
+    "max_violation": 3.7165137376907946e-08,
+    "post_projection_max_excess_normalised": 1.2629118861795519e-09,
+    "epigraph_gap_e": 0.0001940420641028419,
+    "epigraph_gap_d": 1.0226295171777977e-08,
+    "n_intervals": 400
+   }
+  ],
+  "bound_statement": "Within the analysed finite formulation (fixed polyline path with rest at every direction change; speed <= 0.9 of the declared top speed; planned torque <= 0.5 of the actuator record with inertia +5 %, damping +5 %, friction +10 % and the 0.134 kg payload; tray non-slip |a_h| <= (0.3/2)(g + a_z) on the carried segments), the continuous minimum of the planned path time is 7.47375 s (exact per-group bang-coast-bang value; every group is single-axis with constant bounds), and no motion of that path obeying only the speed caps can take less than 6.8487 s (sum of L/V). Discrete SOCP optima approach 7.47375 s from above (they solve a restriction), up to solver tolerance. These are statements about this model and path, not about hardware."
+ },
+ "fidelity_check": {
+  "file": "data/v6_1/e2b/reproduction_v4.json",
+  "n": 8,
+  "outcome_identical": 8,
+  "max_abs_diff": {
+   "tray_xy_error_mm": 0.0,
+   "tray_z_error_mm": 0.0,
+   "tray_yaw_error_deg": 0.0,
+   "tray_tilt_deg": 0.0,
+   "kit_displacement_mm": 0.0,
+   "lift_mm": 0.0,
+   "peak_force_fraction_max": 0.0,
+   "work_J": 0.0
+  }
+ },
+ "pilot": {
+  "file": "data/v6_1/e2b/pilot/pilot1_pure.jsonl",
+  "seeds": "7000..7003",
+  "variants": [
+   "A",
+   "B"
+  ],
+  "n_trials": 16,
+  "successes": {
+   "baseline": "8/8",
+   "optimised": "8/8"
+  },
+  "note": "development only; run with solver tol 1e-9 and before the end-point projection was added (optimised clock 7.474 s); not part of the confirmatory analysis"
+ },
+ "baseline_vs_optimised": {
+  "clock_s": {
+   "baseline": 21.76,
+   "optimised": 7.473961,
+   "fast_v4b_reference": 14.97,
+   "requirement": 10.0
+  },
+  "timeline_with_1s_hold_s": {
+   "baseline": 22.76,
+   "optimised": 8.473961
+  },
+  "timeline_with_hold_and_0p6s_presettle_s": {
+   "baseline": 23.360000000000003,
+   "optimised": 9.073961
+  },
+  "segment_durations_s": {
+   "baseline": [
+    0.8,
+    1.17,
+    1.5,
+    2.0,
+    1.52,
+    4.36,
+    2.4,
+    2.0,
+    5.21,
+    0.8
+   ],
+   "optimised": [
+    0.3429689253968793,
+    0.5293015335444955,
+    0.3372256484945919,
+    0.45985769517724173,
+    0.7863159789185055,
+    1.5715819825691075,
+    0.5627328431523848,
+    0.33722564843441205,
+    2.2037816655764084,
+    0.3429689226765076
+   ]
+  }
+ },
+ "paired_trials": {
+  "protocol_id": "V6.1-E2b-P1",
+  "protocol_sha256": "a3e22b68cabf294fcad8b3080eb01bd39d147b011a88f91c5ad2ce097b73f240",
+  "n_pairs": 100,
+  "missing_trials": [],
+  "seeds": [
+   9100,
+   9149
+  ],
+  "variants": [
+   "A",
+   "B"
+  ],
+  "primary": {
+   "metric": "paired difference in stage_tray success proportion, optimised minus baseline, pooled over the 100 (seed, variant) pairs",
+   "estimate": -0.01,
+   "ci95_cluster_bootstrap_by_seed": [
+    -0.07,
+    0.04
+   ],
+   "n_boot": 10000,
+   "boot_rng_seed": 20261118,
+   "discordant_baseline_only": 4,
+   "discordant_optimised_only": 3,
+   "mcnemar_exact_two_sided_p": 1.0,
+   "decision_rule": "NON_INFERIOR if the lower CI bound > -0.10; INFERIOR if the upper CI bound < 0; otherwise INCONCLUSIVE",
+   "decision": "NON_INFERIOR"
+  },
+  "per_variant": {
+   "A": {
+    "n_pairs": 50,
+    "baseline_successes": 27,
+    "optimised_successes": 29,
+    "baseline_wilson95": [
+     0.404,
+     0.6703
+    ],
+    "optimised_wilson95": [
+     0.4423,
+     0.7062
+    ],
+    "discordant_baseline_only": 1,
+    "discordant_optimised_only": 3,
+    "both_success": 26,
+    "both_fail": 20,
+    "mcnemar_exact_two_sided_p": 0.625,
+    "paired_difference": 0.04
+   },
+   "B": {
+    "n_pairs": 50,
+    "baseline_successes": 32,
+    "optimised_successes": 29,
+    "baseline_wilson95": [
+     0.5014,
+     0.7586
+    ],
+    "optimised_wilson95": [
+     0.4423,
+     0.7062
+    ],
+    "discordant_baseline_only": 3,
+    "discordant_optimised_only": 0,
+    "both_success": 29,
+    "both_fail": 18,
+    "mcnemar_exact_two_sided_p": 0.25,
+    "paired_difference": -0.06
+   }
+  },
+  "kit_displacement_paired_mean_diff_mm": {
+   "all_pairs": {
+    "estimate": 1.8579400000000006,
+    "ci95_cluster_bootstrap_by_seed": [
+     -1.0740625,
+     5.7294474999999965
+    ],
+    "note": "dominated by failed (jammed) trials"
+   },
+   "pairs_both_successful": {
+    "estimate": 0.18494545454545458,
+    "ci95_cluster_bootstrap_by_seed": [
+     0.10890570436507938,
+     0.2674122885338346
+    ],
+    "n_pairs": 55,
+    "median_diff": 0.12899999999999998
+   }
+  },
+  "tray_slip_in_fork_paired_mean_diff_mm_pairs_both_successful": {
+   "estimate": -0.031949575249800945,
+   "ci95_cluster_bootstrap_by_seed": [
+    -0.10401026435106779,
+    0.001422910465352995
+   ]
+  },
+  "arms": {
+   "baseline": {
+    "n": 100,
+    "successes": 59,
+    "rate": 0.59,
+    "wilson95": [
+     0.492,
+     0.6813
+    ],
+    "failure_modes": {
+     "tray_not_seated": 40,
+     "kit_displaced": 1
+    },
+    "clock_s": [
+     21.76
+    ],
+    "requirement_met_trials": 0,
+    "timeline_with_hold_s": [
+     22.76
+    ],
+    "kit_displacement_mm": {
+     "n": 100,
+     "mean": 1.0866600000000002,
+     "median": 0.5645,
+     "min": 0.001,
+     "max": 59.541
+    },
+    "tray_xy_error_mm_successful": {
+     "n": 59,
+     "mean": 0.6757118644067797,
+     "median": 0.657,
+     "min": 0.122,
+     "max": 0.813
+    },
+    "lift_mm": {
+     "n": 100,
+     "mean": 14.643099999999999,
+     "median": 12.530000000000001,
+     "min": 11.02,
+     "max": 25.08
+    },
+    "peak_force_fraction_max_v4_metric": {
+     "n": 100,
+     "mean": 0.49593,
+     "median": 0.27949999999999997,
+     "min": 0.128,
+     "max": 0.981
+    },
+    "tray_slip_in_fork_mm_max": {
+     "n": 100,
+     "mean": 4.830869472256674,
+     "median": 0.0007645390966994378,
+     "min": 0.00013616075685210478,
+     "max": 166.52012895487564
+    },
+    "tray_settle_after_motion_s": {
+     "n": 100,
+     "mean": 0.012100000000001767,
+     "median": 1.7763568394002505e-15,
+     "min": 1.7763568394002505e-15,
+     "max": 0.6700000000000017
+    },
+    "trials_tray_not_settled_in_hold": 0,
+    "final_slide_error_mm_abs_max": 0.01884,
+    "work_J_mechanical_positive": {
+     "n": 100,
+     "mean": 3.146708255864457,
+     "median": 2.6378120630966873,
+     "min": 2.283347277861764,
+     "max": 20.019161725001716
+    },
+    "phases": {
+     "free_in": {
+      "tau_frac_peak_max_per_axis_yxz": [
+       0.1573,
+       0.0,
+       0.0546
+      ],
+      "tau_frac_peak_mean_per_axis_yxz": [
+       0.142,
+       0.0,
+       0.05
+      ],
+      "tau_frac_rms_mean_per_axis_yxz": [
+       0.0575,
+       0.0,
+       0.0291
+      ],
+      "saturation_fraction_mean_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "saturation_fraction_max_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "trials_with_any_saturation": 0,
+      "track_err_mm_max_per_axis_yxz": [
+       0.3707,
+       0.0,
+       0.009
+      ],
+      "track_err_mm_rms_mean_per_axis_yxz": [
+       0.1262,
+       0.0,
+       0.0064
+      ]
+     },
+     "contact": {
+      "tau_frac_peak_max_per_axis_yxz": [
+       1.0,
+       1.0,
+       1.0
+      ],
+      "tau_frac_peak_mean_per_axis_yxz": [
+       0.3839,
+       0.4969,
+       0.2237
+      ],
+      "tau_frac_rms_mean_per_axis_yxz": [
+       0.1644,
+       0.2546,
+       0.1269
+      ],
+      "saturation_fraction_mean_per_axis_yxz": [
+       0.099888,
+       0.153559,
+       0.078697
+      ],
+      "saturation_fraction_max_per_axis_yxz": [
+       0.745027,
+       0.91634,
+       0.624357
+      ],
+      "trials_with_any_saturation": 43,
+      "track_err_mm_max_per_axis_yxz": [
+       190.8118,
+       108.2461,
+       66.6946
+      ],
+      "track_err_mm_rms_mean_per_axis_yxz": [
+       20.0053,
+       5.0376,
+       4.9202
+      ]
+     },
+     "free_out": {
+      "tau_frac_peak_max_per_axis_yxz": [
+       0.1573,
+       0.0,
+       0.0545
+      ],
+      "tau_frac_peak_mean_per_axis_yxz": [
+       0.142,
+       0.0,
+       0.0494
+      ],
+      "tau_frac_rms_mean_per_axis_yxz": [
+       0.0329,
+       0.0,
+       0.0341
+      ],
+      "saturation_fraction_mean_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "saturation_fraction_max_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "trials_with_any_saturation": 0,
+      "track_err_mm_max_per_axis_yxz": [
+       0.3707,
+       0.0,
+       0.0186
+      ],
+      "track_err_mm_rms_mean_per_axis_yxz": [
+       0.0722,
+       0.0,
+       0.0131
+      ]
+     }
+    },
+    "numerics_warnings_trials": 0,
+    "successful_trials_only": {
+     "n": 59,
+     "contact_trials_with_any_saturation": 9,
+     "contact_saturation_fraction_max_per_axis_yxz": [
+      0.0,
+      0.118945,
+      0.096549
+     ],
+     "contact_saturation_fraction_mean_per_axis_yxz": [
+      0.0,
+      0.013528,
+      0.001636
+     ],
+     "free_air_tau_frac_peak_max_yxz": [
+      0.1573,
+      0.0,
+      0.0546
+     ],
+     "contact_track_err_mm_max_per_axis_yxz": [
+      0.4876,
+      1.693,
+      3.5809
+     ],
+     "tray_slip_in_fork_mm_max": {
+      "n": 59,
+      "mean": 0.03154417922808194,
+      "median": 0.0003933443467739451,
+      "min": 0.00013616075685210478,
+      "max": 1.8305931634742765
+     },
+     "kit_displacement_mm": {
+      "n": 59,
+      "mean": 0.3433220338983051,
+      "median": 0.272,
+      "min": 0.037,
+      "max": 0.964
+     },
+     "tray_settle_after_motion_s": {
+      "n": 59,
+      "mean": 1.7763568394002505e-15,
+      "median": 1.7763568394002505e-15,
+      "min": 1.7763568394002505e-15,
+      "max": 1.7763568394002505e-15
+     },
+     "peak_force_fraction_max_v4_metric": {
+      "n": 59,
+      "mean": 0.2931186440677967,
+      "median": 0.135,
+      "min": 0.128,
+      "max": 0.965
+     }
+    }
+   },
+   "optimised": {
+    "n": 100,
+    "successes": 58,
+    "rate": 0.58,
+    "wilson95": [
+     0.4821,
+     0.672
+    ],
+    "failure_modes": {
+     "tray_not_seated": 40,
+     "kit_displaced": 2
+    },
+    "clock_s": [
+     7.473961
+    ],
+    "requirement_met_trials": 58,
+    "timeline_with_hold_s": [
+     8.473961
+    ],
+    "kit_displacement_mm": {
+     "n": 100,
+     "mean": 2.9446,
+     "median": 0.723,
+     "min": 0.001,
+     "max": 148.534
+    },
+    "tray_xy_error_mm_successful": {
+     "n": 58,
+     "mean": 0.6809137931034484,
+     "median": 0.7255,
+     "min": 0.283,
+     "max": 0.81
+    },
+    "lift_mm": {
+     "n": 100,
+     "mean": 13.8623,
+     "median": 12.355,
+     "min": 11.02,
+     "max": 23.13
+    },
+    "peak_force_fraction_max_v4_metric": {
+     "n": 100,
+     "mean": 0.8550900000000002,
+     "median": 0.809,
+     "min": 0.782,
+     "max": 0.981
+    },
+    "tray_slip_in_fork_mm_max": {
+     "n": 100,
+     "mean": 3.5886815181987273,
+     "median": 0.0020714813997794075,
+     "min": 0.0006796476522076981,
+     "max": 38.83712393894642
+    },
+    "tray_settle_after_motion_s": {
+     "n": 100,
+     "mean": 0.0373602032537572,
+     "median": 0.005060203253757223,
+     "min": 0.005060203253757223,
+     "max": 0.8650602032537567
+    },
+    "trials_tray_not_settled_in_hold": 0,
+    "final_slide_error_mm_abs_max": 0.29784,
+    "work_J_mechanical_positive": {
+     "n": 100,
+     "mean": 5.331028543353651,
+     "median": 4.772744461657121,
+     "min": 3.9849640127707264,
+     "max": 15.147816391690617
+    },
+    "phases": {
+     "free_in": {
+      "tau_frac_peak_max_per_axis_yxz": [
+       0.7756,
+       0.0,
+       0.9294
+      ],
+      "tau_frac_peak_mean_per_axis_yxz": [
+       0.7104,
+       0.0,
+       0.8583
+      ],
+      "tau_frac_rms_mean_per_axis_yxz": [
+       0.1894,
+       0.0,
+       0.1742
+      ],
+      "saturation_fraction_mean_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "saturation_fraction_max_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "trials_with_any_saturation": 0,
+      "track_err_mm_max_per_axis_yxz": [
+       0.8624,
+       0.0,
+       0.0107
+      ],
+      "track_err_mm_rms_mean_per_axis_yxz": [
+       0.2626,
+       0.0,
+       0.0057
+      ]
+     },
+     "contact": {
+      "tau_frac_peak_max_per_axis_yxz": [
+       1.0,
+       1.0,
+       1.0
+      ],
+      "tau_frac_peak_mean_per_axis_yxz": [
+       0.5262,
+       0.8342,
+       0.875
+      ],
+      "tau_frac_rms_mean_per_axis_yxz": [
+       0.1791,
+       0.2579,
+       0.1889
+      ],
+      "saturation_fraction_mean_per_axis_yxz": [
+       0.088534,
+       0.126474,
+       0.071971
+      ],
+      "saturation_fraction_max_per_axis_yxz": [
+       0.821068,
+       0.938477,
+       0.680317
+      ],
+      "trials_with_any_saturation": 45,
+      "track_err_mm_max_per_axis_yxz": [
+       192.0248,
+       108.402,
+       66.6878
+      ],
+      "track_err_mm_rms_mean_per_axis_yxz": [
+       15.427,
+       5.6265,
+       3.9634
+      ]
+     },
+     "free_out": {
+      "tau_frac_peak_max_per_axis_yxz": [
+       0.7754,
+       0.0,
+       0.8919
+      ],
+      "tau_frac_peak_mean_per_axis_yxz": [
+       0.7104,
+       0.0,
+       0.8218
+      ],
+      "tau_frac_rms_mean_per_axis_yxz": [
+       0.1079,
+       0.0,
+       0.1116
+      ],
+      "saturation_fraction_mean_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "saturation_fraction_max_per_axis_yxz": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "trials_with_any_saturation": 0,
+      "track_err_mm_max_per_axis_yxz": [
+       0.8623,
+       0.0,
+       0.0213
+      ],
+      "track_err_mm_rms_mean_per_axis_yxz": [
+       0.1529,
+       0.0,
+       0.0156
+      ]
+     }
+    },
+    "numerics_warnings_trials": 0,
+    "successful_trials_only": {
+     "n": 58,
+     "contact_trials_with_any_saturation": 11,
+     "contact_saturation_fraction_max_per_axis_yxz": [
+      0.001879,
+      0.087834,
+      0.044016
+     ],
+     "contact_saturation_fraction_mean_per_axis_yxz": [
+      3.2e-05,
+      0.012521,
+      0.000759
+     ],
+     "free_air_tau_frac_peak_max_yxz": [
+      0.7756,
+      0.0,
+      0.9272
+     ],
+     "contact_track_err_mm_max_per_axis_yxz": [
+      0.7392,
+      1.765,
+      0.5947
+     ],
+     "tray_slip_in_fork_mm_max": {
+      "n": 58,
+      "mean": 0.01448704306369063,
+      "median": 0.0018628733809990747,
+      "min": 0.0006796476522076981,
+      "max": 0.6918118640076371
+     },
+     "kit_displacement_mm": {
+      "n": 58,
+      "mean": 0.5184310344827586,
+      "median": 0.5355000000000001,
+      "min": 0.059,
+      "max": 0.968
+     },
+     "tray_settle_after_motion_s": {
+      "n": 58,
+      "mean": 0.005060203253757223,
+      "median": 0.005060203253757223,
+      "min": 0.005060203253757223,
+      "max": 0.005060203253757223
+     },
+     "peak_force_fraction_max_v4_metric": {
+      "n": 58,
+      "mean": 0.8222068965517242,
+      "median": 0.803,
+      "min": 0.782,
+      "max": 0.964
+     }
+    }
+   }
+  }
+ },
+ "compute_wall_time": {
+  "note": "Simulation wall time is reported separately; it is not the studied planned-task clock.",
+  "trace_reruns_single_process": [
+   {
+    "seed": 9100,
+    "variant": "A",
+    "reproduces_confirmatory_record": {
+     "baseline": {
+      "success_equal": true,
+      "metrics_equal": true,
+      "work_equal": true,
+      "wall_s_single_process_with_trace": 15.12
+     },
+     "optimised": {
+      "success_equal": true,
+      "metrics_equal": true,
+      "work_equal": true,
+      "wall_s_single_process_with_trace": 7.3
+     }
+    }
+   },
+   {
+    "seed": 9101,
+    "variant": "A",
+    "reproduces_confirmatory_record": {
+     "baseline": {
+      "success_equal": true,
+      "metrics_equal": true,
+      "work_equal": true,
+      "wall_s_single_process_with_trace": 11.29
+     },
+     "optimised": {
+      "success_equal": true,
+      "metrics_equal": true,
+      "work_equal": true,
+      "wall_s_single_process_with_trace": 5.1
+     }
+    }
+   }
+  ],
+  "confirmatory_run": {
+   "protocol_path": "evidence/data/v6_1/e2b/protocol/V6_1_E2B_PROTOCOL.json",
+   "protocol_sha256_at_run": "a3e22b68cabf294fcad8b3080eb01bd39d147b011a88f91c5ad2ce097b73f240",
+   "trials": 200,
+   "wall_s": 710,
+   "workers": 4,
+   "threads_per_worker": 1,
+   "nice": 10
+  }
+ },
+ "certificate_statement": {
+  "claim_type": "model-conditional upper and lower bounds on the planned path time; no physical infeasibility claim",
+  "feasible_upper_bound_s": 7.473961,
+  "direction": "the optimised law is a feasible point of the discrete problem, so the model's minimum planned time is <= this value",
+  "continuous_optimum_of_model_s": 7.473751190831366,
+  "speed_cap_lower_bound_s": 6.848749416743445,
+  "relation_to_requirement": "7.474 s < 10.0 s: the requirement is met by the PLAN in this model; whether the plan executes successfully is decided only by the forward simulation (paired_trials)",
+  "not_a_certificate_of": [
+   "hardware performance",
+   "impossibility of anything",
+   "optimality for a different path or a different constraint set"
+  ]
+ },
+ "settling_after_clock_end_supplementary": {
+  "schema": "forge.v6_1.e2b.settle_check/1",
+  "tolerance_mm": 0.05,
+  "hold_appended_s": 0.6,
+  "status": "supplementary, not in the frozen protocol",
+  "rows": [
+   {
+    "law": "baseline",
+    "corner": "nominal",
+    "phase": "free_in (ends at approach)",
+    "planned_end_s": 1.97,
+    "error_at_planned_end_mm": [
+     -0.0,
+     -0.0,
+     -0.0086
+    ],
+    "settle_after_planned_end_s": 0.0,
+    "max_abs_error_after_end_mm": 0.008611593901211578
+   },
+   {
+    "law": "baseline",
+    "corner": "nominal",
+    "phase": "free_out (ends at idle_end = clock end)",
+    "planned_end_s": 6.01,
+    "error_at_planned_end_mm": [
+     0.0143,
+     -0.0,
+     -0.0086
+    ],
+    "settle_after_planned_end_s": 0.0,
+    "max_abs_error_after_end_mm": 0.01433949316620442
+   },
+   {
+    "law": "baseline",
+    "corner": "force0.85_kp0.85",
+    "phase": "free_in (ends at approach)",
+    "planned_end_s": 1.97,
+    "error_at_planned_end_mm": [
+     -0.0,
+     -0.0,
+     -0.0086
+    ],
+    "settle_after_planned_end_s": 0.0,
+    "max_abs_error_after_end_mm": 0.008622852261268299
+   },
+   {
+    "law": "baseline",
+    "corner": "force0.85_kp0.85",
+    "phase": "free_out (ends at idle_end = clock end)",
+    "planned_end_s": 6.01,
+    "error_at_planned_end_mm": [
+     0.0177,
+     -0.0,
+     -0.0086
+    ],
+    "settle_after_planned_end_s": 0.0,
+    "max_abs_error_after_end_mm": 0.017725700511311837
+   },
+   {
+    "law": "optimised",
+    "corner": "nominal",
+    "phase": "free_in (ends at approach)",
+    "planned_end_s": 0.8722704589413748,
+    "error_at_planned_end_mm": [
+     -0.0,
+     -0.0,
+     -0.01
+    ],
+    "settle_after_planned_end_s": 0.0,
+    "max_abs_error_after_end_mm": 0.010126463889592596
+   },
+   {
+    "law": "optimised",
+    "corner": "nominal",
+    "phase": "free_out (ends at idle_end = clock end)",
+    "planned_end_s": 2.546750588252916,
+    "error_at_planned_end_mm": [
+     -0.2376,
+     -0.0,
+     -0.0086
+    ],
+    "settle_after_planned_end_s": 0.0347,
+    "max_abs_error_after_end_mm": 0.2420902152655835
+   },
+   {
+    "law": "optimised",
+    "corner": "force0.85_kp0.85",
+    "phase": "free_in (ends at approach)",
+    "planned_end_s": 0.8722704589413748,
+    "error_at_planned_end_mm": [
+     -0.0,
+     -0.0,
+     -0.0102
+    ],
+    "settle_after_planned_end_s": 0.0,
+    "max_abs_error_after_end_mm": 0.01040054677533403
+   },
+   {
+    "law": "optimised",
+    "corner": "force0.85_kp0.85",
+    "phase": "free_out (ends at idle_end = clock end)",
+    "planned_end_s": 2.546750588252916,
+    "error_at_planned_end_mm": [
+     -0.286,
+     -0.0,
+     -0.0086
+    ],
+    "settle_after_planned_end_s": 0.0657,
+    "max_abs_error_after_end_mm": 0.2962395182436184
+   }
+  ]
+ },
+ "limitations": [
+  "Simulation only (MuJoCo rigid bodies with soft contacts); no hardware run; open-loop steppers idealised as position servos with a constant torque limit; step loss, resonance, belt stretch and backlash are not modelled.",
+  "The torque limit in the simulation is speed-independent (the pull-out torque at the declared top speed); the plan keeps speed at or below 0.9 of that top speed, so the real curve's torque is at least the modelled limit there.",
+  "The 10 s clock is the PLANNED duration as in V4 (not an observed completion time) and excludes the 1.0 s simulated hold; the provenance of the 10 s target is ambiguous in the record (wall time vs simulated time, see clock.provenance_caveat).",
+  "Planned torque budget 0.5 of the record is a declared choice; the measured peaks include the position-loop transient of the bang-coast-bang law and are reported per phase.",
+  "The tray non-slip constraint uses mu_min = 0.3 with a safety factor 2; it is conservative for the Y carry only (the only horizontal motion while the tray is carried); seating on the pins and insertion contacts are not constrained by the formulation and are judged only by the forward simulation.",
+  "Plant margins (+5 % inertia and damping, +10 % friction) cover the declared extra perturbation range; the confirmatory draws stay inside it.",
+  "Variants A and B of one seed share one disturbance draw; they are analysed as clusters.",
+  "The path is fixed (the V4 nominal waypoints); a different path or a non-stop corner blend could be faster and is not studied.",
+  "Mechanical positive work (work_J) is a proxy, not electrical energy or efficiency; driver and motor losses are not modelled.",
+  "Unmodelled hardware items of V4 remain: Z holding when unpowered, driver temperature in the closed box, belt efficiency, LM8UU load rating.",
+  "The V4 runner stitches three phases: the contact phase starts from the free-air end position with zero velocity, and the final free-air phase starts at the commanded withdraw pose; this applies to both arms (residual lag at those boundaries is at most about 0.01 mm on Z for the optimised law).",
+  "The clock ends when the reference ends: the optimised law leaves 0.24 to 0.30 mm of Y lag at the end of idle_end, which settles to 0.05 mm within 0.035 to 0.066 s (supplementary check, outside the frozen protocol); the baseline leaves under 0.02 mm.",
+  "This confirmatory cohort (new seeds 9100..9149 plus the declared extra plant perturbation) is a distinct cohort from the V4 qualification (seeds 1000..1029, 20/30 and 22/30); its baseline success (27/50 A, 32/50 B) is not a re-measurement of the V4 rate.",
+  "The failure mechanism in both arms is dominantly tray_not_seated (the fork's capture of the dock error, a geometric limit documented in V4); the time law does not address it.",
+  "Solver accuracy: Clarabel tolerances 1e-8; computed times carry solver-level error of about 1e-5 relative; ECOS cross-check status often 'optimal_inaccurate' (recorded)."
+ ],
+ "not_claimed": [
+  "physical (hardware) performance",
+  "that the 10 s requirement is physically impossible or possible on real hardware",
+  "electrical efficiency (work_J is mechanical)",
+  "a new feedback controller (the controller is unchanged; only the reference time law changes)",
+  "that the optimised law is optimal for the full task (only for the fixed path under the declared constraint set)",
+  "statistical independence of the A and B pairs of one seed (they share one draw: clustered bootstrap)",
+  "that peak torque below the record means the real stepper would not lose steps (open-loop stepper, step loss is not modelled)"
+ ],
+ "files": {
+  "protocol": "evidence/data/v6_1/e2b/protocol/V6_1_E2B_PROTOCOL.json",
+  "trials": "evidence/data/v6_1/e2b/trials_confirmatory.jsonl",
+  "trials_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926",
+  "formulation": "evidence/data/v6_1/e2b/formulation/formulation.json"
+ },
+ "answer": {
+  "clock_s": {
+   "baseline": 21.76,
+   "optimised": 7.473961,
+   "requirement": 10.0,
+   "met_by_plan": true
+  },
+  "success": {
+   "baseline": "59/100",
+   "optimised": "58/100"
+  },
+  "primary_paired_difference": {
+   "estimate": -0.01,
+   "ci95": [
+    -0.07,
+    0.04
+   ],
+   "decision": "NON_INFERIOR"
+  },
+  "requirement_met_trials (success and clock <= 10 s)": {
+   "baseline": "0/100",
+   "optimised": "58/100"
+  },
+  "scope": "simulation of the exported model only; conditional on the declared plant, limits and envelope"
+ }
+}

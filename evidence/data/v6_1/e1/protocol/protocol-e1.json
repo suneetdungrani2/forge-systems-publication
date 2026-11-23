@@ -1,0 +1,1012 @@
+{
+  "analysis": "task-cluster percentile bootstrap (9999 resamples, seed 61101) of the A2-A1 task-level difference; exact per-arm counts and per-family tables; few-cluster limitations retained; a zero observed difference is not evidence of equivalence",
+  "arms": {
+    "A0": "shared starting-design build receipt and common CAD; per-revision compile/CAD status only",
+    "A1": "A0 plus one protected aggregate development verdict PASS/FAIL/UNKNOWN per reply",
+    "A2": "A1 plus typed development witnesses: per-check details and per-draw physics measurements with units"
+  },
+  "blocks": [
+    {
+      "block_id": "e1-t07-r2",
+      "episodes": [
+        "e1-t07-r2-a0",
+        "e1-t07-r2-a1",
+        "e1-t07-r2-a2"
+      ],
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "block_id": "e1-t08-r1",
+      "episodes": [
+        "e1-t08-r1-a0",
+        "e1-t08-r1-a1",
+        "e1-t08-r1-a2"
+      ],
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "block_id": "e1-t07-r1",
+      "episodes": [
+        "e1-t07-r1-a0",
+        "e1-t07-r1-a1",
+        "e1-t07-r1-a2"
+      ],
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "block_id": "e1-t05-r1",
+      "episodes": [
+        "e1-t05-r1-a0",
+        "e1-t05-r1-a1",
+        "e1-t05-r1-a2"
+      ],
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "block_id": "e1-t05-r2",
+      "episodes": [
+        "e1-t05-r2-a0",
+        "e1-t05-r2-a1",
+        "e1-t05-r2-a2"
+      ],
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "block_id": "e1-t04-r2",
+      "episodes": [
+        "e1-t04-r2-a0",
+        "e1-t04-r2-a1",
+        "e1-t04-r2-a2"
+      ],
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "block_id": "e1-t06-r2",
+      "episodes": [
+        "e1-t06-r2-a0",
+        "e1-t06-r2-a1",
+        "e1-t06-r2-a2"
+      ],
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "block_id": "e1-t01-r1",
+      "episodes": [
+        "e1-t01-r1-a0",
+        "e1-t01-r1-a1",
+        "e1-t01-r1-a2"
+      ],
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "block_id": "e1-t03-r2",
+      "episodes": [
+        "e1-t03-r2-a0",
+        "e1-t03-r2-a1",
+        "e1-t03-r2-a2"
+      ],
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "block_id": "e1-t00-r2",
+      "episodes": [
+        "e1-t00-r2-a0",
+        "e1-t00-r2-a1",
+        "e1-t00-r2-a2"
+      ],
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "block_id": "e1-t06-r1",
+      "episodes": [
+        "e1-t06-r1-a0",
+        "e1-t06-r1-a1",
+        "e1-t06-r1-a2"
+      ],
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "block_id": "e1-t01-r2",
+      "episodes": [
+        "e1-t01-r2-a0",
+        "e1-t01-r2-a1",
+        "e1-t01-r2-a2"
+      ],
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "block_id": "e1-t02-r1",
+      "episodes": [
+        "e1-t02-r1-a0",
+        "e1-t02-r1-a1",
+        "e1-t02-r1-a2"
+      ],
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "block_id": "e1-t04-r1",
+      "episodes": [
+        "e1-t04-r1-a0",
+        "e1-t04-r1-a1",
+        "e1-t04-r1-a2"
+      ],
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "block_id": "e1-t03-r1",
+      "episodes": [
+        "e1-t03-r1-a0",
+        "e1-t03-r1-a1",
+        "e1-t03-r1-a2"
+      ],
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "block_id": "e1-t08-r2",
+      "episodes": [
+        "e1-t08-r2-a0",
+        "e1-t08-r2-a1",
+        "e1-t08-r2-a2"
+      ],
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "block_id": "e1-t02-r2",
+      "episodes": [
+        "e1-t02-r2-a0",
+        "e1-t02-r2-a1",
+        "e1-t02-r2-a2"
+      ],
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "block_id": "e1-t00-r1",
+      "episodes": [
+        "e1-t00-r1-a0",
+        "e1-t00-r1-a1",
+        "e1-t00-r1-a2"
+      ],
+      "task_id": "arm6-sort_cube_and_cylinder"
+    }
+  ],
+  "created_at": "2026-11-18T03:09:11.849018+00:00",
+  "development_draws": [
+    {
+      "damping_scale": 1.0,
+      "friction_scale": 1.0,
+      "id": "dev-1",
+      "mass_scale": 0.95
+    },
+    {
+      "damping_scale": 1.05,
+      "friction_scale": 0.95,
+      "id": "dev-2",
+      "mass_scale": 1.05
+    }
+  ],
+  "disturbance_assumptions": "explicit +/-5% modeled robot mass/damping and +/-10% contact friction multipliers; engineering assumptions, not calibrated physical uncertainty",
+  "episode_count": 54,
+  "episodes": [
+    {
+      "arm": "A0",
+      "block": "e1-t00-r1",
+      "episode_id": "e1-t00-r1-a0",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t00-r1",
+      "episode_id": "e1-t00-r1-a1",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t00-r1",
+      "episode_id": "e1-t00-r1-a2",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t00-r2",
+      "episode_id": "e1-t00-r2-a0",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t00-r2",
+      "episode_id": "e1-t00-r2-a1",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t00-r2",
+      "episode_id": "e1-t00-r2-a2",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t01-r1",
+      "episode_id": "e1-t01-r1-a0",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t01-r1",
+      "episode_id": "e1-t01-r1-a1",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t01-r1",
+      "episode_id": "e1-t01-r1-a2",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t01-r2",
+      "episode_id": "e1-t01-r2-a0",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t01-r2",
+      "episode_id": "e1-t01-r2-a1",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t01-r2",
+      "episode_id": "e1-t01-r2-a2",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t02-r1",
+      "episode_id": "e1-t02-r1-a0",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t02-r1",
+      "episode_id": "e1-t02-r1-a1",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t02-r1",
+      "episode_id": "e1-t02-r1-a2",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t02-r2",
+      "episode_id": "e1-t02-r2-a0",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t02-r2",
+      "episode_id": "e1-t02-r2-a1",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t02-r2",
+      "episode_id": "e1-t02-r2-a2",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t03-r1",
+      "episode_id": "e1-t03-r1-a0",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t03-r1",
+      "episode_id": "e1-t03-r1-a1",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t03-r1",
+      "episode_id": "e1-t03-r1-a2",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t03-r2",
+      "episode_id": "e1-t03-r2-a0",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t03-r2",
+      "episode_id": "e1-t03-r2-a1",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t03-r2",
+      "episode_id": "e1-t03-r2-a2",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t04-r1",
+      "episode_id": "e1-t04-r1-a0",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t04-r1",
+      "episode_id": "e1-t04-r1-a1",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t04-r1",
+      "episode_id": "e1-t04-r1-a2",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t04-r2",
+      "episode_id": "e1-t04-r2-a0",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t04-r2",
+      "episode_id": "e1-t04-r2-a1",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t04-r2",
+      "episode_id": "e1-t04-r2-a2",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t05-r1",
+      "episode_id": "e1-t05-r1-a0",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t05-r1",
+      "episode_id": "e1-t05-r1-a1",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t05-r1",
+      "episode_id": "e1-t05-r1-a2",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t05-r2",
+      "episode_id": "e1-t05-r2-a0",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t05-r2",
+      "episode_id": "e1-t05-r2-a1",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t05-r2",
+      "episode_id": "e1-t05-r2-a2",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t06-r1",
+      "episode_id": "e1-t06-r1-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t06-r1",
+      "episode_id": "e1-t06-r1-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t06-r1",
+      "episode_id": "e1-t06-r1-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t06-r2",
+      "episode_id": "e1-t06-r2-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t06-r2",
+      "episode_id": "e1-t06-r2-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t06-r2",
+      "episode_id": "e1-t06-r2-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t07-r1",
+      "episode_id": "e1-t07-r1-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t07-r1",
+      "episode_id": "e1-t07-r1-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t07-r1",
+      "episode_id": "e1-t07-r1-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t07-r2",
+      "episode_id": "e1-t07-r2-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t07-r2",
+      "episode_id": "e1-t07-r2-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t07-r2",
+      "episode_id": "e1-t07-r2-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t08-r1",
+      "episode_id": "e1-t08-r1-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t08-r1",
+      "episode_id": "e1-t08-r1-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t08-r1",
+      "episode_id": "e1-t08-r1-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A0",
+      "block": "e1-t08-r2",
+      "episode_id": "e1-t08-r2-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A1",
+      "block": "e1-t08-r2",
+      "episode_id": "e1-t08-r2-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A2",
+      "block": "e1-t08-r2",
+      "episode_id": "e1-t08-r2-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-tray_transfer"
+    }
+  ],
+  "exclusions": "none planned; every planned episode stays in its denominator",
+  "execution": "blocks in the frozen shuffled order; the three arms of one (task, session) block start together and run concurrently under one host admission so arms share time-of-day, provider and host load",
+  "family_grouping": "arm6 and arm6_cell share the same six-axis arm template lineage; the three gantry tasks share one sourced-drive gantry; nine task clusters are not nine independent robots",
+  "heldout_draws": [
+    {
+      "damping_scale": 0.9699011643509867,
+      "friction_scale": 1.097971441712822,
+      "id": "heldout-6110001",
+      "mass_scale": 1.0162574506149584
+    },
+    {
+      "damping_scale": 0.9803628922721853,
+      "friction_scale": 0.9925776805048472,
+      "id": "heldout-6110002",
+      "mass_scale": 1.0301190807584826
+    },
+    {
+      "damping_scale": 1.009825271937398,
+      "friction_scale": 0.9587458253732459,
+      "id": "heldout-6110003",
+      "mass_scale": 1.0227468341112558
+    },
+    {
+      "damping_scale": 0.9952132255535276,
+      "friction_scale": 1.0907440301278375,
+      "id": "heldout-6110004",
+      "mass_scale": 0.961289461480197
+    },
+    {
+      "damping_scale": 1.0095325504171575,
+      "friction_scale": 0.9658278735033091,
+      "id": "heldout-6110005",
+      "mass_scale": 0.9858631237581006
+    }
+  ],
+  "heldout_draws_sealed": {
+    "count": 5,
+    "ranges": {
+      "damping_scale": [
+        0.95,
+        1.05
+      ],
+      "friction_scale": [
+        0.9,
+        1.1
+      ],
+      "mass_scale": [
+        0.95,
+        1.05
+      ]
+    },
+    "seeds": [
+      6110001,
+      6110002,
+      6110003,
+      6110004,
+      6110005
+    ],
+    "sha256": "d2e82ede986c022a8d80dd5ad4f4ead884489a08b088548db580fe5a3f727a44"
+  },
+  "label": "e1",
+  "model": "gpt-6.1-sol",
+  "model_weights_version": "not exposed",
+  "outcome_definitions": {
+    "CRASH": "episode controller or provider loss before episode closure that left no selectable candidate for reasons other than a voluntary stop; reported separately from NO_CANDIDATE",
+    "FAIL": "any eligible check or held-out draw FAIL, or no build-valid submitted candidate (NO_CANDIDATE)",
+    "NO_CANDIDATE": "provider finished without any build-valid submission (counted as non-PASS in the primary)",
+    "PASS": "all eligible geometry checks PASS and all 5 held-out draws PASS with confirmed perturbations",
+    "UNKNOWN": "build-valid selected candidate whose evaluator observation is incomplete (stage timeout/crash or UNKNOWN check) without any FAIL",
+    "completed_repair_transition": "selected ordinal >= 2 whose geometry or case hash differs from ordinal 1",
+    "regression": "a candidate with development PASS followed by a later selected candidate with held-out FAIL",
+    "starting_design_repair": "held-out PASS of a selected candidate that differs (geometry or case hash) from c0"
+  },
+  "pilot_excluded_from_confirmatory": true,
+  "pilot_receipts": {
+    "budget_decision": "wall 1800 s and request cap 900 s retained: pilot3 episodes 33-40 s on the timing-only family; pre-study arm revision worker 77.5 s (cache miss) / 15.8 s (cache hit); arm episodes with up to 4 revisions fit with margin; no confirmatory outcome inspected",
+    "pilot1": {
+      "outcome": "never dispatched because a storage correction was pending; excluded",
+      "protocol_sha256": "1560408fe74ebdaabd9261f08c88d2a97545031fde317ae0bb38d6d45b412661"
+    },
+    "pilot2": {
+      "outcome": "PLATFORM_FAILURE: a dependency import was blocked by environment permissions; all revisions reported compile FAIL in about 1 s; excluded from analysis.",
+      "protocol_sha256": "b3824ed1691c3123fce8687fd0ebbd5c3b6d77d2f2a45f60e4475cbba920f993"
+    },
+    "pilot3": [
+      {
+        "arm": "A0",
+        "end_reason": "PROVIDER_FINISHED",
+        "episode_id": "pilot3-t00-r1-a0",
+        "episode_sha256": "98057f3acd3beb07739ecef0e717f38b7eb7971484cf9673cf85e45181bb41f2",
+        "graded_requests": [
+          {
+            "cap_s": 900,
+            "ordinal": 1,
+            "request_seen_s": 18.218,
+            "worker_elapsed_s": 11.834,
+            "worker_exit_code": 0
+          }
+        ],
+        "provider_usage": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 164992,
+            "input_tokens": 183208,
+            "output_tokens": 650,
+            "reasoning_output_tokens": 109
+          }
+        ],
+        "selected_ordinal": 1,
+        "wall_s": 39.862
+      },
+      {
+        "arm": "A1",
+        "end_reason": "PROVIDER_FINISHED",
+        "episode_id": "pilot3-t00-r1-a1",
+        "episode_sha256": "e610ea3f849004c211825430af432d846798a080997f3970ba33c433392d582a",
+        "graded_requests": [
+          {
+            "cap_s": 900,
+            "ordinal": 1,
+            "request_seen_s": 12.613,
+            "worker_elapsed_s": 11.838,
+            "worker_exit_code": 0
+          }
+        ],
+        "provider_usage": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 121600,
+            "input_tokens": 160681,
+            "output_tokens": 665,
+            "reasoning_output_tokens": 104
+          }
+        ],
+        "selected_ordinal": 1,
+        "wall_s": 33.459
+      },
+      {
+        "arm": "A2",
+        "end_reason": "PROVIDER_FINISHED",
+        "episode_id": "pilot3-t00-r1-a2",
+        "episode_sha256": "a005eef8fd99c375bcc9f06ef3a84ac462a22ae65d96a4fce37f85b8eb93f5ca",
+        "graded_requests": [
+          {
+            "cap_s": 900,
+            "ordinal": 1,
+            "request_seen_s": 20.82,
+            "worker_elapsed_s": 11.937,
+            "worker_exit_code": 0
+          }
+        ],
+        "provider_usage": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 125824,
+            "input_tokens": 167249,
+            "output_tokens": 682,
+            "reasoning_output_tokens": 107
+          }
+        ],
+        "selected_ordinal": 1,
+        "wall_s": 37.162
+      }
+    ],
+    "pilot3_protocol_sha256": "7eed02a4c58e76bfab0b3355b7f0d3784ef8a1a31664404182a5a96d58448c70",
+    "schema": "forge.v6_1-e1-pilot-summary/1",
+    "task": "gantry_v4b-inspection_position_b (disjoint pilot split)"
+  },
+  "preparer_sha256": "e2e6b9f1b9e5b0e9c74d789962e0211bcc09ff459d31fd316f20a8991097a3b7",
+  "primary_contrast": "A2 minus A1 held-out success fraction; task-level mean of the two sessions; 9 task clusters",
+  "primary_endpoint": "selected artifact satisfies every frozen eligible development geometry check and all five held-out physics draws within unchanged task, actuator and observation-window constraints",
+  "provider_auto_compact_trigger_tokens": 60000,
+  "provider_context_window_tokens": 65536,
+  "provider_request_limits": "identical runtime/model configuration, revision budget and wall ceiling for all arms; token usage recorded where emitted; missing usage is unknown, never zero",
+  "provider_seed": "not exposed; independent ephemeral sessions",
+  "reasoning_effort": "medium",
+  "registration": "privately prespecified before any V6.1 confirmatory episode; not publicly registered",
+  "request_cap_s": 900,
+  "revision_budget": 4,
+  "schema": "forge.v6_1-e1-protocol/1",
+  "secondary": [
+    "A2 minus A0 and A1 minus A0 held-out success fraction",
+    "completed repair transitions: an episode whose selected candidate has ordinal >= 2 and differs substantively (geometry or case hash) from ordinal 1",
+    "repairs of the shared failing starting design: held-out PASS of a selected candidate whose geometry or case hash differs from c0 (c0 is a development FAIL for every task)",
+    "first-versus-final: held-out outcome of the first build-valid submitted candidate versus the selected candidate, both scored only after the cohort seal",
+    "time to first build-valid revision and to first development PASS reply (where the arm sees it)",
+    "crash/unknown/no-candidate rates, regressions (development PASS followed by a later FAIL)",
+    "continuous: V(c)=||max(0,g(c))||_2 over the frozen constraint vector; rho_k=1-V(c_k)/V(c0) only when V(c0)>0 and the assessed component sets are identical; logged for all arms, never shown to A0/A1"
+  ],
+  "selection": "last task-preserving build-valid candidate (ordinal 1..4) with a completed trusted artifact receipt before episode closure; never the best held-out or development score",
+  "separation": "candidate namespace contains only its own workspace, common CAD tooling and the submit client; private records, evaluator source, other episodes and held-out draws are absent; held-out draws are used only after the cohort seal by the separate scorer",
+  "source": {
+    "commit": "ebe03b2f212eb0297b02413e1ac867bb07acab8d",
+    "manifest_sha256": "d6c0349aa0607bf00e1edd8cd6cfe1179ef66a348f41fcdcb6ee7d84d7f3894e"
+  },
+  "split": "confirmatory",
+  "stage_deadlines_s": {
+    "access": 120.0,
+    "assembly_ir": 60.0,
+    "compile": 180.0,
+    "electrical": 30.0,
+    "interfaces": 60.0,
+    "physics_draw": 120.0,
+    "static": 120.0,
+    "sweep": 300.0
+  },
+  "starting_design": "each task's c0 was built and evaluated once by the trusted worker before any episode; every arm receives identical rev-0000 CAD and an arm-projected reply-0000; c0 is never selectable; its compute is reported separately and is not part of any episode budget",
+  "study_id": "FORGE-SYSTEMS-V6.1-E1",
+  "task_manifest_sha256": "61e27f14046ebe6c8827e19f439287310650df53934b74cb575fe6ed18f3ab72",
+  "tasks": [
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "0c2da550b683080192d503c83941a31e0cba6f5a11e4c4231f35fef16d2cfc94",
+      "case_id": "sort_cube_and_cylinder",
+      "diagnostic_checks": [
+        "assembly_ir",
+        "electrical"
+      ],
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "sweep"
+      ],
+      "family": "arm6",
+      "protected_sha256": "1d69abb8465266236a209c51466258daf14f9044eeacbbdd1895bd51482d8ba3",
+      "starting_params": {
+        "l1": 100.0,
+        "l2": 90.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "2071f90f4c5eea599739052e0b2551f1846f6e6ecb4490892df63d8a9fc89b4a",
+      "case_id": "sort_heavy_shifted",
+      "diagnostic_checks": [
+        "assembly_ir",
+        "electrical"
+      ],
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "sweep"
+      ],
+      "family": "arm6",
+      "protected_sha256": "055121f5caf7648c01334979a9f521e5ac7ddd82bfeb6e51d5022e1ea659a92a",
+      "starting_params": {
+        "l1": 100.0,
+        "l2": 90.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "e7bec8236b5e633b9ffa04fabba8f72a0477c31d1029f9c9f8527c8a6f2c47fa",
+      "case_id": "sort_shifted_fixture",
+      "diagnostic_checks": [
+        "assembly_ir",
+        "electrical"
+      ],
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "sweep"
+      ],
+      "family": "arm6",
+      "protected_sha256": "f7af30d920c0610fdccb7d061341245273a87b677e89da38cd09c34a31551af2",
+      "starting_params": {
+        "l1": 100.0,
+        "l2": 90.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "697b52dffb7290f87aa74ee92313d2202d943c5dea8ee4170ec12bda71fc70eb",
+      "case_id": "seat_housing_deep",
+      "diagnostic_checks": [
+        "assembly_ir",
+        "electrical"
+      ],
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "protected_sha256": "d1cf2feacb50455e0aa9f903687622d1e74bcbfa32bd6a03337f211019701aa3",
+      "starting_params": {
+        "l1": 125.0,
+        "l2": 120.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "3826ee48054d7f2b949f01682348faf008c105821401fdac12fc58e37900a706",
+      "case_id": "seat_housing_shallow",
+      "diagnostic_checks": [
+        "assembly_ir",
+        "electrical"
+      ],
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "protected_sha256": "59b41247b20db8e1f7e71602f398cfe1d328c0f55346a64d1d7991b252542e88",
+      "starting_params": {
+        "l1": 125.0,
+        "l2": 120.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "c82e4851744530b6002cf69ea69350fdd73800fcab90cf3fcaeba2af53bc2b7c",
+      "case_id": "set_insert_proxy",
+      "diagnostic_checks": [
+        "assembly_ir",
+        "electrical"
+      ],
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "protected_sha256": "575a4980b276676659c7531b121bba9ffebbb61081627f632ea5b2f525d70419",
+      "starting_params": {
+        "l1": 125.0,
+        "l2": 120.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "fbf567160da4e741449c4d60562ee1861085124a79d806a8598552e9afff3a04",
+      "case_id": "inspection_position_a",
+      "diagnostic_checks": [],
+      "eligible_checks": [],
+      "family": "gantry_v4b",
+      "protected_sha256": "33f382373e45d51a6b01bd1b98ec329a055b8512e7ba2107305fae111f5f614f",
+      "starting_params": {
+        "time_scale": 0.5
+      },
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "d07685d0db2be9ae5d0b4c81b3a9bebe1a1bd927d63915d6d91c74939fa7e33e",
+      "case_id": "traverse_full_volume",
+      "diagnostic_checks": [],
+      "eligible_checks": [],
+      "family": "gantry_v4b",
+      "protected_sha256": "a28ed5cefd98fb81b665ebce887304215c9e0a63d55e70dc172264f3dd419eb2",
+      "starting_params": {
+        "time_scale": 0.5
+      },
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "baseline_development_status": "FAIL",
+      "baseline_sha256": "e3c4cb28b149bfe4659cf56bf8e8c3da4d6f68095d49997d90f1807859cea631",
+      "case_id": "tray_transfer",
+      "diagnostic_checks": [],
+      "eligible_checks": [],
+      "family": "gantry_v4b",
+      "protected_sha256": "0381c38f11cbe1c1aac2d43dd73c9362ff54b231a2f1444b2119ea73340f0478",
+      "starting_params": {
+        "time_scale": 0.5
+      },
+      "task_id": "gantry_v4b-tray_transfer"
+    }
+  ],
+  "wall_budget_s": 1800
+}

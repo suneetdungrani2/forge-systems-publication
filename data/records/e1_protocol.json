@@ -1,0 +1,2682 @@
+{
+  "analysis": "A2-A1 task-level mean of two session outcomes; task-cluster percentile bootstrap, 9999 resamples, fixed seed9999; few-cluster limitations retained; A0 and first/final contrasts secondary",
+  "budget_pilot": {
+    "complete_cost_candidate_ordinal": 1,
+    "episode_id": "pilot-04-t00-r1-a2",
+    "episode_sha256": "8fedbf45d96dcc97334981776e1ac6c16b1bd574890e4393e32d7c609847d057",
+    "excluded_from_confirmatory": true,
+    "graded_revisions": 1,
+    "protocol_sha256": "22e000a3d7f4b365bb43ca99930b7d39db4e78aa5e075f6e42b3f9ea4ec6350f",
+    "provider_accounting": {
+      "event_types": {
+        "item.completed": 5,
+        "item.started": 3,
+        "thread.started": 1,
+        "turn.completed": 1,
+        "turn.started": 1
+      },
+      "usage": [
+        {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 70272,
+          "input_tokens": 83071,
+          "output_tokens": 351,
+          "reasoning_output_tokens": 11
+        }
+      ]
+    },
+    "selected_build_present": true,
+    "selected_tier": 54,
+    "selection_basis": "9 supported tasks, 2 independent sessions per arm; total fixed-wall ceiling 3.6 hours plus heldout scoring fits the authorized study window with integration reserve; no confirmatory outcomes inspected",
+    "wall_s": 23.42015978499694
+  },
+  "created_at": "2026-11-15T22:08:04.523850+00:00",
+  "development_draws": [
+    {
+      "damping_scale": 1.0,
+      "friction_scale": 1.0,
+      "id": "dev-1",
+      "mass_scale": 0.95
+    },
+    {
+      "damping_scale": 1.05,
+      "friction_scale": 0.95,
+      "id": "dev-2",
+      "mass_scale": 1.05
+    }
+  ],
+  "disturbance_assumptions": "explicit +/-5% modeled robot mass/damping and +/-10% contact-friction multipliers; engineering assumptions, not calibrated physical uncertainties",
+  "endpoint": "selected artifact satisfies the same frozen eligible geometry checks and all five heldout physics cases within unchanged task, actuator and observation-window constraints",
+  "episode_count": 54,
+  "episodes": [
+    {
+      "arm": "A1",
+      "episode_id": "e1-t05-r1-a1",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t05-r1-a2",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t05-r1-a0",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t02-r2-a1",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t02-r2-a2",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t02-r2-a0",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t04-r2-a1",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t04-r2-a0",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t04-r2-a2",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t03-r1-a2",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t03-r1-a0",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t03-r1-a1",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t07-r2-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t07-r2-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t07-r2-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t00-r2-a2",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t00-r2-a0",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t00-r2-a1",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t06-r1-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t06-r1-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t06-r1-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t04-r1-a0",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t04-r1-a2",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t04-r1-a1",
+      "family": "arm6_cell",
+      "repeat_id": "1",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t08-r2-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t08-r2-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t08-r2-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t07-r1-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t07-r1-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t07-r1-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t03-r2-a2",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t03-r2-a1",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t03-r2-a0",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t05-r2-a1",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t05-r2-a0",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t05-r2-a2",
+      "family": "arm6_cell",
+      "repeat_id": "2",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t06-r2-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t06-r2-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t06-r2-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "2",
+      "task_id": "gantry_v4b-inspection_position_a"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t01-r1-a2",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t01-r1-a1",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t01-r1-a0",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t08-r1-a1",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t08-r1-a0",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t08-r1-a2",
+      "family": "gantry_v4b",
+      "repeat_id": "1",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t00-r1-a2",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t00-r1-a0",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t00-r1-a1",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t01-r2-a2",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t01-r2-a1",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t01-r2-a0",
+      "family": "arm6",
+      "repeat_id": "2",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "arm": "A2",
+      "episode_id": "e1-t02-r1-a2",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A1",
+      "episode_id": "e1-t02-r1-a1",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "arm": "A0",
+      "episode_id": "e1-t02-r1-a0",
+      "family": "arm6",
+      "repeat_id": "1",
+      "task_id": "arm6-sort_shifted_fixture"
+    }
+  ],
+  "family_grouping": "near-duplicate family templates share structural lineage; nine task clusters do not represent nine independently invented robot morphologies",
+  "gantry_geometry_scope": "fixed sourced-drive geometry is not recomputed by E1 geometry gates because timing is the only admitted candidate variable and its geometry endpoint is empty; full common CAD inspection and unchanged task/actuator physics remain available",
+  "heldout_draws": [
+    {
+      "damping_scale": 0.9534355420142671,
+      "friction_scale": 0.9129586381284353,
+      "id": "heldout-640001",
+      "mass_scale": 0.9710611218888778
+    },
+    {
+      "damping_scale": 0.9843922036484573,
+      "friction_scale": 0.9504593427296163,
+      "id": "heldout-640002",
+      "mass_scale": 1.039593782955726
+    },
+    {
+      "damping_scale": 0.9681040482748521,
+      "friction_scale": 0.9000058857503791,
+      "id": "heldout-640003",
+      "mass_scale": 1.034630082628498
+    },
+    {
+      "damping_scale": 0.9576451528164628,
+      "friction_scale": 1.018607476195213,
+      "id": "heldout-640004",
+      "mass_scale": 0.9726433192662712
+    },
+    {
+      "damping_scale": 1.0269072063934592,
+      "friction_scale": 0.9803207658165786,
+      "id": "heldout-640005",
+      "mass_scale": 1.0170774028012997
+    }
+  ],
+  "model": "gpt-6.1-sol",
+  "model_weights_version": "not exposed",
+  "outcomes": "PASS/FAIL/UNKNOWN/CRASH all retained in planned episode denominator; no build-valid candidate is FAIL, unavailable evaluator observation UNKNOWN, execution loss CRASH",
+  "pilot_excluded_from_confirmatory": true,
+  "pilot_history": [
+    {
+      "complete_cost_candidate_ordinal": null,
+      "episode_id": "pilot-t00-r1-a2",
+      "episode_sha256": "ae19beaafd59a02175069eb30b10ce3e27e1d4e3c5b986f4e43ff05ad8ded899",
+      "excluded_from_confirmatory": true,
+      "graded_revisions": 0,
+      "protocol_sha256": "e6296099d9785eff9bb9364f1e8ed1a0fdf11d5037f3630f788c6b6304fe63df",
+      "provider_accounting": {
+        "event_types": {
+          "item.completed": 8,
+          "item.started": 5,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "usage": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 82816,
+            "input_tokens": 94184,
+            "output_tokens": 561,
+            "reasoning_output_tokens": 123
+          }
+        ]
+      },
+      "selected_build_present": false,
+      "wall_s": 24.222810724000738
+    },
+    {
+      "complete_cost_candidate_ordinal": null,
+      "episode_id": "pilot-02-t00-r1-a2",
+      "episode_sha256": "059955d982530000882e7c7e8eaa91cc50dc2b8360a5461779d70b3e30c27e3b",
+      "excluded_from_confirmatory": true,
+      "graded_revisions": 4,
+      "protocol_sha256": "6fc10a6f2c6a932667360a8d9e87b839f06020643db2ccf590d626317d715822",
+      "provider_accounting": {
+        "event_types": {
+          "item.completed": 11,
+          "item.started": 7,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "usage": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 175104,
+            "input_tokens": 181084,
+            "output_tokens": 1168,
+            "reasoning_output_tokens": 226
+          }
+        ]
+      },
+      "selected_build_present": false,
+      "wall_s": 47.3303002850007
+    },
+    {
+      "complete_cost_candidate_ordinal": null,
+      "episode_id": "pilot-03-t00-r1-a2",
+      "episode_sha256": "ab82a1d2e852a09d59ad8277d105092a876c3080da5077b54da1d06f0137f6bd",
+      "excluded_from_confirmatory": true,
+      "graded_revisions": 1,
+      "protocol_sha256": "a7d03cabfabb65d2b1a29e17b7d4a190a717d96c204f85e8de44e2f5db2cc6b5",
+      "provider_accounting": {
+        "event_types": {
+          "item.completed": 5,
+          "item.started": 4,
+          "thread.started": 1,
+          "turn.started": 1
+        },
+        "usage": []
+      },
+      "selected_build_present": false,
+      "wall_s": 135.0281082079964
+    },
+    {
+      "complete_cost_candidate_ordinal": 1,
+      "episode_id": "pilot-04-t00-r1-a2",
+      "episode_sha256": "8fedbf45d96dcc97334981776e1ac6c16b1bd574890e4393e32d7c609847d057",
+      "excluded_from_confirmatory": true,
+      "graded_revisions": 1,
+      "protocol_sha256": "22e000a3d7f4b365bb43ca99930b7d39db4e78aa5e075f6e42b3f9ea4ec6350f",
+      "provider_accounting": {
+        "event_types": {
+          "item.completed": 5,
+          "item.started": 3,
+          "thread.started": 1,
+          "turn.completed": 1,
+          "turn.started": 1
+        },
+        "usage": [
+          {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 70272,
+            "input_tokens": 83071,
+            "output_tokens": 351,
+            "reasoning_output_tokens": 11
+          }
+        ]
+      },
+      "selected_build_present": true,
+      "wall_s": 23.42015978499694
+    }
+  ],
+  "preparer_sha256": "140a0621d9c5fa42e499d54a98239e4b0ef69d7fddef3102bf075d4df12bcc2e",
+  "primary_contrast": "A2 minus A1 task-success fraction, paired at task level",
+  "provider_auto_compact_trigger_tokens": 60000,
+  "provider_context_configuration_status": "CLI configuration prescribed identically across arms; acceptance pending actual pilot",
+  "provider_context_window_tokens": 65536,
+  "provider_request_limits": "same runtime/model configuration and hard wall ceiling for all arms; actual token usage retained separately; no hard aggregate paid-token budget",
+  "provider_seed": "not exposed; independent ephemeral sessions",
+  "reasoning_effort": "medium",
+  "registration": "privately prespecified; not publicly registered",
+  "revision_budget": 4,
+  "schema": "forge.v6-e1-protocol/1",
+  "selection": "last task-preserving build-valid candidate with a completed trusted artifact receipt before episode closure; no hidden-score selection",
+  "separation": "candidate sees only selected workspace, CAD and projected feedback; private source/evaluator/heldout files absent from namespace; forge maintainer is trusted and can inspect private study inputs",
+  "source": {
+    "commit": "1e8e388afda1c98eb2c6ccf2de52d59d7b23b259",
+    "manifest_sha256": "72968ebb370eb941c7e5cf971acdadcc6161effb6d3f1a0ccf6cfd8a351f2deb"
+  },
+  "split": "confirmatory",
+  "study_id": "FORGE-SYSTEMS-V6-E1",
+  "task_manifest_sha256": "251608f5545a7a8d2064f2b70a78014bd025a01d79107c2e589612897addd58a",
+  "task_method_contracts": [
+    {
+      "candidate_parameter_ranges": {
+        "l1": {
+          "default": 110.0,
+          "max": 130.0,
+          "meaning": "upper arm length: shoulder axis to elbow axis",
+          "min": 100.0,
+          "unit": "mm"
+        },
+        "l2": {
+          "default": 100.0,
+          "max": 120.0,
+          "meaning": "forearm length: elbow axis to the forearm roll axis",
+          "min": 90.0,
+          "unit": "mm"
+        },
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "seat_housing_shallow",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "nominal_segment_durations_s": [
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2
+      ],
+      "protected_projection": {
+        "compliant_joints": [
+          "grip"
+        ],
+        "hold_s": 0.6,
+        "id": "seat_housing_shallow",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.9,
+            "id": "housing_a",
+            "mass_g": 13,
+            "pos_mm": [
+              176.0,
+              -56.0,
+              13.2
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "cylinder",
+            "size_mm": [
+              44,
+              44,
+              26.4
+            ]
+          }
+        ],
+        "observation_window_s": 11.5,
+        "record_video": false,
+        "requirement": "R1",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 40,
+              "object": "housing_a"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 11.5,
+              "object": "housing_a",
+              "target_mm": [
+                200.0,
+                80.0,
+                13.2
+              ],
+              "tol_mm": 4
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                225.6,
+                80.0,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                218.102,
+                98.102,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                45.0
+              ]
+            },
+            {
+              "center_mm": [
+                200.0,
+                105.6,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                90.0
+              ]
+            },
+            {
+              "center_mm": [
+                181.898,
+                98.102,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                135.0
+              ]
+            },
+            {
+              "center_mm": [
+                174.4,
+                80.0,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                180.0
+              ]
+            },
+            {
+              "center_mm": [
+                181.898,
+                61.898,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                225.0
+              ]
+            },
+            {
+              "center_mm": [
+                200.0,
+                54.4,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                270.0
+              ]
+            },
+            {
+              "center_mm": [
+                218.102,
+                61.898,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                315.0
+              ]
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "59b41247b20db8e1f7e71602f398cfe1d328c0f55346a64d1d7991b252542e88",
+      "scope_note": "arm6_cell protected cases use pod-sized solid proxies; hollow/keyed production parts are outside this suite.",
+      "starting_params": {
+        "l1": 110.0,
+        "l2": 100.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "l1": {
+          "default": 110.0,
+          "max": 130.0,
+          "meaning": "upper arm length: shoulder axis to elbow axis",
+          "min": 100.0,
+          "unit": "mm"
+        },
+        "l2": {
+          "default": 100.0,
+          "max": 120.0,
+          "meaning": "forearm length: elbow axis to the forearm roll axis",
+          "min": 90.0,
+          "unit": "mm"
+        },
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "seat_housing_deep",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "nominal_segment_durations_s": [
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2
+      ],
+      "protected_projection": {
+        "compliant_joints": [
+          "grip"
+        ],
+        "hold_s": 0.6,
+        "id": "seat_housing_deep",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.9,
+            "id": "housing_b",
+            "mass_g": 16,
+            "pos_mm": [
+              176.0,
+              -56.0,
+              18.2
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "cylinder",
+            "size_mm": [
+              44,
+              44,
+              36.4
+            ]
+          }
+        ],
+        "observation_window_s": 11.5,
+        "record_video": false,
+        "requirement": "R2",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 40,
+              "object": "housing_b"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 11.5,
+              "object": "housing_b",
+              "target_mm": [
+                200.0,
+                80.0,
+                18.2
+              ],
+              "tol_mm": 4
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                225.6,
+                80.0,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                218.102,
+                98.102,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                45.0
+              ]
+            },
+            {
+              "center_mm": [
+                200.0,
+                105.6,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                90.0
+              ]
+            },
+            {
+              "center_mm": [
+                181.898,
+                98.102,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                135.0
+              ]
+            },
+            {
+              "center_mm": [
+                174.4,
+                80.0,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                180.0
+              ]
+            },
+            {
+              "center_mm": [
+                181.898,
+                61.898,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                225.0
+              ]
+            },
+            {
+              "center_mm": [
+                200.0,
+                54.4,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                270.0
+              ]
+            },
+            {
+              "center_mm": [
+                218.102,
+                61.898,
+                4.0
+              ],
+              "half_mm": [
+                3.0,
+                11.847,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                315.0
+              ]
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "d1cf2feacb50455e0aa9f903687622d1e74bcbfa32bd6a03337f211019701aa3",
+      "scope_note": "arm6_cell protected cases use pod-sized solid proxies; hollow/keyed production parts are outside this suite.",
+      "starting_params": {
+        "l1": 110.0,
+        "l2": 100.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "l1": {
+          "default": 110.0,
+          "max": 130.0,
+          "meaning": "upper arm length: shoulder axis to elbow axis",
+          "min": 100.0,
+          "unit": "mm"
+        },
+        "l2": {
+          "default": 100.0,
+          "max": 120.0,
+          "meaning": "forearm length: elbow axis to the forearm roll axis",
+          "min": 90.0,
+          "unit": "mm"
+        },
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "set_insert_proxy",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "nominal_segment_durations_s": [
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2
+      ],
+      "protected_projection": {
+        "compliant_joints": [
+          "grip"
+        ],
+        "hold_s": 0.6,
+        "id": "set_insert_proxy",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.9,
+            "id": "insert_a",
+            "mass_g": 22,
+            "pos_mm": [
+              234.0,
+              -56.0,
+              10.5
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "cylinder",
+            "size_mm": [
+              28,
+              28,
+              21.0
+            ]
+          }
+        ],
+        "observation_window_s": 11.5,
+        "record_video": false,
+        "requirement": "R3",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 40,
+              "object": "insert_a"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 11.5,
+              "object": "insert_a",
+              "target_mm": [
+                200.0,
+                60.0,
+                10.5
+              ],
+              "tol_mm": 4
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                200.0,
+                60.0,
+                1.0
+              ],
+              "half_mm": [
+                30.0,
+                30.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "575a4980b276676659c7531b121bba9ffebbb61081627f632ea5b2f525d70419",
+      "scope_note": "arm6_cell protected cases use pod-sized solid proxies; hollow/keyed production parts are outside this suite.",
+      "starting_params": {
+        "l1": 110.0,
+        "l2": 100.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "l1": {
+          "default": 110.0,
+          "max": 130.0,
+          "meaning": "upper arm length: shoulder axis to elbow axis",
+          "min": 100.0,
+          "unit": "mm"
+        },
+        "l2": {
+          "default": 100.0,
+          "max": 120.0,
+          "meaning": "forearm length: elbow axis to the forearm roll axis",
+          "min": 90.0,
+          "unit": "mm"
+        },
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "sort_cube_and_cylinder",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6",
+      "nominal_segment_durations_s": [
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2,
+        2.2,
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2
+      ],
+      "protected_projection": {
+        "compliant_joints": [
+          "grip"
+        ],
+        "hold_s": 0.6,
+        "id": "sort_cube_and_cylinder",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.9,
+            "id": "cube",
+            "mass_g": 60,
+            "pos_mm": [
+              150.0,
+              -100.0,
+              15
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              25.0
+            ],
+            "shape": "box",
+            "size_mm": [
+              30,
+              30,
+              30
+            ]
+          },
+          {
+            "friction": 0.9,
+            "id": "cylinder",
+            "mass_g": 40,
+            "pos_mm": [
+              195.0,
+              -50.0,
+              17
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "cylinder",
+            "size_mm": [
+              28,
+              28,
+              34
+            ]
+          }
+        ],
+        "observation_window_s": 21.5,
+        "record_video": false,
+        "requirement": "R1",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 40,
+              "object": "cube"
+            },
+            {
+              "min_height_mm": 40,
+              "object": "cylinder"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 10.5,
+              "object": "cube",
+              "target_mm": [
+                160.0,
+                105.0,
+                15
+              ],
+              "tol_mm": 6
+            },
+            {
+              "by_s": 21.5,
+              "object": "cylinder",
+              "target_mm": [
+                205.0,
+                35.0,
+                17
+              ],
+              "tol_mm": 6
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                180.5,
+                125.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                180.5,
+                84.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.5,
+                125.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.5,
+                84.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                180.207,
+                125.5,
+                11.707
+              ],
+              "half_mm": [
+                4.243,
+                4.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                -45.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                180.5,
+                84.793,
+                11.707
+              ],
+              "half_mm": [
+                4.0,
+                4.243,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                -45.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.793,
+                125.5,
+                11.707
+              ],
+              "half_mm": [
+                4.243,
+                4.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                45.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.5,
+                84.793,
+                11.707
+              ],
+              "half_mm": [
+                4.0,
+                4.243,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                -45.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                205.0,
+                54.5,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                90.0
+              ]
+            },
+            {
+              "center_mm": [
+                188.113,
+                25.25,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                210.0
+              ]
+            },
+            {
+              "center_mm": [
+                221.887,
+                25.25,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                330.0
+              ]
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "1d69abb8465266236a209c51466258daf14f9044eeacbbdd1895bd51482d8ba3",
+      "scope_note": null,
+      "starting_params": {
+        "l1": 110.0,
+        "l2": 100.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "l1": {
+          "default": 110.0,
+          "max": 130.0,
+          "meaning": "upper arm length: shoulder axis to elbow axis",
+          "min": 100.0,
+          "unit": "mm"
+        },
+        "l2": {
+          "default": 100.0,
+          "max": 120.0,
+          "meaning": "forearm length: elbow axis to the forearm roll axis",
+          "min": 90.0,
+          "unit": "mm"
+        },
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "sort_heavy_shifted",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6",
+      "nominal_segment_durations_s": [
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2,
+        2.2,
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2
+      ],
+      "protected_projection": {
+        "compliant_joints": [
+          "grip"
+        ],
+        "hold_s": 0.6,
+        "id": "sort_heavy_shifted",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.9,
+            "id": "cube",
+            "mass_g": 120,
+            "pos_mm": [
+              140.0,
+              -110.0,
+              15
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              -20.0
+            ],
+            "shape": "box",
+            "size_mm": [
+              30,
+              30,
+              30
+            ]
+          },
+          {
+            "friction": 0.9,
+            "id": "cylinder",
+            "mass_g": 80,
+            "pos_mm": [
+              190.0,
+              -65.0,
+              17
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "cylinder",
+            "size_mm": [
+              28,
+              28,
+              34
+            ]
+          }
+        ],
+        "observation_window_s": 21.5,
+        "record_video": false,
+        "requirement": "R2",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 40,
+              "object": "cube"
+            },
+            {
+              "min_height_mm": 40,
+              "object": "cylinder"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 10.5,
+              "object": "cube",
+              "target_mm": [
+                160.0,
+                105.0,
+                15
+              ],
+              "tol_mm": 6
+            },
+            {
+              "by_s": 21.5,
+              "object": "cylinder",
+              "target_mm": [
+                205.0,
+                35.0,
+                17
+              ],
+              "tol_mm": 6
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                180.5,
+                125.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                180.5,
+                84.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.5,
+                125.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.5,
+                84.5,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                180.207,
+                125.5,
+                11.707
+              ],
+              "half_mm": [
+                4.243,
+                4.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                -45.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                180.5,
+                84.793,
+                11.707
+              ],
+              "half_mm": [
+                4.0,
+                4.243,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                -45.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.793,
+                125.5,
+                11.707
+              ],
+              "half_mm": [
+                4.243,
+                4.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                45.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                139.5,
+                84.793,
+                11.707
+              ],
+              "half_mm": [
+                4.0,
+                4.243,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                -45.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "center_mm": [
+                205.0,
+                54.5,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                90.0
+              ]
+            },
+            {
+              "center_mm": [
+                188.113,
+                25.25,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                210.0
+              ]
+            },
+            {
+              "center_mm": [
+                221.887,
+                25.25,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                330.0
+              ]
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "055121f5caf7648c01334979a9f521e5ac7ddd82bfeb6e51d5022e1ea659a92a",
+      "scope_note": null,
+      "starting_params": {
+        "l1": 110.0,
+        "l2": 100.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "l1": {
+          "default": 110.0,
+          "max": 130.0,
+          "meaning": "upper arm length: shoulder axis to elbow axis",
+          "min": 100.0,
+          "unit": "mm"
+        },
+        "l2": {
+          "default": 100.0,
+          "max": 120.0,
+          "meaning": "forearm length: elbow axis to the forearm roll axis",
+          "min": 90.0,
+          "unit": "mm"
+        },
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "sort_shifted_fixture",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6",
+      "nominal_segment_durations_s": [
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2,
+        2.2,
+        1.2,
+        0.9,
+        1.4,
+        2.2,
+        1.4,
+        0.9,
+        1.2
+      ],
+      "protected_projection": {
+        "compliant_joints": [
+          "grip"
+        ],
+        "hold_s": 0.6,
+        "id": "sort_shifted_fixture",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.9,
+            "id": "cube",
+            "mass_g": 60,
+            "pos_mm": [
+              170.0,
+              -90.0,
+              15
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0.0
+            ],
+            "shape": "box",
+            "size_mm": [
+              30,
+              30,
+              30
+            ]
+          },
+          {
+            "friction": 0.9,
+            "id": "cylinder",
+            "mass_g": 40,
+            "pos_mm": [
+              195.0,
+              -50.0,
+              17
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "cylinder",
+            "size_mm": [
+              28,
+              28,
+              34
+            ]
+          }
+        ],
+        "observation_window_s": 21.5,
+        "record_video": false,
+        "requirement": "R3",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 40,
+              "object": "cube"
+            },
+            {
+              "min_height_mm": 40,
+              "object": "cylinder"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 10.5,
+              "object": "cube",
+              "target_mm": [
+                150.0,
+                118.0,
+                15
+              ],
+              "tol_mm": 6
+            },
+            {
+              "by_s": 21.5,
+              "object": "cylinder",
+              "target_mm": [
+                190.0,
+                50.0,
+                17
+              ],
+              "tol_mm": 6
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                157.504,
+                146.004,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                178.004,
+                110.496,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                121.996,
+                125.504,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                142.496,
+                89.996,
+                4.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                4.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                157.25,
+                145.857,
+                11.707
+              ],
+              "half_mm": [
+                4.243,
+                4.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                -45.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                177.857,
+                110.75,
+                11.707
+              ],
+              "half_mm": [
+                4.0,
+                4.243,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                -45.0,
+                0.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                122.25,
+                125.65,
+                11.707
+              ],
+              "half_mm": [
+                4.243,
+                4.0,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                45.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                142.35,
+                90.25,
+                11.707
+              ],
+              "half_mm": [
+                4.0,
+                4.243,
+                1.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                -45.0,
+                0.0,
+                30.0
+              ]
+            },
+            {
+              "center_mm": [
+                183.331,
+                68.324,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                110.0
+              ]
+            },
+            {
+              "center_mm": [
+                177.466,
+                35.062,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                230.0
+              ]
+            },
+            {
+              "center_mm": [
+                209.204,
+                46.614,
+                8.0
+              ],
+              "half_mm": [
+                4.0,
+                4.0,
+                8.0
+              ],
+              "kind": "box",
+              "rpy_deg": [
+                0.0,
+                0.0,
+                350.0
+              ]
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "f7af30d920c0610fdccb7d061341245273a87b677e89da38cd09c34a31551af2",
+      "scope_note": null,
+      "starting_params": {
+        "l1": 110.0,
+        "l2": 100.0,
+        "time_scale": 1.5
+      },
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "traverse_full_volume",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [],
+      "family": "gantry_v4b",
+      "nominal_segment_durations_s": [
+        2.34,
+        2.66,
+        9.55,
+        9.55
+      ],
+      "protected_projection": {
+        "hold_s": 0.5,
+        "id": "traverse_full_volume",
+        "kind": "joint_trajectory",
+        "observation_window_s": 24.6,
+        "record_video": false,
+        "requirement": "R1"
+      },
+      "protected_sha256": "a28ed5cefd98fb81b665ebce887304215c9e0a63d55e70dc172264f3dd419eb2",
+      "scope_note": null,
+      "starting_params": {
+        "time_scale": 1.5
+      },
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "tray_transfer",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [],
+      "family": "gantry_v4b",
+      "nominal_segment_durations_s": [
+        3.0,
+        1.5,
+        1.52,
+        1.5,
+        2.0
+      ],
+      "protected_projection": {
+        "hold_s": 1.0,
+        "id": "tray_transfer",
+        "kind": "manipulation",
+        "objects": [
+          {
+            "friction": 0.45,
+            "id": "tray",
+            "mass_g": 250.0,
+            "pos_mm": [
+              215.0,
+              100.0,
+              8.52
+            ],
+            "rpy_deg": [
+              0,
+              0,
+              0
+            ],
+            "shape": "box",
+            "size_mm": [
+              130.0,
+              130.0,
+              5.0
+            ]
+          }
+        ],
+        "observation_window_s": 10.52,
+        "record_video": false,
+        "requirement": "R2",
+        "success": {
+          "lifted": [
+            {
+              "min_height_mm": 10.0,
+              "object": "tray"
+            }
+          ],
+          "object_at": [
+            {
+              "by_s": 10.42,
+              "object": "tray",
+              "target_mm": [
+                215.0,
+                295.0,
+                8.5
+              ],
+              "tol_mm": 4.0
+            }
+          ]
+        },
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                279.0,
+                164.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                279.0,
+                36.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                151.0,
+                164.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                151.0,
+                36.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                279.0,
+                359.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                279.0,
+                231.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                151.0,
+                359.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                151.0,
+                231.0,
+                3.0
+              ],
+              "half_mm": [
+                6.0,
+                6.0,
+                3.0
+              ],
+              "kind": "box"
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "0381c38f11cbe1c1aac2d43dd73c9362ff54b231a2f1444b2119ea73340f0478",
+      "scope_note": null,
+      "starting_params": {
+        "time_scale": 1.5
+      },
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "candidate_parameter_ranges": {
+        "time_scale": {
+          "default": 1.0,
+          "max": 1.5,
+          "meaning": "multiplies controller segment durations only",
+          "min": 0.5,
+          "unit": "multiplier"
+        }
+      },
+      "case_id": "inspection_position_a",
+      "controller_implementation": "proprietary; not included or independently rerunnable",
+      "eligible_development_checks": [],
+      "family": "gantry_v4b",
+      "nominal_segment_durations_s": [
+        4.59,
+        1.82,
+        1.95
+      ],
+      "protected_projection": {
+        "hold_s": 1.0,
+        "id": "inspection_position_a",
+        "kind": "joint_trajectory",
+        "observation_window_s": 9.36,
+        "record_video": false,
+        "requirement": "R3",
+        "terrain": {
+          "features": [
+            {
+              "center_mm": [
+                380.0,
+                300.0,
+                3.0
+              ],
+              "half_mm": [
+                55.0,
+                55.0,
+                3.0
+              ],
+              "kind": "box"
+            },
+            {
+              "center_mm": [
+                380.0,
+                300.0,
+                27.7
+              ],
+              "half_mm": [
+                22.0,
+                22.0,
+                21.7
+              ],
+              "kind": "box"
+            }
+          ],
+          "friction": 0.9
+        }
+      },
+      "protected_sha256": "33f382373e45d51a6b01bd1b98ec329a055b8512e7ba2107305fae111f5f614f",
+      "scope_note": null,
+      "starting_params": {
+        "time_scale": 1.5
+      },
+      "task_id": "gantry_v4b-inspection_position_a"
+    }
+  ],
+  "task_method_contracts_scope": "Data-only starting parameters, admitted variables, fixed success targets and nominal durations from the frozen contracts; no controller or generation implementation.",
+  "tasks": [
+    {
+      "case_id": "seat_housing_shallow",
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "protected_sha256": "59b41247b20db8e1f7e71602f398cfe1d328c0f55346a64d1d7991b252542e88",
+      "task_id": "arm6_cell-seat_housing_shallow"
+    },
+    {
+      "case_id": "seat_housing_deep",
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "protected_sha256": "d1cf2feacb50455e0aa9f903687622d1e74bcbfa32bd6a03337f211019701aa3",
+      "task_id": "arm6_cell-seat_housing_deep"
+    },
+    {
+      "case_id": "set_insert_proxy",
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6_cell",
+      "protected_sha256": "575a4980b276676659c7531b121bba9ffebbb61081627f632ea5b2f525d70419",
+      "task_id": "arm6_cell-set_insert_proxy"
+    },
+    {
+      "case_id": "sort_cube_and_cylinder",
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6",
+      "protected_sha256": "1d69abb8465266236a209c51466258daf14f9044eeacbbdd1895bd51482d8ba3",
+      "task_id": "arm6-sort_cube_and_cylinder"
+    },
+    {
+      "case_id": "sort_heavy_shifted",
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6",
+      "protected_sha256": "055121f5caf7648c01334979a9f521e5ac7ddd82bfeb6e51d5022e1ea659a92a",
+      "task_id": "arm6-sort_heavy_shifted"
+    },
+    {
+      "case_id": "sort_shifted_fixture",
+      "eligible_checks": [
+        "static",
+        "access",
+        "interfaces",
+        "assembly_ir",
+        "sweep"
+      ],
+      "family": "arm6",
+      "protected_sha256": "f7af30d920c0610fdccb7d061341245273a87b677e89da38cd09c34a31551af2",
+      "task_id": "arm6-sort_shifted_fixture"
+    },
+    {
+      "case_id": "traverse_full_volume",
+      "eligible_checks": [],
+      "family": "gantry_v4b",
+      "protected_sha256": "a28ed5cefd98fb81b665ebce887304215c9e0a63d55e70dc172264f3dd419eb2",
+      "task_id": "gantry_v4b-traverse_full_volume"
+    },
+    {
+      "case_id": "tray_transfer",
+      "eligible_checks": [],
+      "family": "gantry_v4b",
+      "protected_sha256": "0381c38f11cbe1c1aac2d43dd73c9362ff54b231a2f1444b2119ea73340f0478",
+      "task_id": "gantry_v4b-tray_transfer"
+    },
+    {
+      "case_id": "inspection_position_a",
+      "eligible_checks": [],
+      "family": "gantry_v4b",
+      "protected_sha256": "33f382373e45d51a6b01bd1b98ec329a055b8512e7ba2107305fae111f5f614f",
+      "task_id": "gantry_v4b-inspection_position_a"
+    }
+  ],
+  "wall_budget_s": 240
+}

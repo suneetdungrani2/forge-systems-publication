@@ -1,0 +1,626 @@
+{
+  "amendment_sha256": "5c236338b932184fca49abff93abb7739d6d1636e2b846d456bc59c5254002d1",
+  "classification": "EXPLORATORY_POST_PRIMARY_GEOMETRY_SENSITIVITY",
+  "geometry_checks": [
+    {
+      "assessment": {
+        "assessment_facet_count": 48,
+        "baseline_facet_count": 24,
+        "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+        "primary_results_replaced": false,
+        "schema": "forge.v6-e2-exploratory-geometry-assessment/1",
+        "seed_selection": "same frozen selected subset as the 24-facet operation check",
+        "solver_iteration_multiplier": 2,
+        "status": "EXPLORATORY_POST_PRIMARY_GEOMETRY_SENSITIVITY",
+        "timestep_multiplier": 0.5
+      },
+      "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+      "condition": "historical_v4_lead_in",
+      "geometry_refinement_verified": true,
+      "invariant_checks": {
+        "actuator_force_controls_and_gains_unchanged": true,
+        "body_frame_positions_unchanged": true,
+        "body_identity_unchanged": true,
+        "contact_property_values_unchanged": true,
+        "gravity_unchanged": true,
+        "nominal_poses_unchanged": true,
+        "pre_refinement_solver_iterations_unchanged": true,
+        "pre_refinement_timestep_unchanged": true
+      },
+      "mass_inertia_changes_from_collision_representation": [
+        {
+          "body": "obj_housing",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00045207222313371027,
+              -5.406309932767328e-19,
+              0.010397509722462632
+            ],
+            "inertia_kg_m2": [
+              4.818669807708935e-06,
+              3.3225239272395744e-06,
+              3.313050344363725e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5221755720129867,
+              0.5221755720129867,
+              -0.47679416103063976,
+              0.47679416103063976
+            ],
+            "mass_kg": 0.012533990211999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.000453282996697902,
+              -7.433676167044375e-19,
+              0.010387656658249278
+            ],
+            "inertia_kg_m2": [
+              4.802270889079121e-06,
+              3.3146144601012212e-06,
+              3.30522434521538e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5223685253395913,
+              0.5223685253395913,
+              -0.47658275643852493,
+              0.47658275643852493
+            ],
+            "mass_kg": 0.012533990195999998
+          }
+        },
+        {
+          "body": "obj_insert",
+          "facet24": {
+            "center_of_mass_m": [
+              0.00017566991970465132,
+              -6.49712772632299e-20,
+              0.009264224565481313
+            ],
+            "inertia_kg_m2": [
+              2.959854770053097e-06,
+              2.2912643727314277e-06,
+              2.2272470707477034e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059418519539575,
+              0.5059418519539575,
+              -0.493986682453486,
+              0.493986682453486
+            ],
+            "mass_kg": 0.021999999979999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              0.00017462955777705898,
+              7.399506562805778e-20,
+              0.009266273935900234
+            ],
+            "inertia_kg_m2": [
+              2.9549942609968303e-06,
+              2.2886923457141164e-06,
+              2.2251896816628495e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059299522624036,
+              0.5059299522624036,
+              -0.4939988698405732,
+              0.4939988698405732
+            ],
+            "mass_kg": 0.022000000022799997
+          }
+        },
+        {
+          "body": "obj_lid",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00029201997675306756,
+              0.0,
+              0.008711708927877147
+            ],
+            "inertia_kg_m2": [
+              2.4430522238337557e-06,
+              1.7046447593200048e-06,
+              1.5754724879617342e-06
+            ],
+            "inertia_orientation_quat": [
+              0.49274354746408444,
+              0.49274354746408444,
+              -0.5071526362275081,
+              0.5071526362275081
+            ],
+            "mass_kg": 0.014882402212999999
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.00029230386575928,
+              0.0,
+              0.008712505627288897
+            ],
+            "inertia_kg_m2": [
+              2.442301575084417e-06,
+              1.7041847147106862e-06,
+              1.5750850534885312e-06
+            ],
+            "inertia_orientation_quat": [
+              0.4927288905265054,
+              0.4927288905265054,
+              -0.507166876324273,
+              0.507166876324273
+            ],
+            "mass_kg": 0.0148824022159
+          }
+        }
+      ],
+      "primary_results_replaced": false,
+      "profile": "historical_fast",
+      "schema": "forge.v6-e2-geometry-refinement-evidence/1"
+    },
+    {
+      "assessment": {
+        "assessment_facet_count": 48,
+        "baseline_facet_count": 24,
+        "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+        "primary_results_replaced": false,
+        "schema": "forge.v6-e2-exploratory-geometry-assessment/1",
+        "seed_selection": "same frozen selected subset as the 24-facet operation check",
+        "solver_iteration_multiplier": 2,
+        "status": "EXPLORATORY_POST_PRIMARY_GEOMETRY_SENSITIVITY",
+        "timestep_multiplier": 0.5
+      },
+      "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+      "condition": "original",
+      "geometry_refinement_verified": true,
+      "invariant_checks": {
+        "actuator_force_controls_and_gains_unchanged": true,
+        "body_frame_positions_unchanged": true,
+        "body_identity_unchanged": true,
+        "contact_property_values_unchanged": true,
+        "gravity_unchanged": true,
+        "nominal_poses_unchanged": true,
+        "pre_refinement_solver_iterations_unchanged": true,
+        "pre_refinement_timestep_unchanged": true
+      },
+      "mass_inertia_changes_from_collision_representation": [
+        {
+          "body": "obj_housing",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00045207222313371027,
+              -5.406309932767328e-19,
+              0.010397509722462632
+            ],
+            "inertia_kg_m2": [
+              4.818669807708935e-06,
+              3.3225239272395744e-06,
+              3.313050344363725e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5221755720129867,
+              0.5221755720129867,
+              -0.47679416103063976,
+              0.47679416103063976
+            ],
+            "mass_kg": 0.012533990211999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.000453282996697902,
+              -7.433676167044375e-19,
+              0.010387656658249278
+            ],
+            "inertia_kg_m2": [
+              4.802270889079121e-06,
+              3.3146144601012212e-06,
+              3.30522434521538e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5223685253395913,
+              0.5223685253395913,
+              -0.47658275643852493,
+              0.47658275643852493
+            ],
+            "mass_kg": 0.012533990195999998
+          }
+        },
+        {
+          "body": "obj_insert",
+          "facet24": {
+            "center_of_mass_m": [
+              0.00017566991970465132,
+              -6.49712772632299e-20,
+              0.009264224565481313
+            ],
+            "inertia_kg_m2": [
+              2.959854770053097e-06,
+              2.2912643727314277e-06,
+              2.2272470707477034e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059418519539575,
+              0.5059418519539575,
+              -0.493986682453486,
+              0.493986682453486
+            ],
+            "mass_kg": 0.021999999979999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              0.00017462955777705898,
+              7.399506562805778e-20,
+              0.009266273935900234
+            ],
+            "inertia_kg_m2": [
+              2.9549942609968303e-06,
+              2.2886923457141164e-06,
+              2.2251896816628495e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059299522624036,
+              0.5059299522624036,
+              -0.4939988698405732,
+              0.4939988698405732
+            ],
+            "mass_kg": 0.022000000022799997
+          }
+        },
+        {
+          "body": "obj_lid",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00029201997675306756,
+              0.0,
+              0.008711708927877147
+            ],
+            "inertia_kg_m2": [
+              2.4430522238337557e-06,
+              1.7046447593200048e-06,
+              1.5754724879617342e-06
+            ],
+            "inertia_orientation_quat": [
+              0.49274354746408444,
+              0.49274354746408444,
+              -0.5071526362275081,
+              0.5071526362275081
+            ],
+            "mass_kg": 0.014882402212999999
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.00029230386575928,
+              0.0,
+              0.008712505627288897
+            ],
+            "inertia_kg_m2": [
+              2.442301575084417e-06,
+              1.7041847147106862e-06,
+              1.5750850534885312e-06
+            ],
+            "inertia_orientation_quat": [
+              0.4927288905265054,
+              0.4927288905265054,
+              -0.507166876324273,
+              0.507166876324273
+            ],
+            "mass_kg": 0.0148824022159
+          }
+        }
+      ],
+      "primary_results_replaced": false,
+      "profile": "historical_fast",
+      "schema": "forge.v6-e2-geometry-refinement-evidence/1"
+    },
+    {
+      "assessment": {
+        "assessment_facet_count": 48,
+        "baseline_facet_count": 24,
+        "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+        "primary_results_replaced": false,
+        "schema": "forge.v6-e2-exploratory-geometry-assessment/1",
+        "seed_selection": "same frozen selected subset as the 24-facet operation check",
+        "solver_iteration_multiplier": 2,
+        "status": "EXPLORATORY_POST_PRIMARY_GEOMETRY_SENSITIVITY",
+        "timestep_multiplier": 0.5
+      },
+      "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+      "condition": "historical_v4_lead_in",
+      "geometry_refinement_verified": true,
+      "invariant_checks": {
+        "actuator_force_controls_and_gains_unchanged": true,
+        "body_frame_positions_unchanged": true,
+        "body_identity_unchanged": true,
+        "contact_property_values_unchanged": true,
+        "gravity_unchanged": true,
+        "nominal_poses_unchanged": true,
+        "pre_refinement_solver_iterations_unchanged": true,
+        "pre_refinement_timestep_unchanged": true
+      },
+      "mass_inertia_changes_from_collision_representation": [
+        {
+          "body": "obj_housing",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00045207222313371027,
+              -5.406309932767328e-19,
+              0.010397509722462632
+            ],
+            "inertia_kg_m2": [
+              4.818669807708935e-06,
+              3.3225239272395744e-06,
+              3.313050344363725e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5221755720129867,
+              0.5221755720129867,
+              -0.47679416103063976,
+              0.47679416103063976
+            ],
+            "mass_kg": 0.012533990211999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.000453282996697902,
+              -7.433676167044375e-19,
+              0.010387656658249278
+            ],
+            "inertia_kg_m2": [
+              4.802270889079121e-06,
+              3.3146144601012212e-06,
+              3.30522434521538e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5223685253395913,
+              0.5223685253395913,
+              -0.47658275643852493,
+              0.47658275643852493
+            ],
+            "mass_kg": 0.012533990195999998
+          }
+        },
+        {
+          "body": "obj_insert",
+          "facet24": {
+            "center_of_mass_m": [
+              0.00017566991970465132,
+              -6.49712772632299e-20,
+              0.009264224565481313
+            ],
+            "inertia_kg_m2": [
+              2.959854770053097e-06,
+              2.2912643727314277e-06,
+              2.2272470707477034e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059418519539575,
+              0.5059418519539575,
+              -0.493986682453486,
+              0.493986682453486
+            ],
+            "mass_kg": 0.021999999979999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              0.00017462955777705898,
+              7.399506562805778e-20,
+              0.009266273935900234
+            ],
+            "inertia_kg_m2": [
+              2.9549942609968303e-06,
+              2.2886923457141164e-06,
+              2.2251896816628495e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059299522624036,
+              0.5059299522624036,
+              -0.4939988698405732,
+              0.4939988698405732
+            ],
+            "mass_kg": 0.022000000022799997
+          }
+        },
+        {
+          "body": "obj_lid",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00029201997675306756,
+              0.0,
+              0.008711708927877147
+            ],
+            "inertia_kg_m2": [
+              2.4430522238337557e-06,
+              1.7046447593200048e-06,
+              1.5754724879617342e-06
+            ],
+            "inertia_orientation_quat": [
+              0.49274354746408444,
+              0.49274354746408444,
+              -0.5071526362275081,
+              0.5071526362275081
+            ],
+            "mass_kg": 0.014882402212999999
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.00029230386575928,
+              0.0,
+              0.008712505627288897
+            ],
+            "inertia_kg_m2": [
+              2.442301575084417e-06,
+              1.7041847147106862e-06,
+              1.5750850534885312e-06
+            ],
+            "inertia_orientation_quat": [
+              0.4927288905265054,
+              0.4927288905265054,
+              -0.507166876324273,
+              0.507166876324273
+            ],
+            "mass_kg": 0.0148824022159
+          }
+        }
+      ],
+      "primary_results_replaced": false,
+      "profile": "reference",
+      "schema": "forge.v6-e2-geometry-refinement-evidence/1"
+    },
+    {
+      "assessment": {
+        "assessment_facet_count": 48,
+        "baseline_facet_count": 24,
+        "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+        "primary_results_replaced": false,
+        "schema": "forge.v6-e2-exploratory-geometry-assessment/1",
+        "seed_selection": "same frozen selected subset as the 24-facet operation check",
+        "solver_iteration_multiplier": 2,
+        "status": "EXPLORATORY_POST_PRIMARY_GEOMETRY_SENSITIVITY",
+        "timestep_multiplier": 0.5
+      },
+      "collision_parity_claim": "local cavity witnesses only; no universal collision/CAD parity claim",
+      "condition": "original",
+      "geometry_refinement_verified": true,
+      "invariant_checks": {
+        "actuator_force_controls_and_gains_unchanged": true,
+        "body_frame_positions_unchanged": true,
+        "body_identity_unchanged": true,
+        "contact_property_values_unchanged": true,
+        "gravity_unchanged": true,
+        "nominal_poses_unchanged": true,
+        "pre_refinement_solver_iterations_unchanged": true,
+        "pre_refinement_timestep_unchanged": true
+      },
+      "mass_inertia_changes_from_collision_representation": [
+        {
+          "body": "obj_housing",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00045207222313371027,
+              -5.406309932767328e-19,
+              0.010397509722462632
+            ],
+            "inertia_kg_m2": [
+              4.818669807708935e-06,
+              3.3225239272395744e-06,
+              3.313050344363725e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5221755720129867,
+              0.5221755720129867,
+              -0.47679416103063976,
+              0.47679416103063976
+            ],
+            "mass_kg": 0.012533990211999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.000453282996697902,
+              -7.433676167044375e-19,
+              0.010387656658249278
+            ],
+            "inertia_kg_m2": [
+              4.802270889079121e-06,
+              3.3146144601012212e-06,
+              3.30522434521538e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5223685253395913,
+              0.5223685253395913,
+              -0.47658275643852493,
+              0.47658275643852493
+            ],
+            "mass_kg": 0.012533990195999998
+          }
+        },
+        {
+          "body": "obj_insert",
+          "facet24": {
+            "center_of_mass_m": [
+              0.00017566991970465132,
+              -6.49712772632299e-20,
+              0.009264224565481313
+            ],
+            "inertia_kg_m2": [
+              2.959854770053097e-06,
+              2.2912643727314277e-06,
+              2.2272470707477034e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059418519539575,
+              0.5059418519539575,
+              -0.493986682453486,
+              0.493986682453486
+            ],
+            "mass_kg": 0.021999999979999994
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              0.00017462955777705898,
+              7.399506562805778e-20,
+              0.009266273935900234
+            ],
+            "inertia_kg_m2": [
+              2.9549942609968303e-06,
+              2.2886923457141164e-06,
+              2.2251896816628495e-06
+            ],
+            "inertia_orientation_quat": [
+              0.5059299522624036,
+              0.5059299522624036,
+              -0.4939988698405732,
+              0.4939988698405732
+            ],
+            "mass_kg": 0.022000000022799997
+          }
+        },
+        {
+          "body": "obj_lid",
+          "facet24": {
+            "center_of_mass_m": [
+              -0.00029201997675306756,
+              0.0,
+              0.008711708927877147
+            ],
+            "inertia_kg_m2": [
+              2.4430522238337557e-06,
+              1.7046447593200048e-06,
+              1.5754724879617342e-06
+            ],
+            "inertia_orientation_quat": [
+              0.49274354746408444,
+              0.49274354746408444,
+              -0.5071526362275081,
+              0.5071526362275081
+            ],
+            "mass_kg": 0.014882402212999999
+          },
+          "facet48": {
+            "center_of_mass_m": [
+              -0.00029230386575928,
+              0.0,
+              0.008712505627288897
+            ],
+            "inertia_kg_m2": [
+              2.442301575084417e-06,
+              1.7041847147106862e-06,
+              1.5750850534885312e-06
+            ],
+            "inertia_orientation_quat": [
+              0.4927288905265054,
+              0.4927288905265054,
+              -0.507166876324273,
+              0.507166876324273
+            ],
+            "mass_kg": 0.0148824022159
+          }
+        }
+      ],
+      "primary_results_replaced": false,
+      "profile": "reference",
+      "schema": "forge.v6-e2-geometry-refinement-evidence/1"
+    }
+  ],
+  "primary_results_replaced": false,
+  "raw_trials_sha256": "a396bb9531a8f5cb1234eaaeeb73f93c14a04b6bc5a549198924f1a119d17ce3",
+  "schema": "forge.v6.geometry-sensitivity/1",
+  "source_manifest_sha256": "f76dbf46c77426ab3da9060c9b9fa48ee27e7e5099346c8a58840ba786fbf5ca"
+}

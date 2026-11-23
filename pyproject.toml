@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forge-study-artifact-analysis"
+version = "0.1.0"
+description = "Offline analysis for the sanitized FORGE systems study artifact"
+authors = [{ name = "Suneet Dungrani", email = "suneetdungrani@utexas.edu" }]
+requires-python = ">=3.11"
+dependencies = ["matplotlib>=3.8"]
+
+[project.scripts]
+study-artifact-verify = "analysis.verify:main"
+study-artifact-summarize = "analysis.summarize:main"
+study-artifact-figures = "analysis.figures:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["analysis*"]

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Suneet Dungrani"><meta name="description" content="Evidence and limitations for FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation."><meta property="og:image" content="../media/forge_poster.jpg"><meta property="og:image:alt" content="Forge research poster showing a quadruped design under test and a simulated fixture comparison"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="../media/forge_poster.jpg">
+<meta property="og:title" content="FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation · Evidence and limitations">
+<meta property="og:description" content="Recorded results, evidence classes, and scope for FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation.">
+<title>FORGE: Evidence-Linked Robot Design, Verification, and Manufacturing Evaluation · Evidence and limitations</title>
+<style>
+body{max-width:52rem;margin:2rem auto;padding:0 1rem;color:#edf2f7;background:#0d1218;font:16px/1.55 system-ui,sans-serif}.skip-link{position:absolute;left:-10000px;top:0;background:#151b23;color:#edf2f7;padding:.65rem 1rem;border:2px solid #ea7424;border-radius:6px;z-index:10}.skip-link:focus{left:16px;top:8px}
+a{color:#ffa363}figure{margin:1rem 0}img{max-width:100%;height:auto}figcaption{color:#b9c3cd}
+@media(prefers-color-scheme:light){body{color:#14171b;background:#f6f5f2}a{color:#9a3e00}figcaption{color:#4d5560}}
+</style>
+<a class="skip-link" href="#main">Skip to evidence content</a><nav aria-label="Research navigation"><a href="../index.html">Back to the research overview</a></nav><main id="main">
+<h1>Evidence and limitations</h1>
+<p><strong>Preprint · Not peer reviewed</strong></p>
+<p>Suneet Dungrani · Independent Researcher · <a href="mailto:suneetdungrani@utexas.edu">suneetdungrani@utexas.edu</a></p>
+<p>Section references are to the <a href="../papers/FORGE_Research_Paper.pdf">research paper</a>. See the
+<a href="../papers/FORGE_Technical_Supplement.pdf">technical supplement</a> for evidence classes, reproduction instructions and detailed outcomes.</p>
+<h2>Geometry checks</h2><p>Section 5.1 compares known-answer cases with distinct feature-local and whole-part scoring targets.
+The <a href="geometry-checker-outcomes.svg">checker outcomes</a> show the different abstention behavior and scoring targets.</p>
+<h2>Agent-assisted design repair</h2><p>Section 5.2 reports held-out results from budget-matched template repair.
+The <a href="design-repair-outcomes-by-family.svg">outcomes by task family</a> and
+<a href="submitted-design-revisions.svg">revision counts</a> describe the observed differences. Richer feedback showed no established superiority.</p>
+<h2>Fixture placement</h2><p>Section 5.3 reports 96/100 and 100/100 successes under the simulated reference approach.
+The lead-in redesign changed two features together. Their individual effects were not estimated.</p>
+<h2>Gantry motion and transfer</h2><p>Section 6 reports planned motion of 21.760 s versus approximately 7.474 s, excluding settling and hold.
+In the paired simulations, 59/100 baseline and 58/100 optimized attempts achieved a complete transfer. Both profiles left the tray unseated in 40/100 trials.
+The original timing target has conflicting clock definitions in the historical records. The visual comparison shows only the two measured plan durations. The other unsuccessful outcomes were kit displacement in 1/100 baseline trial and 2/100 optimized trials.</p>
+<figure><a href="gantry-speed-profile.png"><img src="gantry-speed-profile.png" alt="Planned speed along the fixed gantry path, comparing the baseline and optimized profiles"></a><figcaption>Planned along-path speed in the modeled comparison.</figcaption></figure>
+<h2>Modeled production</h2><p>Section 7 reports conditional contrasts across the model's fixed scenarios. The modeled dispatch contrast exceeds the mechanical-only contrast. These are modeled good-unit counts within an empirical envelope.</p>
+<p><a href="claims.json">Registered claims used for this summary</a> · <a href="../export-manifest.json">Export manifest</a></p>
+</main></html>

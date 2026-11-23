@@ -1,0 +1,110 @@
+{
+  "files": [
+    {
+      "bytes": 9064,
+      "path": "episodes.csv",
+      "sha256": "2057081f3a74ae61209f82106a3cdad5109f6c264dfeba3c4db8ec2364b4747c"
+    },
+    {
+      "bytes": 41499,
+      "path": "evaluator_cases.csv",
+      "sha256": "77cff0c85ce3a977b158a4c83cb96e00fc4dc4d87274ad182d1142e1720a80f4"
+    },
+    {
+      "bytes": 115176,
+      "path": "operation_trials.csv",
+      "sha256": "826dce83568293493017648a1d1289724ee41786e64bfd165017fdf28dad9ed4"
+    },
+    {
+      "bytes": 78108,
+      "path": "production_runs.csv",
+      "sha256": "e2dabaf0b21f6b62829cf321ce8917bd338b62bbb1008c6a592503ab0a9648c7"
+    },
+    {
+      "bytes": 355,
+      "path": "protocol.json",
+      "sha256": "10b798bad491eecd95130b8acd94a4f860e35b200eb859ce62907922d4de76de"
+    },
+    {
+      "bytes": 51499,
+      "path": "records/candidate_attempts.json",
+      "sha256": "4baa591717a9fbb30d0948b2e6cdd7f3074d47a027a81e6474bc8a9aed3131ab"
+    },
+    {
+      "bytes": 65598,
+      "path": "records/e1_protocol.json",
+      "sha256": "e15ff53b5c7e9700d038666ffd4d8a5db3c026e008c0275586af66bb5115f614"
+    },
+    {
+      "bytes": 22668,
+      "path": "records/first_candidate_cohort.json",
+      "sha256": "40486a25e150fc88b93a87d8b13acfd7852a72d061f811c41a648aeb33973c2b"
+    },
+    {
+      "bytes": 23101,
+      "path": "records/first_candidate_outcomes.json",
+      "sha256": "0cd661e2c1b751e90ee893e2ea0b607c1f3992b8d397d191eccc4a39f276af48"
+    },
+    {
+      "bytes": 2870,
+      "path": "records/fixture_case.json",
+      "sha256": "7583b2679bff3815e5908d6d8ee7dfb2323e10977367b89a50bf5b40946a82f5"
+    },
+    {
+      "bytes": 20606,
+      "path": "records/geometry_sensitivity.json",
+      "sha256": "d0e42289461036f507f55b1329e32233515cdb1f9bc36e4d664ad810117067f3"
+    },
+    {
+      "bytes": 101573,
+      "path": "records/operation_model_contracts.json",
+      "sha256": "33130de8e8a4f3df4424abe383b96ec9ddc98a59fd82e4b844ed5c804b127ae2"
+    },
+    {
+      "bytes": 166033,
+      "path": "records/operation_witnesses.csv",
+      "sha256": "22c6bc1bcee2324822355f70483c9647f9420333f5024976f40cbf83f485c584"
+    },
+    {
+      "bytes": 1488,
+      "path": "records/operation_witnesses.manifest.json",
+      "sha256": "4360b018e0483491abcf8c773ab9401e223fa9ce8124e16847553c1be6b920ab"
+    },
+    {
+      "bytes": 21821,
+      "path": "records/primary_candidate_cohort.json",
+      "sha256": "3d7dec754318229a82ccc82ff34f3f9fb565283f6c4988a572cc24c950936dc7"
+    },
+    {
+      "bytes": 21049,
+      "path": "records/primary_results_seal.json",
+      "sha256": "ef110b139de1778fefab36e8576e44fb1ff8af3450fe34aaaef173ef92002bb4"
+    },
+    {
+      "bytes": 59184,
+      "path": "records/resource_accounting.json",
+      "sha256": "1239fa0b45c93bd305519dc7593ffa39c3be9ce7a3d17dfa519c49571fb34655"
+    },
+    {
+      "bytes": 4016,
+      "path": "records/resource_summary.json",
+      "sha256": "e051e87c8d63c715710111974e270d81a025e2e0e98d8763a0352b1df0078ec7"
+    },
+    {
+      "bytes": 13591,
+      "path": "records/result_identities.json",
+      "sha256": "2ec6d10b48724870da11072c72b8d5fe96bc7262d8d59ff15d22104805d96f9b"
+    },
+    {
+      "bytes": 1563,
+      "path": "records/study_provenance.json",
+      "sha256": "fbbe62812872e3f60e906b969b733d2b8b11086ba6a9b5bed78b5248f3fbc480"
+    },
+    {
+      "bytes": 4121,
+      "path": "refinement_manifest.json",
+      "sha256": "873b85b2986af556b9ba601ec61396f7377137e22c9a901668798b79cda31c6a"
+    }
+  ],
+  "schema_version": 1
+}

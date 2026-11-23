@@ -1,0 +1,45 @@
+{
+  "integrator": "from MJCF <option>",
+  "model_counts": {
+    "na": 0,
+    "nmocap": 0,
+    "nq": 31,
+    "nv": 28
+  },
+  "pose_sample_rule": "after each mj_step with k >= settle_steps: cached xpos/xquat/xmat of the part body (pre-integration pose of that step), labelled task_time (k - settle_steps) * dt",
+  "post_task_hold_s": 0.5,
+  "qpos_state_rule": "after mj_step with k >= settle_steps, record (task_time, qpos copy) when task_time >= len(states)/30 - 1e-9",
+  "schedule_semantics": "ctrl row k is written to MjData.ctrl immediately before the k-th mj_step; row 0 is also the pre-settle ctrl",
+  "segment_durations_s": [
+    0.35,
+    0.35,
+    0.7,
+    0.35,
+    0.693922305764411,
+    0.35,
+    1.2,
+    0.7,
+    0.35,
+    0.3853383458646617
+  ],
+  "segment_names": [
+    "start",
+    "pick_hover",
+    "pick_down",
+    "grip",
+    "lift",
+    "transfer",
+    "approach",
+    "insert",
+    "release",
+    "retreat",
+    "park"
+  ],
+  "settle_s": 0.6,
+  "settle_steps": 1200,
+  "task_and_hold_steps": 11859,
+  "task_duration_s": 5.429260651629072,
+  "task_time_of_step_k_s": "(k - settle_steps) * timestep_s",
+  "timestep_s": 0.0005,
+  "total_steps": 13059
+}

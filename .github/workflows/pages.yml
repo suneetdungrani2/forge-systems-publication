@@ -1,0 +1,29 @@
+name: Research website
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency: github-pages
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract the published website
+        run: |
+          curl --fail --location --retry 4 "https://github.com/${GITHUB_REPOSITORY}/releases/download/preprint-materials/FORGE_Reviewer_Website.zip" -o website.zip
+          echo 'dd0049ccf20b9c4536f0a72f347237654dc065735f4e2c6dad61907e5e7d90b3  website.zip' | sha256sum -c -
+          unzip -q website.zip -d site
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: site
+  deploy:
+    needs: site
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - id: pages
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346

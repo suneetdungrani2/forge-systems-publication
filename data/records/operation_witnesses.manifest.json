@@ -1,0 +1,36 @@
+{
+  "frozen_source": {
+    "commit": "86308de844dbca9d0a9ee3103a23e977c097d24c",
+    "manifest_sha256": "f76dbf46c77426ab3da9060c9b9fa48ee27e7e5099346c8a58840ba786fbf5ca"
+  },
+  "inputs": {
+    "historical_fast": {
+      "protocol_sha256": "1e8b04b6ae639fd891e999deb8806976ebb576ff1190e83fba9ca20de89d58c4",
+      "study_status_sha256": "58596b610300bafe2a7f2e88e2684d44a2e14d1f3cbac76888a8adcf12852a5c",
+      "summary_sha256": "c3d1fd4e9e18da4031ebe492b515ef2a2cafdfeb0dde1d12f6dca3b2a90d36c3",
+      "trials_sha256": "fca7a2162ac1affa62ea22576135cf1a0e62b917806269a0ff749d62576419e8"
+    },
+    "reference": {
+      "protocol_sha256": "ab2ce4f7976fd73f46afcbb9e4601fd756c3801399999bb1c08b36153954e597",
+      "study_status_sha256": "fd9f3efb77771ddf6b86b4f834171737fc275d67bff08a6fdaf8b6534b489bf2",
+      "summary_sha256": "7f63538cbbf9e4e9d1220bb55e2be1f9682a17baaa86b650477ffd74279281f3",
+      "trials_sha256": "c4d9c166c2d27c41ba8b099e4b695c6f747af60fca5c5653ddd97f877cf5fdfa"
+    }
+  },
+  "limits": {
+    "abs_yaw_error_deg": 3.3,
+    "abs_z_error_mm": 0.4,
+    "tilt_deg": 2.0,
+    "xy_error_mm": 1.0
+  },
+  "operation_witnesses_sha256": "22c6bc1bcee2324822355f70483c9647f9420333f5024976f40cbf83f485c584",
+  "row_count": 400,
+  "schema": "forge.v6.e2-operation-witness-export/1",
+  "scope": "frozen aggregate observations; not raw pose-grid coverage",
+  "units": {
+    "abs_yaw_error_deg": "deg",
+    "abs_z_error_mm": "mm",
+    "tilt_deg": "deg",
+    "xy_error_mm": "mm"
+  }
+}

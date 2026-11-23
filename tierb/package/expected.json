@@ -1,0 +1,101 @@
+{
+  "historical_v4_lead_in": {
+    "all_attempt_simulated_s": 6.5295000000000005,
+    "hold_acceptance": {
+      "hold_sample_count": 500,
+      "limits": {
+        "abs_yaw_error_deg": 3.3,
+        "abs_z_error_mm": 0.4,
+        "tilt_deg": 2.0,
+        "xy_error_mm": 1.0
+      },
+      "status": "PASS",
+      "worst": {
+        "abs_yaw_error_deg": 0.0741256688107228,
+        "abs_z_error_mm": 0.0015486610542181367,
+        "tilt_deg": 0.002746354139953668,
+        "xy_error_mm": 0.6002371121508795
+      }
+    },
+    "legacy_metrics": {
+      "carry_z_max_mm": 61.63,
+      "collateral_mm": 0.126,
+      "grip_yaw_slip_deg": -0.112,
+      "max_penetration_mm": 0.222,
+      "peak_torque_fraction_max": 0.29,
+      "tilt_deg": 0.003,
+      "xy_error_mm": 0.6,
+      "yaw_error_deg": 0.074,
+      "z_error_mm": -0.002
+    },
+    "legacy_mode": null,
+    "legacy_success": true,
+    "legacy_time_s_excludes_settle_and_post_hold": 5.429260651629072,
+    "observation_clock": {
+      "all_attempt_simulated_s": 6.5295000000000005,
+      "post_task_actual_s": 0.5002393483709282,
+      "post_task_requested_s": 0.5,
+      "settling_s": 0.6,
+      "task_clock_sampled_s": 5.9295,
+      "task_s": 5.429260651629072
+    },
+    "observation_sha256": "2f8eec9f6a43d0c8924132f51e3fd84b0decdeecc032b70a9f74fe25719d4f7e",
+    "observation_warnings": {
+      "mjWARN_BADQACC": 0,
+      "mjWARN_BADQPOS": 0,
+      "mjWARN_BADQVEL": 0
+    },
+    "qpos_replay_sha256": "0422b3678fca526111ae04b071ca4bb0fb1f21530139f468b4e486dd6bd0862e",
+    "status": "PASS"
+  },
+  "original": {
+    "all_attempt_simulated_s": 6.5295000000000005,
+    "hold_acceptance": {
+      "hold_sample_count": 500,
+      "limits": {
+        "abs_yaw_error_deg": 3.3,
+        "abs_z_error_mm": 0.4,
+        "tilt_deg": 2.0,
+        "xy_error_mm": 1.0
+      },
+      "reason": "legacy_terminal_failure",
+      "status": "FAIL",
+      "worst": {
+        "abs_yaw_error_deg": 3.423286325450391,
+        "abs_z_error_mm": 0.001589309458719157,
+        "tilt_deg": 0.0029017849643710575,
+        "xy_error_mm": 0.4638850669434567
+      }
+    },
+    "legacy_metrics": {
+      "carry_z_max_mm": 61.63,
+      "collateral_mm": 0.126,
+      "grip_yaw_slip_deg": -0.337,
+      "max_penetration_mm": 0.263,
+      "peak_torque_fraction_max": 0.29,
+      "tilt_deg": 0.003,
+      "xy_error_mm": 0.464,
+      "yaw_error_deg": 3.423,
+      "z_error_mm": -0.002
+    },
+    "legacy_mode": "seated_out_of_tolerance",
+    "legacy_success": false,
+    "legacy_time_s_excludes_settle_and_post_hold": 5.429260651629072,
+    "observation_clock": {
+      "all_attempt_simulated_s": 6.5295000000000005,
+      "post_task_actual_s": 0.5002393483709282,
+      "post_task_requested_s": 0.5,
+      "settling_s": 0.6,
+      "task_clock_sampled_s": 5.9295,
+      "task_s": 5.429260651629072
+    },
+    "observation_sha256": "f4a082715fa89aca450264c6f3126f6f9b2067cb175ca345e3000083e61258af",
+    "observation_warnings": {
+      "mjWARN_BADQACC": 0,
+      "mjWARN_BADQPOS": 0,
+      "mjWARN_BADQVEL": 0
+    },
+    "qpos_replay_sha256": "09a5122c7d30d8782e1537b35577d547aae65a45872b3b9c8457b8779fe6d741",
+    "status": "FAIL"
+  }
+}

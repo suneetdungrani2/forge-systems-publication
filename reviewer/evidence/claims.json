@@ -1,0 +1,293 @@
+{
+  "research_commit": "89942082d13cf84776b4cc19feea0396f9fcb22d",
+  "claims": [
+    {
+      "claim_id": "V6-E2-reference-historical_v4_lead_in",
+      "evidence_class": "SIMULATION_CONDITIONAL",
+      "value": 100,
+      "numerator": 100,
+      "denominator": 100,
+      "interval": {
+        "high": 1.0,
+        "level": 0.95,
+        "low": 0.963007,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "826dce83568293493017648a1d1289724ee41786e64bfd165017fdf28dad9ed4"
+    },
+    {
+      "claim_id": "V6-E2-reference-original",
+      "evidence_class": "SIMULATION_CONDITIONAL",
+      "value": 96,
+      "numerator": 96,
+      "denominator": 100,
+      "interval": {
+        "high": 0.984337,
+        "level": 0.95,
+        "low": 0.901629,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "826dce83568293493017648a1d1289724ee41786e64bfd165017fdf28dad9ed4"
+    },
+    {
+      "claim_id": "V6-E3-combined",
+      "evidence_class": "PRODUCTION_MODEL_CONDITIONAL",
+      "value": 1.994444,
+      "numerator": null,
+      "denominator": 720,
+      "interval": null,
+      "source_sha256": "e2dabaf0b21f6b62829cf321ce8917bd338b62bbb1008c6a592503ab0a9648c7"
+    },
+    {
+      "claim_id": "V6-E3-interaction",
+      "evidence_class": "PRODUCTION_MODEL_CONDITIONAL",
+      "value": 0.161111,
+      "numerator": null,
+      "denominator": 720,
+      "interval": null,
+      "source_sha256": "e2dabaf0b21f6b62829cf321ce8917bd338b62bbb1008c6a592503ab0a9648c7"
+    },
+    {
+      "claim_id": "V6-E3-mechanical",
+      "evidence_class": "PRODUCTION_MODEL_CONDITIONAL",
+      "value": 0.355556,
+      "numerator": null,
+      "denominator": 720,
+      "interval": null,
+      "source_sha256": "e2dabaf0b21f6b62829cf321ce8917bd338b62bbb1008c6a592503ab0a9648c7"
+    },
+    {
+      "claim_id": "V6-E3-scheduling",
+      "evidence_class": "PRODUCTION_MODEL_CONDITIONAL",
+      "value": 1.477778,
+      "numerator": null,
+      "denominator": 720,
+      "interval": null,
+      "source_sha256": "e2dabaf0b21f6b62829cf321ce8917bd338b62bbb1008c6a592503ab0a9648c7"
+    },
+    {
+      "claim_id": "V6.1-E0-old_sampled-confusion",
+      "evidence_class": "KNOWN_ANSWER_SYNTHETIC",
+      "value": {
+        "abstain": 0,
+        "correct_accept": 108,
+        "correct_reject": 48,
+        "crash": 0,
+        "false_accept": 104,
+        "false_reject": 0
+      },
+      "numerator": 104,
+      "denominator": 260,
+      "interval": null,
+      "source_sha256": "b782c390cc55dd7eb3ebe8eaa065975212d7e9af34bfd078df20a887127e68a4"
+    },
+    {
+      "claim_id": "V6.1-E0-v61_scoped-confusion",
+      "evidence_class": "KNOWN_ANSWER_SYNTHETIC",
+      "value": {
+        "abstain": 38,
+        "correct_accept": 113,
+        "correct_reject": 109,
+        "crash": 0,
+        "false_accept": 0,
+        "false_reject": 0
+      },
+      "numerator": 0,
+      "denominator": 260,
+      "interval": null,
+      "source_sha256": "b782c390cc55dd7eb3ebe8eaa065975212d7e9af34bfd078df20a887127e68a4"
+    },
+    {
+      "claim_id": "V6.1-E1-A0-first-fail-final-pass",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 0,
+      "numerator": 0,
+      "denominator": 18,
+      "interval": null,
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A0-outcomes",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": {
+        "CRASH": 0,
+        "FAIL": 4,
+        "NO_CANDIDATE": 0,
+        "PASS": 14,
+        "UNKNOWN": 0
+      },
+      "numerator": 14,
+      "denominator": 18,
+      "interval": {
+        "high": 0.909991,
+        "level": 0.95,
+        "low": 0.547854,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A0-transitions",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 3,
+      "numerator": 3,
+      "denominator": 18,
+      "interval": null,
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A1-first-fail-final-pass",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 5,
+      "numerator": 5,
+      "denominator": 18,
+      "interval": null,
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A1-outcomes",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": {
+        "CRASH": 0,
+        "FAIL": 1,
+        "NO_CANDIDATE": 0,
+        "PASS": 17,
+        "UNKNOWN": 0
+      },
+      "numerator": 17,
+      "denominator": 18,
+      "interval": {
+        "high": 0.990125,
+        "level": 0.95,
+        "low": 0.742427,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A1-transitions",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 6,
+      "numerator": 6,
+      "denominator": 18,
+      "interval": null,
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A2-first-fail-final-pass",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 5,
+      "numerator": 5,
+      "denominator": 18,
+      "interval": null,
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A2-outcomes",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": {
+        "CRASH": 0,
+        "FAIL": 0,
+        "NO_CANDIDATE": 0,
+        "PASS": 18,
+        "UNKNOWN": 0
+      },
+      "numerator": 18,
+      "denominator": 18,
+      "interval": {
+        "high": 1.0,
+        "level": 0.95,
+        "low": 0.824121,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-A2-transitions",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 6,
+      "numerator": 6,
+      "denominator": 18,
+      "interval": null,
+      "source_sha256": "1cfd801e5d8cb5d0f4b6957d7fa21f3478efbd214d0efc2f19cd8187e878719c"
+    },
+    {
+      "claim_id": "V6.1-E1-primary_A2_minus_A1",
+      "evidence_class": "CONTROLLED_AGENT_STUDY",
+      "value": 0.055556,
+      "numerator": null,
+      "denominator": 9,
+      "interval": {
+        "high": 0.166667,
+        "level": 0.95,
+        "low": 0.0,
+        "type": "task-cluster percentile bootstrap 95%"
+      },
+      "source_sha256": "9d3fe9bd30f49e9b28793826ba9f189816cb66b52294e842631d2bc357e84201"
+    },
+    {
+      "claim_id": "V6.1-E2b-baseline-planned-clock",
+      "evidence_class": "OPTIMIZATION_MODEL",
+      "value": 21.76,
+      "numerator": null,
+      "denominator": null,
+      "interval": null,
+      "source_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926"
+    },
+    {
+      "claim_id": "V6.1-E2b-baseline-success",
+      "evidence_class": "SIMULATION_CONDITIONAL",
+      "value": 59,
+      "numerator": 59,
+      "denominator": 100,
+      "interval": {
+        "high": 0.681327,
+        "level": 0.95,
+        "low": 0.492014,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926"
+    },
+    {
+      "claim_id": "V6.1-E2b-film.e2b.not_seated.baseline",
+      "evidence_class": "OPTIMIZATION_MODEL",
+      "value": 40,
+      "numerator": 40,
+      "denominator": 100,
+      "interval": null,
+      "source_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926"
+    },
+    {
+      "claim_id": "V6.1-E2b-film.e2b.not_seated.optimised",
+      "evidence_class": "OPTIMIZATION_MODEL",
+      "value": 40,
+      "numerator": 40,
+      "denominator": 100,
+      "interval": null,
+      "source_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926"
+    },
+    {
+      "claim_id": "V6.1-E2b-optimised-planned-clock",
+      "evidence_class": "OPTIMIZATION_MODEL",
+      "value": 7.474,
+      "numerator": null,
+      "denominator": null,
+      "interval": null,
+      "source_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926"
+    },
+    {
+      "claim_id": "V6.1-E2b-optimised-success",
+      "evidence_class": "SIMULATION_CONDITIONAL",
+      "value": 58,
+      "numerator": 58,
+      "denominator": 100,
+      "interval": {
+        "high": 0.672016,
+        "level": 0.95,
+        "low": 0.482065,
+        "type": "Wilson score (unclustered, descriptive)"
+      },
+      "source_sha256": "99c99de45285f9672b1acd7ea26be9f32b121e0936dd49537d5923fe7eb43926"
+    }
+  ]
+}
